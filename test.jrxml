@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="test" pageWidth="420" pageHeight="595" whenNoDataType="AllSectionsNoDetail" columnWidth="392" leftMargin="14" rightMargin="14" topMargin="14" bottomMargin="14" uuid="e69fb012-8c43-43e6-a272-da757cf03e56">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Json_test"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="mm"/>
+	<property name="ireport.jasperserver.url" value="http://localhost:8080/jasperserver/"/>
+	<property name="ireport.jasperserver.user" value="jasperadmin"/>
+	<property name="ireport.jasperserver.reportUnit" value="/reports/test"/>
+	<subDataset name="Dataset1" uuid="31ec45c5-e2d3-4ddc-bf46-a0d3bd3f40ec">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Json_test"/>
+		<parameter name="net.sf.jasperreports.json.source" class="java.lang.String">
+			<defaultValueExpression><![CDATA["http://localhost:9200/ptagpoc-item-gb-en/GB_en/ART-60302617"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="json">
+			<![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item]]>
+		</queryString>
+		<field name="ItemNo" class="java.lang.Integer">
+			<property name="net.sf.jasperreports.json.field.expression" value="ItemNo"/>
+			<fieldDescription><![CDATA[ItemNo]]></fieldDescription>
+		</field>
+		<field name="UpdateDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="UpdateDate"/>
+			<fieldDescription><![CDATA[UpdateDate]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="producttype" uuid="6215c006-dd39-4b0d-903c-fcc178c1f8ec">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Json_test"/>
+		<parameter name="net.sf.jasperreports.json.source" class="java.lang.String">
+			<defaultValueExpression><![CDATA["http://localhost:9200/ptagpoc-item-gb-en/GB_en/ART-60302617"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="json">
+			<![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.ProductTypeLocalList.ProductTypeLocal.ProductTypeName]]>
+		</queryString>
+		<field name="node" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="."/>
+			<fieldDescription><![CDATA[.]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="ProductName" uuid="385275e3-a52c-4199-9ab1-8f45622d9be8">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Json_test"/>
+		<parameter name="net.sf.jasperreports.json.source" class="java.lang.String">
+			<defaultValueExpression><![CDATA["http://localhost:9200/ptagpoc-item-gb-en/GB_en/ART-60302617"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="json">
+			<![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.ProductNameLocalList.ProductNameLocal]]>
+		</queryString>
+		<field name="ProductNameNo" class="java.lang.Integer">
+			<property name="net.sf.jasperreports.json.field.expression" value="ProductNameNo"/>
+			<fieldDescription><![CDATA[ProductNameNo]]></fieldDescription>
+		</field>
+		<field name="ProductName" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ProductName"/>
+			<fieldDescription><![CDATA[ProductName]]></fieldDescription>
+		</field>
+		<field name="ProductNameShort" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ProductNameShort"/>
+			<fieldDescription><![CDATA[ProductNameShort]]></fieldDescription>
+		</field>
+		<field name="SortNo" class="java.lang.Integer">
+			<property name="net.sf.jasperreports.json.field.expression" value="SortNo"/>
+			<fieldDescription><![CDATA[SortNo]]></fieldDescription>
+		</field>
+		<field name="RegisterDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="RegisterDate"/>
+			<fieldDescription><![CDATA[RegisterDate]]></fieldDescription>
+		</field>
+		<field name="UpdateDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="UpdateDate"/>
+			<fieldDescription><![CDATA[UpdateDate]]></fieldDescription>
+		</field>
+		<field name="DeleteDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="DeleteDate"/>
+			<fieldDescription><![CDATA[DeleteDate]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="Price" uuid="2c28b7de-8961-4e08-ae97-f5ac32e16c5d">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Json_test"/>
+		<parameter name="net.sf.jasperreports.json.source" class="java.lang.String">
+			<defaultValueExpression><![CDATA["http://localhost:9200/ptagpoc-item-gb-en/GB_en/ART-60302617"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="json">
+			<![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.RetailItemPriceList.RetailItemPrice]]>
+		</queryString>
+		<field name="RetailPriceIncludingTax" class="java.lang.Integer">
+			<property name="net.sf.jasperreports.json.field.expression" value="RetailPriceIncludingTax"/>
+			<fieldDescription><![CDATA[RetailPriceIncludingTax]]></fieldDescription>
+		</field>
+		<field name="RetailPriceExcludingTax" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="RetailPriceExcludingTax"/>
+			<fieldDescription><![CDATA[RetailPriceExcludingTax]]></fieldDescription>
+		</field>
+		<field name="RetailItemPriceType" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="RetailItemPriceType"/>
+			<fieldDescription><![CDATA[RetailItemPriceType]]></fieldDescription>
+		</field>
+		<field name="CurrencyCode" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="CurrencyCode"/>
+			<fieldDescription><![CDATA[CurrencyCode]]></fieldDescription>
+		</field>
+		<field name="ValidFrom" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ValidFrom"/>
+			<fieldDescription><![CDATA[ValidFrom]]></fieldDescription>
+		</field>
+		<field name="ValidTo" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ValidTo"/>
+			<fieldDescription><![CDATA[ValidTo]]></fieldDescription>
+		</field>
+		<field name="ReasonCode" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ReasonCode"/>
+			<fieldDescription><![CDATA[ReasonCode]]></fieldDescription>
+		</field>
+		<field name="RegisterDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="RegisterDate"/>
+			<fieldDescription><![CDATA[RegisterDate]]></fieldDescription>
+		</field>
+		<field name="UpdateDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="UpdateDate"/>
+			<fieldDescription><![CDATA[UpdateDate]]></fieldDescription>
+		</field>
+		<field name="DeleteDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="DeleteDate"/>
+			<fieldDescription><![CDATA[DeleteDate]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="PA Number" uuid="7f2a5ad4-5bf3-42ab-b5a9-1522fe864b60">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Json_test"/>
+		<parameter name="net.sf.jasperreports.json.source" class="java.lang.String">
+			<defaultValueExpression><![CDATA["http://localhost:9200/ptagpoc-item-gb-en/GB_en/ART-60302617"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="json">
+			<![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.ProductAreaLocalList.ProductAreaLocal]]>
+		</queryString>
+		<field name="ProductAreaNo" class="java.lang.Integer">
+			<property name="net.sf.jasperreports.json.field.expression" value="ProductAreaNo"/>
+			<fieldDescription><![CDATA[ProductAreaNo]]></fieldDescription>
+		</field>
+		<field name="ProductAreaName" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ProductAreaName"/>
+			<fieldDescription><![CDATA[ProductAreaName]]></fieldDescription>
+		</field>
+		<field name="ValidFrom" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ValidFrom"/>
+			<fieldDescription><![CDATA[ValidFrom]]></fieldDescription>
+		</field>
+		<field name="ValidTo" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ValidTo"/>
+			<fieldDescription><![CDATA[ValidTo]]></fieldDescription>
+		</field>
+		<field name="RegisterDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="RegisterDate"/>
+			<fieldDescription><![CDATA[RegisterDate]]></fieldDescription>
+		</field>
+		<field name="UpdateDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="UpdateDate"/>
+			<fieldDescription><![CDATA[UpdateDate]]></fieldDescription>
+		</field>
+		<field name="DeleteDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="DeleteDate"/>
+			<fieldDescription><![CDATA[DeleteDate]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="PrintDate" uuid="826b52fb-a7d6-4382-9377-61725579d033">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Json_test"/>
+		<parameter name="net.sf.jasperreports.json.source" class="java.lang.String">
+			<defaultValueExpression><![CDATA["http://localhost:9200/ptagpoc-item-gb-en/GB_en/ART-60302617"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="json">
+			<![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item]]>
+		</queryString>
+		<field name="ItemNo" class="java.lang.Integer">
+			<property name="net.sf.jasperreports.json.field.expression" value="ItemNo"/>
+			<fieldDescription><![CDATA[ItemNo]]></fieldDescription>
+		</field>
+		<field name="ItemType" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ItemType"/>
+			<fieldDescription><![CDATA[ItemType]]></fieldDescription>
+		</field>
+		<field name="ItemState" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ItemState"/>
+			<fieldDescription><![CDATA[ItemState]]></fieldDescription>
+		</field>
+		<field name="ItemNameEn" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ItemNameEn"/>
+			<fieldDescription><![CDATA[ItemNameEn]]></fieldDescription>
+		</field>
+		<field name="RegisterDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="RegisterDate"/>
+			<fieldDescription><![CDATA[RegisterDate]]></fieldDescription>
+		</field>
+		<field name="UpdateDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="UpdateDate"/>
+			<fieldDescription><![CDATA[UpdateDate]]></fieldDescription>
+		</field>
+		<field name="DeleteDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="DeleteDate"/>
+			<fieldDescription><![CDATA[DeleteDate]]></fieldDescription>
+		</field>
+		<field name="Attribute" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Attribute"/>
+			<fieldDescription><![CDATA[Attribute]]></fieldDescription>
+		</field>
+		<field name="CustomerBenefitLocalList" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="CustomerBenefitLocalList"/>
+			<fieldDescription><![CDATA[CustomerBenefitLocalList]]></fieldDescription>
+		</field>
+		<field name="CustomerMaterialLocalList" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="CustomerMaterialLocalList"/>
+			<fieldDescription><![CDATA[CustomerMaterialLocalList]]></fieldDescription>
+		</field>
+		<field name="ImageList" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ImageList"/>
+			<fieldDescription><![CDATA[ImageList]]></fieldDescription>
+		</field>
+		<field name="MeasureLocalList" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="MeasureLocalList"/>
+			<fieldDescription><![CDATA[MeasureLocalList]]></fieldDescription>
+		</field>
+		<field name="GoodToKnowLocalList" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="GoodToKnowLocalList"/>
+			<fieldDescription><![CDATA[GoodToKnowLocalList]]></fieldDescription>
+		</field>
+		<field name="ItemNameLocal" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ItemNameLocal"/>
+			<fieldDescription><![CDATA[ItemNameLocal]]></fieldDescription>
+		</field>
+		<field name="MeasureReferenceLocalList" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="MeasureReferenceLocalList"/>
+			<fieldDescription><![CDATA[MeasureReferenceLocalList]]></fieldDescription>
+		</field>
+		<field name="LongBenefitLocalList" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="LongBenefitLocalList"/>
+			<fieldDescription><![CDATA[LongBenefitLocalList]]></fieldDescription>
+		</field>
+		<field name="ProductAreaLocalList" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ProductAreaLocalList"/>
+			<fieldDescription><![CDATA[ProductAreaLocalList]]></fieldDescription>
+		</field>
+		<field name="PackageMeasurementLocalList" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="PackageMeasurementLocalList"/>
+			<fieldDescription><![CDATA[PackageMeasurementLocalList]]></fieldDescription>
+		</field>
+		<field name="RecommendedSalesPriceList" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="RecommendedSalesPriceList"/>
+			<fieldDescription><![CDATA[RecommendedSalesPriceList]]></fieldDescription>
+		</field>
+		<field name="ProductNameLocalList" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ProductNameLocalList"/>
+			<fieldDescription><![CDATA[ProductNameLocalList]]></fieldDescription>
+		</field>
+		<field name="RecCustomerOrderList" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="RecCustomerOrderList"/>
+			<fieldDescription><![CDATA[RecCustomerOrderList]]></fieldDescription>
+		</field>
+		<field name="RetailItemPriceList" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="RetailItemPriceList"/>
+			<fieldDescription><![CDATA[RetailItemPriceList]]></fieldDescription>
+		</field>
+		<field name="ProductTypeLocalList" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ProductTypeLocalList"/>
+			<fieldDescription><![CDATA[ProductTypeLocalList]]></fieldDescription>
+		</field>
+		<field name="PackageMeasurementConsumerPackLocalList" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="PackageMeasurementConsumerPackLocalList"/>
+			<fieldDescription><![CDATA[PackageMeasurementConsumerPackLocalList]]></fieldDescription>
+		</field>
+		<field name="ValidDesignLocalList" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ValidDesignLocalList"/>
+			<fieldDescription><![CDATA[ValidDesignLocalList]]></fieldDescription>
+		</field>
+		<field name="ValidDesignPartsLocalList" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ValidDesignPartsLocalList"/>
+			<fieldDescription><![CDATA[ValidDesignPartsLocalList]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="selfAssembly" uuid="9cb16da5-2fdc-4daa-86f3-f1ec0d6803b8">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Json_test"/>
+		<queryString language="json">
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<queryString language="json">
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="567" splitType="Stretch">
+			<componentElement>
+				<reportElement x="100" y="530" width="70" height="30" uuid="fe03c6f3-53f2-45ba-92f6-53d7bea5e1d3"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="Dataset1" uuid="d3489d19-7670-4a03-9707-c27f8f8b68f3">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="30" width="70">
+						<textField>
+							<reportElement x="0" y="0" width="50" height="20" uuid="d103b703-4bcd-460e-9f55-0be8bf1f69c7"/>
+							<textElement>
+								<font fontName="IKEA Sans" size="6"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{ItemNo}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement x="199" y="34" width="150" height="70" uuid="48a031c6-99a9-479a-9239-c13b75288ca2"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="ProductName" uuid="dfd815e5-4316-4eeb-8b6e-4213c7ca9823">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="70" width="150">
+						<textField>
+							<reportElement x="0" y="0" width="150" height="40" uuid="33cf6374-ce7e-408e-9c3c-7e27d7dc7fdd"/>
+							<textElement>
+								<font size="22" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{ProductName}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement x="200" y="7" width="130" height="23" uuid="34974d57-d556-4730-904f-02043e350387"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="producttype" uuid="d4270816-c94e-44c6-86d1-8011bd4ec12c">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="23" width="130">
+						<textField>
+							<reportElement x="0" y="0" width="100" height="23" uuid="1c31c986-e823-4cfa-90fc-e156738032d7"/>
+							<textElement>
+								<font fontName="IKEA Sans" size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{node}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement positionType="Float" x="213" y="380" width="170" height="70" uuid="23dd74a0-9fb2-4858-9168-9dcee0f48b57"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="Price" uuid="234ca216-b39d-462b-b1ee-044cd75b25b5"/>
+					<jr:listContents height="70" width="170">
+						<textField>
+							<reportElement x="0" y="0" width="150" height="60" uuid="f42dd242-4a08-4852-8144-d223381103b4"/>
+							<textElement>
+								<font fontName="IKEA Sans" size="36" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA["$"+$F{RetailPriceIncludingTax}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<image>
+				<reportElement x="199" y="485" width="100" height="80" uuid="ae882ba1-0d9a-4225-8a71-9e1c470c7e80"/>
+				<imageExpression><![CDATA["C:/temp/logo1.JPG"]]></imageExpression>
+			</image>
+			<componentElement>
+				<reportElement x="0" y="530" width="68" height="30" uuid="9119a5df-4e8b-48c0-b72a-822e702f79da"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="PA Number" uuid="b11918db-ac31-4d23-8e14-a0e870fa21a5">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="30" width="68">
+						<textField>
+							<reportElement x="0" y="0" width="50" height="20" uuid="00211215-a13f-4bbc-a35a-fba201e1bab7"/>
+							<textElement>
+								<font fontName="IKEA Sans" size="6"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{ProductAreaNo}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement x="40" y="530" width="122" height="30" uuid="941f2121-9f87-46c4-810d-19cba058d1a4"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="PrintDate" uuid="dfb54071-2d36-45d9-8318-376991bca1b9">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="30" width="122">
+						<textField>
+							<reportElement x="0" y="0" width="100" height="30" uuid="38b08371-73c4-40ef-97a1-611aa855fe8b"/>
+							<textElement>
+								<font fontName="IKEA Sans" size="6"/>
+							</textElement>
+							<textFieldExpression><![CDATA[($F{RegisterDate}.substring(8,10)+"/"+$F{RegisterDate}.substring(5,7)+"/"+$F{RegisterDate}.substring(0,4) ) 
+]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<staticText>
+				<reportElement x="308" y="520" width="75" height="38" uuid="81e3f039-3728-4fa5-a9d7-de6299c6c436"/>
+				<textElement>
+					<font fontName="IKEA Sans" size="12"/>
+				</textElement>
+				<text><![CDATA[Turn over for more info ►]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="172" y="403" width="8" height="150" uuid="da8771a8-ad78-41cb-ad4d-c2cc5660e4df"/>
+				<textElement rotation="Left">
+					<font fontName="IKEA Sans" size="6"/>
+				</textElement>
+				<text><![CDATA[© Inter IKEA Systems B. V. 1994]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="500" width="120" height="23" uuid="f765badb-23b0-485d-9d7a-678f66a8cee9"/>
+				<textElement>
+					<font fontName="IKEA Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["SELF ASSEMBLY"]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
