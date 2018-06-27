@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sample29" pageWidth="420" pageHeight="595" columnWidth="392" leftMargin="14" rightMargin="14" topMargin="14" bottomMargin="14" uuid="8f0406b4-95e2-4f6d-951e-d27c7327ccf7">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_Item"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<subDataset name="DS_ProductType" uuid="8a9a6862-687b-4c34-889b-93fd7fd7c065">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_Item"/>
+		<parameter name="Parameter1" class="java.lang.String"/>
+		<queryString language="JSON">
+			<![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.ProductTypeLocalList.ProductTypeLocal]]>
+		</queryString>
+		<field name="ProductTypeNo" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ProductTypeNo"/>
+			<fieldDescription><![CDATA[ProductTypeNo]]></fieldDescription>
+		</field>
+		<field name="ProductTypeName" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ProductTypeName"/>
+			<fieldDescription><![CDATA[ProductTypeName]]></fieldDescription>
+		</field>
+		<field name="ProductTypeNamePart" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ProductTypeNamePart"/>
+			<fieldDescription><![CDATA[ProductTypeNamePart]]></fieldDescription>
+		</field>
+		<field name="ProductTypeCommentEn" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ProductTypeCommentEn"/>
+			<fieldDescription><![CDATA[ProductTypeCommentEn]]></fieldDescription>
+		</field>
+		<field name="RegisterDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="RegisterDate"/>
+			<fieldDescription><![CDATA[RegisterDate]]></fieldDescription>
+		</field>
+		<field name="UpdateDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="UpdateDate"/>
+			<fieldDescription><![CDATA[UpdateDate]]></fieldDescription>
+		</field>
+		<field name="DeleteDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="DeleteDate"/>
+			<fieldDescription><![CDATA[DeleteDate]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="DS_ProductName" uuid="bab81150-0b2a-481b-b561-a541340b3f8e">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_Item"/>
+		<queryString language="JSON">
+			<![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.ProductNameLocalList.ProductNameLocal]]>
+		</queryString>
+		<field name="ProductNameNo" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ProductNameNo"/>
+			<fieldDescription><![CDATA[ProductNameNo]]></fieldDescription>
+		</field>
+		<field name="ProductName" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ProductName"/>
+			<fieldDescription><![CDATA[ProductName]]></fieldDescription>
+		</field>
+		<field name="ProductNameShort" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ProductNameShort"/>
+			<fieldDescription><![CDATA[ProductNameShort]]></fieldDescription>
+		</field>
+		<field name="SortNo" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="SortNo"/>
+			<fieldDescription><![CDATA[SortNo]]></fieldDescription>
+		</field>
+		<field name="RegisterDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="RegisterDate"/>
+			<fieldDescription><![CDATA[RegisterDate]]></fieldDescription>
+		</field>
+		<field name="UpdateDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="UpdateDate"/>
+			<fieldDescription><![CDATA[UpdateDate]]></fieldDescription>
+		</field>
+		<field name="DeleteDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="DeleteDate"/>
+			<fieldDescription><![CDATA[DeleteDate]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="DS_Price" uuid="05eca06d-3d28-458d-b4a8-dd9c30a77f95">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_Item"/>
+		<queryString language="JSON">
+			<![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.RetailItemPriceList.RetailItemPrice]]>
+		</queryString>
+		<field name="RetailPriceIncludingTax" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="RetailPriceIncludingTax"/>
+			<fieldDescription><![CDATA[RetailPriceIncludingTax]]></fieldDescription>
+		</field>
+		<field name="RetailPriceExcludingTax" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="RetailPriceExcludingTax"/>
+			<fieldDescription><![CDATA[RetailPriceExcludingTax]]></fieldDescription>
+		</field>
+		<field name="RetailItemPriceType" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="RetailItemPriceType"/>
+			<fieldDescription><![CDATA[RetailItemPriceType]]></fieldDescription>
+		</field>
+		<field name="CurrencyCode" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="CurrencyCode"/>
+			<fieldDescription><![CDATA[CurrencyCode]]></fieldDescription>
+		</field>
+		<field name="ValidFrom" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ValidFrom"/>
+			<fieldDescription><![CDATA[ValidFrom]]></fieldDescription>
+		</field>
+		<field name="ValidTo" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ValidTo"/>
+			<fieldDescription><![CDATA[ValidTo]]></fieldDescription>
+		</field>
+		<field name="ReasonCode" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ReasonCode"/>
+			<fieldDescription><![CDATA[ReasonCode]]></fieldDescription>
+		</field>
+		<field name="RegisterDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="RegisterDate"/>
+			<fieldDescription><![CDATA[RegisterDate]]></fieldDescription>
+		</field>
+		<field name="UpdateDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="UpdateDate"/>
+			<fieldDescription><![CDATA[UpdateDate]]></fieldDescription>
+		</field>
+		<field name="DeleteDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="DeleteDate"/>
+			<fieldDescription><![CDATA[DeleteDate]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="DS_TurnOver" uuid="962e51f2-b990-42b8-9113-442e57407183">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_Translation "/>
+		<queryString language="JSON">
+			<![CDATA[_source.TranslationList.Translations]]>
+		</queryString>
+		<field name="TitleId" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="TitleId"/>
+			<fieldDescription><![CDATA[TitleId]]></fieldDescription>
+		</field>
+		<field name="TitileName" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="TitileName"/>
+			<fieldDescription><![CDATA[TitileName]]></fieldDescription>
+		</field>
+		<field name="TitleNameLength" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="TitleNameLength"/>
+			<fieldDescription><![CDATA[TitleNameLength]]></fieldDescription>
+		</field>
+		<field name="Updatable" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Updatable"/>
+			<fieldDescription><![CDATA[Updatable]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="DS_CopyRight" uuid="69989b2e-5c9d-4956-973c-d240a77fc83d">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<subDataset name="DS_Logo" uuid="53687d0b-e357-4334-9c28-16fbe9634323">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<subDataset name="DS_SelfAssembly" uuid="3c0b2ee4-62b4-434d-b32a-bcf0946cbd96">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<subDataset name="DS_PANumber" uuid="f9b1f8bf-d5be-4065-8cec-054d97f12a66">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_Item"/>
+		<queryString language="JSON">
+			<![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.ProductAreaLocalList.ProductAreaLocal]]>
+		</queryString>
+		<field name="ProductAreaNo" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ProductAreaNo"/>
+			<fieldDescription><![CDATA[ProductAreaNo]]></fieldDescription>
+		</field>
+		<field name="ProductAreaName" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ProductAreaName"/>
+			<fieldDescription><![CDATA[ProductAreaName]]></fieldDescription>
+		</field>
+		<field name="ValidFrom" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ValidFrom"/>
+			<fieldDescription><![CDATA[ValidFrom]]></fieldDescription>
+		</field>
+		<field name="ValidTo" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ValidTo"/>
+			<fieldDescription><![CDATA[ValidTo]]></fieldDescription>
+		</field>
+		<field name="RegisterDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="RegisterDate"/>
+			<fieldDescription><![CDATA[RegisterDate]]></fieldDescription>
+		</field>
+		<field name="UpdateDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="UpdateDate"/>
+			<fieldDescription><![CDATA[UpdateDate]]></fieldDescription>
+		</field>
+		<field name="DeleteDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="DeleteDate"/>
+			<fieldDescription><![CDATA[DeleteDate]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="DS_PrintDate" uuid="98fd7118-943f-484a-a3a6-5a991ddb2fd9">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<subDataset name="DS_ArticleNumber" uuid="39357bda-1d13-421b-bb4e-3ab0589b9350">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_Item"/>
+		<queryString language="JSON">
+			<![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.ItemNo]]>
+		</queryString>
+		<field name="node" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="."/>
+			<fieldDescription><![CDATA[.]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="DS_ProductNameLocal" uuid="e66463be-8516-4cb6-b9b8-28d4fb3a6430">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_Item"/>
+		<queryString language="JSON">
+			<![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.ProductNameLocalList.ProductNameLocal]]>
+		</queryString>
+		<field name="ProductNameNo" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ProductNameNo"/>
+			<fieldDescription><![CDATA[ProductNameNo]]></fieldDescription>
+		</field>
+		<field name="ProductName" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ProductName"/>
+			<fieldDescription><![CDATA[ProductName]]></fieldDescription>
+		</field>
+		<field name="ProductNameShort" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ProductNameShort"/>
+			<fieldDescription><![CDATA[ProductNameShort]]></fieldDescription>
+		</field>
+		<field name="SortNo" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="SortNo"/>
+			<fieldDescription><![CDATA[SortNo]]></fieldDescription>
+		</field>
+		<field name="RegisterDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="RegisterDate"/>
+			<fieldDescription><![CDATA[RegisterDate]]></fieldDescription>
+		</field>
+		<field name="UpdateDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="UpdateDate"/>
+			<fieldDescription><![CDATA[UpdateDate]]></fieldDescription>
+		</field>
+		<field name="DeleteDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="DeleteDate"/>
+			<fieldDescription><![CDATA[DeleteDate]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="DS_CurrencySymbol" uuid="e7a1e640-e96c-47b8-9baa-da1e44e0fa30">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_Configuration"/>
+		<queryString language="JSON">
+			<![CDATA[_source.CurrencyformatList.CurrencyFormat]]>
+		</queryString>
+		<field name="CurrencyUnitType" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="CurrencyUnitType"/>
+			<fieldDescription><![CDATA[CurrencyUnitType]]></fieldDescription>
+		</field>
+		<field name="CurrencySymbol" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="CurrencySymbol"/>
+			<fieldDescription><![CDATA[CurrencySymbol]]></fieldDescription>
+		</field>
+		<field name="CurrencyText" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="CurrencyText"/>
+			<fieldDescription><![CDATA[CurrencyText]]></fieldDescription>
+		</field>
+		<field name="CurrencyPosition" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="CurrencyPosition"/>
+			<fieldDescription><![CDATA[CurrencyPosition]]></fieldDescription>
+		</field>
+		<field name="CurrencyLayout" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="CurrencyLayout"/>
+			<fieldDescription><![CDATA[CurrencyLayout]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="DS_CustomerBenifits" uuid="ff65a567-ec21-4cc6-812b-fec2132dd2f9">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_Item"/>
+		<queryString language="JSON">
+			<![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.CustomerBenefitLocalList.CustomerBenefitLocal]]>
+		</queryString>
+		<field name="CustomerBenefitNo" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="CustomerBenefitNo"/>
+			<fieldDescription><![CDATA[CustomerBenefitNo]]></fieldDescription>
+		</field>
+		<field name="CustomerBenefitText" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="CustomerBenefitText"/>
+			<fieldDescription><![CDATA[CustomerBenefitText]]></fieldDescription>
+		</field>
+		<field name="CustomerBenefitAlternativeYN" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="CustomerBenefitAlternativeYN"/>
+			<fieldDescription><![CDATA[CustomerBenefitAlternativeYN]]></fieldDescription>
+		</field>
+		<field name="SortNo" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="SortNo"/>
+			<fieldDescription><![CDATA[SortNo]]></fieldDescription>
+		</field>
+		<field name="RegisterDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="RegisterDate"/>
+			<fieldDescription><![CDATA[RegisterDate]]></fieldDescription>
+		</field>
+		<field name="UpdateDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="UpdateDate"/>
+			<fieldDescription><![CDATA[UpdateDate]]></fieldDescription>
+		</field>
+		<field name="DeleteDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="DeleteDate"/>
+			<fieldDescription><![CDATA[DeleteDate]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="CountryCode" class="java.lang.String"/>
+	<parameter name="LanguageCode" class="java.lang.String"/>
+	<parameter name="ItemNumber" class="java.lang.String"/>
+	<parameter name="ItemType" class="java.lang.String"/>
+	<queryString language="JSON">
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="566" splitType="Stretch">
+			<componentElement>
+				<reportElement x="190" y="10" width="133" height="30" uuid="faa54ef6-a5d7-4aac-9bd6-2f14d9c393af"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="DS_ProductType" uuid="b550df38-64ed-4623-a420-0904eb374d65">
+						<datasetParameter name="net.sf.jasperreports.json.source">
+							<datasetParameterExpression><![CDATA["http://localhost:9200/ptagpoc-item-"+LOWER( $P{CountryCode})+"-"+$P{LanguageCode}+"/"+$P{CountryCode}+"_"+$P{LanguageCode}+"/"+$P{ItemType}+"-"+$P{ItemNumber}
+]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="30" width="133">
+						<textField>
+							<reportElement x="0" y="0" width="100" height="30" uuid="848bb914-20f5-46f6-a7a6-ecfeaacc8c3a"/>
+							<textElement>
+								<font fontName="Ikea fonts"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{ProductTypeName}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement x="198" y="50" width="142" height="30" uuid="f77c6e95-b243-4f3d-9597-c0cf20070df3"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="DS_ProductName" uuid="2fc650df-a3a1-4293-a37a-eebf2cc0e7f4">
+						<datasetParameter name="net.sf.jasperreports.json.source">
+							<datasetParameterExpression><![CDATA["http://localhost:9200/ptagpoc-item-"+LOWER( $P{CountryCode})+"-"+$P{LanguageCode}+"/"+$P{CountryCode}+"_"+$P{LanguageCode}+"/"+$P{ItemType}+"-"+$P{ItemNumber}
+]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="30" width="142">
+						<textField>
+							<reportElement x="0" y="0" width="100" height="30" uuid="93d7e867-3ba7-489d-a72a-d1dc16e3a0b2"/>
+							<textFieldExpression><![CDATA[$F{ProductName}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<staticText>
+				<reportElement x="160" y="330" width="19" height="180" uuid="b2ccfa72-6bf9-4e48-ac66-e6bb07b85bbc"/>
+				<textElement rotation="Left">
+					<font fontName="Ikea fonts"/>
+				</textElement>
+				<text><![CDATA[© Inter IKEA Systems B. V. 1994]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="10" y="380" width="105" height="30" uuid="50980968-7160-4ea8-8ae5-9a8872e13a85"/>
+				<textElement>
+					<font fontName="Ikea fonts"/>
+				</textElement>
+				<textFieldExpression><![CDATA["SELF ASSEMBLY"]]></textFieldExpression>
+			</textField>
+			<textField pattern="d/M/yyyy ">
+				<reportElement x="47" y="427" width="100" height="23" uuid="44ec2799-89da-40cd-9d01-7f3121359bbb"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="###,###,##">
+				<reportElement x="239" y="437" width="100" height="30" uuid="5042f696-d567-4e71-9911-ff9e84f48d3d"/>
+				<textFieldExpression><![CDATA[$P{ItemNumber}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="206" y="90" width="100" height="30" uuid="8260a096-cebc-40e5-953f-9952c049850c"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="DS_ProductNameLocal" uuid="78378d23-3516-498d-9b3b-9d398838d215">
+						<datasetParameter name="net.sf.jasperreports.json.source">
+							<datasetParameterExpression><![CDATA["http://localhost:9200/ptagpoc-item-"+LOWER( $P{CountryCode})+"-"+$P{LanguageCode}+"/"+$P{CountryCode}+"_"+$P{LanguageCode}+"/"+$P{ItemType}+"-"+$P{ItemNumber}
+]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="30" width="100">
+						<textField>
+							<reportElement x="0" y="0" width="100" height="30" uuid="1d24fdf5-4e9f-4033-88f5-d8cde711f009"/>
+							<textFieldExpression><![CDATA[$F{ProductName}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement x="2" y="527" width="140" height="30" uuid="e92dc595-c327-431d-a9a0-f6640ea07d81"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="DS_PANumber" uuid="5b8cad88-d027-448d-aec3-7034d34fe1d6">
+						<datasetParameter name="net.sf.jasperreports.json.source">
+							<datasetParameterExpression><![CDATA["http://localhost:9200/ptagpoc-item-"+LOWER( $P{CountryCode})+"-"+$P{LanguageCode}+"/"+$P{CountryCode}+"_"+$P{LanguageCode}+"/"+$P{ItemType}+"-"+$P{ItemNumber}
+]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="30" width="140">
+						<textField>
+							<reportElement x="0" y="0" width="100" height="20" uuid="aa84fb9f-bc7e-4feb-831b-ab36ac10fa9d"/>
+							<textFieldExpression><![CDATA[$F{ProductAreaNo}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement x="193" y="317" width="46" height="30" uuid="d0385371-e66a-4434-a3d8-67ffa8532022"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="DS_CurrencySymbol" uuid="bfd8f8bd-72d5-4acf-8767-cba24625e48f">
+						<datasetParameter name="net.sf.jasperreports.json.source">
+							<datasetParameterExpression><![CDATA["http://35.204.113.104/configurations/configuration/"+$P{CountryCode}+"-"+$P{LanguageCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="30" width="46">
+						<textField>
+							<reportElement x="0" y="0" width="30" height="30" uuid="7a26bd7e-9d5b-4fbb-9c4b-d51aaef47683"/>
+							<textFieldExpression><![CDATA[$F{CurrencySymbol}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement x="245" y="318" width="100" height="30" uuid="df5d6a87-0d89-43c4-a86c-bd07409c1cc0"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="DS_Price" uuid="ec1f81ef-c800-4393-a77d-d2bd134fa5d5">
+						<datasetParameter name="net.sf.jasperreports.json.source">
+							<datasetParameterExpression><![CDATA["http://localhost:9200/ptagpoc-item-"+LOWER( $P{CountryCode})+"-"+$P{LanguageCode}+"/"+$P{CountryCode}+"_"+$P{LanguageCode}+"/"+$P{ItemType}+"-"+$P{ItemNumber}
+]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="30" width="100">
+						<textField>
+							<reportElement x="0" y="0" width="100" height="30" uuid="cc400621-9298-4915-93a8-3f0f798fa6c6"/>
+							<textFieldExpression><![CDATA[$F{RetailPriceIncludingTax}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement x="187" y="130" width="203" height="150" uuid="43c79137-d782-443e-b908-539ed774c392"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" ignoreWidth="true">
+					<datasetRun subDataset="DS_CustomerBenifits" uuid="d01a3ac3-0f56-4a5a-ba72-8f14594c4aea">
+						<datasetParameter name="net.sf.jasperreports.json.source">
+							<datasetParameterExpression><![CDATA["http://localhost:9200/ptagpoc-item-"+LOWER( $P{CountryCode})+"-"+$P{LanguageCode}+"/"+$P{CountryCode}+"_"+$P{LanguageCode}+"/"+$P{ItemType}+"-"+$P{ItemNumber}
+]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="150" width="203">
+						<textField>
+							<reportElement x="0" y="0" width="100" height="30" uuid="08018f57-9cfc-4ce6-b693-3a8328f06dfe"/>
+							<textFieldExpression><![CDATA[$F{CustomerBenefitText}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<image>
+				<reportElement x="190" y="490" width="100" height="71" uuid="9f6f74bc-8bcf-46cf-87bc-da249b77dad2"/>
+				<imageExpression><![CDATA["C:/temp/logo.PNG"]]></imageExpression>
+			</image>
+			<componentElement>
+				<reportElement x="290" y="500" width="100" height="30" uuid="3f4d3ae5-1d75-4c42-a552-7cb5e92c2eed"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="DS_TurnOver" uuid="0cb5fff0-ae1f-4481-8e87-0adbfc199c77">
+						<datasetParameter name="net.sf.jasperreports.json.source">
+							<datasetParameterExpression><![CDATA["http://35.204.113.104/translations/translation/"+$P{CountryCode}+"-"+$P{LanguageCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="30" width="100">
+						<textField>
+							<reportElement x="0" y="0" width="100" height="30" uuid="bc9a9f0d-2239-4c7c-8d75-510734c4459e"/>
+							<textFieldExpression><![CDATA[$F{TitileName}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>
