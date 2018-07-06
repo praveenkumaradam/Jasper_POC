@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Pricetag-A4-L2R" pageWidth="420" pageHeight="595" whenNoDataType="AllSectionsNoDetail" columnWidth="392" leftMargin="14" rightMargin="14" topMargin="14" bottomMargin="14" uuid="925e2051-747c-44bf-85fb-017bb7ba7579">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_Item"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_Configuration"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
@@ -17,16 +17,25 @@
 	<property name="ireport.jasperserver.reportUnit" value="/reports/Pricetag_A4_L2R"/>
 	<style name="Style1" fontName="IKEA Sans">
 		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "jp") && $P{LanguageCode}.equalsIgnoreCase( "ja" )]]></conditionExpression>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP") && $P{LanguageCode}.equalsIgnoreCase( "ja" )]]></conditionExpression>
 			<style fontName="IKEA Sans JPN"/>
 		</conditionalStyle>
 	</style>
 	<subDataset name="DS_Item" uuid="a307ecaa-c512-4f5d-aa8f-b312f62402d9">
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_Item"/>
+		<parameter name="CurrencySymbol" class="java.lang.String">
+			<defaultValueExpression><![CDATA["£"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="LanguageCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+		</parameter>
 		<queryString language="json">
 			<![CDATA[]]>
 		</queryString>
-		<field name="ItemNo" class="java.lang.String">
+		<field name="ItemNo" class="java.lang.Integer">
 			<property name="net.sf.jasperreports.json.field.expression" value="_source.GetItemResponse.ItemListContainer.ItemList.Item.ItemNo"/>
 			<fieldDescription><![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.ItemNo]]></fieldDescription>
 		</field>
@@ -42,7 +51,7 @@
 			<property name="net.sf.jasperreports.json.field.expression" value="_source.GetItemResponse.ItemListContainer.ItemList.Item.ProductNameLocalList.ProductNameLocal.ProductName[0]"/>
 			<fieldDescription><![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.ProductNameLocalList.ProductNameLocal.ProductName]]></fieldDescription>
 		</field>
-		<field name="RetailPriceIncludingTax" class="java.lang.String">
+		<field name="Member Price" class="java.lang.String">
 			<property name="net.sf.jasperreports.json.field.expression" value="_source.GetItemResponse.ItemListContainer.ItemList.Item.RetailItemPriceList.RetailItemPrice.RetailPriceIncludingTax[0]"/>
 			<fieldDescription><![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.RetailItemPriceList.RetailItemPrice.RetailPriceIncludingTax]]></fieldDescription>
 		</field>
@@ -62,9 +71,17 @@
 			<property name="net.sf.jasperreports.json.field.expression" value="_source.GetItemResponse.ItemListContainer.ItemList.Item.ProductNameList.ProductName.ProductNameEn[0]"/>
 			<fieldDescription><![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.ProductNameList.ProductName.ProductNameEn]]></fieldDescription>
 		</field>
+		<field name="PeoplePlanetText" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="_source.GetItemResponse.ItemListContainer.ItemList.Item.PeoplePlanetLocalList.PeoplePlanetLocal.PeoplePlanetText[0]"/>
+			<fieldDescription><![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.PeoplePlanetLocalList.PeoplePlanetLocal.PeoplePlanetText]]></fieldDescription>
+		</field>
+		<field name="Regular Price" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="_source.GetItemResponse.ItemListContainer.ItemList.Item.RetailItemPriceList.RetailItemPrice.RetailPriceIncludingTax[1]"/>
+			<fieldDescription><![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.RetailItemPriceList.RetailItemPrice.RetailPriceIncludingTax]]></fieldDescription>
+		</field>
 	</subDataset>
 	<subDataset name="DS_Configuration" uuid="0b9c65e9-9e98-44ec-a124-90794084a7d6">
-		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_Configuration"/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Json_Translation"/>
 		<queryString language="JSON">
 			<![CDATA[]]>
 		</queryString>
@@ -74,7 +91,13 @@
 		</field>
 	</subDataset>
 	<subDataset name="DS_Translation" uuid="a091d26e-d65f-49ba-94ed-a488d35ada26">
-		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_Translation "/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Json_Translation"/>
+		<parameter name="CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="LanguageCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+		</parameter>
 		<queryString language="json">
 			<![CDATA[]]>
 		</queryString>
@@ -84,48 +107,106 @@
 		</field>
 	</subDataset>
 	<subDataset name="DS_Turnover" uuid="4bc47bed-4b16-44eb-aa74-da9f3f84dcc5">
-		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_Translation "/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Json_Translation"/>
+		<parameter name="CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="LanguageCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+		</parameter>
 		<queryString language="JSON">
 			<![CDATA[]]>
 		</queryString>
-		<field name="TitileName" class="java.lang.String">
+		<field name="Turn over " class="java.lang.String">
 			<property name="net.sf.jasperreports.json.field.expression" value="_source.TranslationList.Translations.TitileName[135]"/>
+			<fieldDescription><![CDATA[_source.TranslationList.Translations.TitileName]]></fieldDescription>
+		</field>
+		<field name="Good To Know" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="_source.TranslationList.Translations.TitileName[51]"/>
+			<fieldDescription><![CDATA[_source.TranslationList.Translations.TitileName]]></fieldDescription>
+		</field>
+		<field name="People and Planet" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="_source.TranslationList.Translations.TitileName[50]"/>
+			<fieldDescription><![CDATA[_source.TranslationList.Translations.TitileName]]></fieldDescription>
+		</field>
+		<field name="Also available in" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="_source.TranslationList.Translations.TitileName[83]"/>
+			<fieldDescription><![CDATA[_source.TranslationList.Translations.TitileName]]></fieldDescription>
+		</field>
+		<field name="MemberPrice" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="_source.TranslationList.Translations.TitileName[48]"/>
+			<fieldDescription><![CDATA[_source.TranslationList.Translations.TitileName]]></fieldDescription>
+		</field>
+		<field name="RegularPrice" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="_source.TranslationList.Translations.TitileName[89]"/>
+			<fieldDescription><![CDATA[_source.TranslationList.Translations.TitileName]]></fieldDescription>
+		</field>
+		<field name="SelfAssembly" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="_source.TranslationList.Translations.TitileName[1]"/>
 			<fieldDescription><![CDATA[_source.TranslationList.Translations.TitileName]]></fieldDescription>
 		</field>
 	</subDataset>
 	<subDataset name="DS_CustomerBenifits" uuid="33b482c1-41c1-422a-a9ac-dcbd049f9b1d">
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_Item"/>
+		<parameter name="CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="LanguageCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+		</parameter>
 		<queryString language="JSON">
 			<![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.CustomerBenefitLocalList.CustomerBenefitLocal]]>
 		</queryString>
-		<field name="CustomerBenefitNo" class="java.lang.String">
-			<property name="net.sf.jasperreports.json.field.expression" value="CustomerBenefitNo"/>
-			<fieldDescription><![CDATA[CustomerBenefitNo]]></fieldDescription>
-		</field>
 		<field name="CustomerBenefitText" class="java.lang.String">
 			<property name="net.sf.jasperreports.json.field.expression" value="CustomerBenefitText"/>
 			<fieldDescription><![CDATA[CustomerBenefitText]]></fieldDescription>
 		</field>
-		<field name="CustomerBenefitAlternativeYN" class="java.lang.String">
-			<property name="net.sf.jasperreports.json.field.expression" value="CustomerBenefitAlternativeYN"/>
-			<fieldDescription><![CDATA[CustomerBenefitAlternativeYN]]></fieldDescription>
+	</subDataset>
+	<subDataset name="DS_GoodToKnow" uuid="02aa1ebd-0f35-4a07-9c0e-a9c677412280">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_Item"/>
+		<parameter name="CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="LanguageCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="JSON">
+			<![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.GoodToKnowLocalList.GoodToKnowLocal]]>
+		</queryString>
+		<field name="GoodToKnowText" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="GoodToKnowText"/>
+			<fieldDescription><![CDATA[GoodToKnowText]]></fieldDescription>
 		</field>
-		<field name="SortNo" class="java.lang.String">
-			<property name="net.sf.jasperreports.json.field.expression" value="SortNo"/>
-			<fieldDescription><![CDATA[SortNo]]></fieldDescription>
+	</subDataset>
+	<subDataset name="DS_check" uuid="517e91ee-717f-47ff-bf84-3c44f1cc5783">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_Item"/>
+		<queryString language="JSON">
+			<![CDATA[]]>
+		</queryString>
+		<field name="GoodToKnowText" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="_source.GetItemResponse.ItemListContainer.ItemList.Item.GoodToKnowLocalList.GoodToKnowLocal.GoodToKnowText"/>
+			<fieldDescription><![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.GoodToKnowLocalList.GoodToKnowLocal.GoodToKnowText]]></fieldDescription>
 		</field>
-		<field name="RegisterDate" class="java.lang.String">
-			<property name="net.sf.jasperreports.json.field.expression" value="RegisterDate"/>
-			<fieldDescription><![CDATA[RegisterDate]]></fieldDescription>
+	</subDataset>
+	<subDataset name="DS_AvailableColours" uuid="145b37d2-f96c-4eb6-8389-ae9c51b85547">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_Item"/>
+		<parameter name="CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="LanguageCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="jsonql">
+			<![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.ItemVariantLocalList.ItemVariantLocal["VariantColour"]]]>
+		</queryString>
+		<field name="node" class="java.lang.String">
+			<property name="net.sf.jasperreports.jsonql.field.expression" value="[0]"/>
+			<fieldDescription><![CDATA[[0]]]></fieldDescription>
 		</field>
-		<field name="UpdateDate" class="java.lang.String">
-			<property name="net.sf.jasperreports.json.field.expression" value="UpdateDate"/>
-			<fieldDescription><![CDATA[UpdateDate]]></fieldDescription>
-		</field>
-		<field name="DeleteDate" class="java.lang.String">
-			<property name="net.sf.jasperreports.json.field.expression" value="DeleteDate"/>
-			<fieldDescription><![CDATA[DeleteDate]]></fieldDescription>
-		</field>
+		<variable name="Variable_1" class="java.lang.String">
+			<variableExpression><![CDATA[IF( $V{REPORT_COUNT}==1,$V{Variable_1}+$F{node},$V{Variable_1}+","+$F{node})]]></variableExpression>
+			<initialValueExpression><![CDATA[""]]></initialValueExpression>
+		</variable>
 	</subDataset>
 	<parameter name="CountryCode" class="java.lang.String">
 		<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
@@ -140,11 +221,35 @@
 	<queryString language="json">
 		<![CDATA[]]>
 	</queryString>
+	<field name="CurrencySymbol" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="_source.CurrencyformatList.CurrencyFormat.CurrencySymbol"/>
+		<fieldDescription><![CDATA[_source.CurrencyformatList.CurrencyFormat.CurrencySymbol]]></fieldDescription>
+	</field>
+	<variable name="Variable_GoodToKnow" class="java.lang.String" calculation="System"/>
+	<variable name="Variable_Planet" class="java.lang.String" calculation="System"/>
+	<variable name="Variable_AlsoAvailable" class="java.lang.String" calculation="System"/>
+	<variable name="Variable_MemberPrice" class="java.lang.String" calculation="System"/>
+	<variable name="Variable_RegularPrice" class="java.lang.String" calculation="System"/>
+	<variable name="Variable_SelfAssembly" class="java.lang.String" calculation="System"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band splitType="Stretch"/>
+		<band splitType="Stretch">
+			<subreport isUsingCache="false" runToBottom="false">
+				<reportElement positionType="Float" x="110" y="0" width="97" height="0" uuid="9e88ece7-69a0-4809-b5b3-f8c6b1ec5dce"/>
+				<subreportParameter name="net.sf.jasperreports.json.source">
+					<subreportParameterExpression><![CDATA["http://35.204.113.104/item-"+LOWER( $P{CountryCode})+"-"+$P{LanguageCode}+"/"+$P{CountryCode}+"_"+$P{LanguageCode}+"/"+$P{ItemType}+"-"+$P{ItemNumber}]]></subreportParameterExpression>
+				</subreportParameter>
+				<returnValue subreportVariable="Variable_GoodToKnow" toVariable="Variable_GoodToKnow"/>
+				<returnValue subreportVariable="Variable_Planet" toVariable="Variable_Planet"/>
+				<returnValue subreportVariable="Variable_AlsoAvailable" toVariable="Variable_AlsoAvailable"/>
+				<returnValue subreportVariable="Variable_MemberPrice" toVariable="Variable_MemberPrice"/>
+				<returnValue subreportVariable="Variable_RegularPrice" toVariable="Variable_RegularPrice"/>
+				<returnValue subreportVariable="Variable_SelfAssembly" toVariable="Variable_SelfAssembly"/>
+				<subreportExpression><![CDATA["Translation.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
 	</title>
 	<pageHeader>
 		<band splitType="Stretch"/>
@@ -164,7 +269,7 @@
 	<summary>
 		<band height="567" splitType="Stretch">
 			<componentElement>
-				<reportElement x="0" y="520" width="160" height="40" uuid="603b2a34-ab2e-4f57-b9e8-8fedcbf456de"/>
+				<reportElement style="Style1" x="0" y="510" width="160" height="40" uuid="603b2a34-ab2e-4f57-b9e8-8fedcbf456de"/>
 				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
 					<datasetRun subDataset="DS_Item" uuid="3ae06f0c-813a-48ad-8ca4-56c7e9a17cd6">
 						<datasetParameter name="net.sf.jasperreports.json.source">
@@ -198,23 +303,23 @@
 					</datasetRun>
 					<jr:listContents height="40" width="160">
 						<textField>
-							<reportElement x="10" y="9" width="40" height="18" uuid="4369db65-ee4a-44eb-adeb-4e68b3d24228"/>
+							<reportElement style="Style1" x="10" y="6" width="40" height="18" uuid="4369db65-ee4a-44eb-adeb-4e68b3d24228"/>
 							<textElement verticalAlignment="Bottom">
-								<font fontName="IKEA Sans" size="6"/>
+								<font size="6"/>
 							</textElement>
 							<textFieldExpression><![CDATA[$F{ProductAreaNo}]]></textFieldExpression>
 						</textField>
-						<textField>
-							<reportElement x="106" y="10" width="44" height="20" uuid="22ef6ff0-af8d-4cbc-ac24-5594de0f71aa"/>
+						<textField pattern="##.####">
+							<reportElement style="Style1" x="106" y="10" width="44" height="20" uuid="22ef6ff0-af8d-4cbc-ac24-5594de0f71aa"/>
 							<textElement verticalAlignment="Middle">
-								<font fontName="IKEA Sans" size="6"/>
+								<font size="6"/>
 							</textElement>
 							<textFieldExpression><![CDATA[$F{ItemNo}]]></textFieldExpression>
 						</textField>
 						<textField pattern="d/M/yyyy">
-							<reportElement x="57" y="12" width="49" height="18" uuid="6c5779fc-cc24-4cd5-bf9d-852928762283"/>
+							<reportElement style="Style1" x="57" y="12" width="49" height="18" uuid="6c5779fc-cc24-4cd5-bf9d-852928762283"/>
 							<textElement verticalAlignment="Middle">
-								<font fontName="IKEA Sans" size="6"/>
+								<font size="6"/>
 							</textElement>
 							<textFieldExpression><![CDATA[NOW( )]]></textFieldExpression>
 						</textField>
@@ -222,9 +327,9 @@
 				</jr:list>
 			</componentElement>
 			<componentElement>
-				<reportElement x="230" y="394" width="128" height="66" uuid="288e81de-2755-4c6e-a018-513df5f45667"/>
+				<reportElement style="Style1" positionType="Float" x="193" y="231" width="196" height="33" uuid="288e81de-2755-4c6e-a018-513df5f45667"/>
 				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
-					<datasetRun subDataset="DS_Item" uuid="8fe4d86a-cbef-4c0a-84d8-deb601f5a784">
+					<datasetRun subDataset="DS_Item" uuid="4471943f-c2d1-4186-a4af-d6c0228fb3ed">
 						<datasetParameter name="net.sf.jasperreports.json.source">
 							<datasetParameterExpression><![CDATA["http://35.204.113.104/item-"+LOWER( $P{CountryCode})+"-"+$P{LanguageCode}+"/"+$P{CountryCode}+"_"+$P{LanguageCode}+"/"+$P{ItemType}+"-"+$P{ItemNumber}]]></datasetParameterExpression>
 						</datasetParameter>
@@ -252,57 +357,70 @@
 						<datasetParameter name="net.sf.jasperreports.json.timezone.id">
 							<datasetParameterExpression><![CDATA[$P{net.sf.jasperreports.json.timezone.id}]]></datasetParameterExpression>
 						</datasetParameter>
-						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-					</datasetRun>
-					<jr:listContents height="66" width="128">
-						<textField>
-							<reportElement x="2" y="0" width="118" height="66" uuid="22f13af7-9b2c-4867-a6e7-b0691709e5ff"/>
-							<textElement>
-								<font fontName="IKEA Sans" size="50" isBold="true"/>
-							</textElement>
-							<textFieldExpression><![CDATA[$F{RetailPriceIncludingTax}]]></textFieldExpression>
-						</textField>
-					</jr:listContents>
-				</jr:list>
-			</componentElement>
-			<componentElement>
-				<reportElement x="206" y="394" width="70" height="66" uuid="de23879b-279e-4537-a1d0-f7085bf58cb1"/>
-				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
-					<datasetRun subDataset="DS_Configuration" uuid="781a54ad-25aa-49f0-92d4-0dfed3d1e83a">
-						<datasetParameter name="net.sf.jasperreports.json.source">
-							<datasetParameterExpression><![CDATA["http://35.204.113.104/configurations/configuration/"+$P{CountryCode}+"-"+$P{LanguageCode}]]></datasetParameterExpression>
+						<datasetParameter name="CurrencySymbol">
+							<datasetParameterExpression><![CDATA[$F{CurrencySymbol}]]></datasetParameterExpression>
 						</datasetParameter>
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
-					<jr:listContents height="66" width="70">
-						<textField>
-							<reportElement positionType="Float" x="0" y="0" width="70" height="66" uuid="e7bc733e-7eea-43fd-8ffd-bba4dc042195"/>
+					<jr:listContents height="33" width="196">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="Style1" positionType="Float" x="2" y="0" width="187" height="33" uuid="22f13af7-9b2c-4867-a6e7-b0691709e5ff"/>
 							<textElement>
-								<font fontName="IKEA Sans" size="50" isBold="true"/>
+								<font size="26" isBold="true"/>
 							</textElement>
-							<textFieldExpression><![CDATA[$F{CurrencySymbol}]]></textFieldExpression>
+							<textFieldExpression><![CDATA[IF( $F{Member Price}.equals(" ")," ",$P{CurrencySymbol}+" "+$F{Member Price})]]></textFieldExpression>
 						</textField>
 					</jr:listContents>
 				</jr:list>
 			</componentElement>
 			<image>
-				<reportElement x="190" y="496" width="80" height="62" uuid="1f636066-355b-46c8-b339-f2a53bf40713"/>
+				<reportElement x="190" y="486" width="80" height="62" uuid="1f636066-355b-46c8-b339-f2a53bf40713"/>
 				<imageExpression><![CDATA["C:/temp/logo.PNG"]]></imageExpression>
 			</image>
 			<componentElement>
-				<reportElement x="358" y="529" width="28" height="23" uuid="0a19dfd4-dda5-48d1-acaa-18acd6fe4426"/>
+				<reportElement style="Style1" x="358" y="519" width="28" height="23" uuid="0a19dfd4-dda5-48d1-acaa-18acd6fe4426"/>
 				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
-					<datasetRun subDataset="DS_Translation" uuid="d569fbe3-8701-4781-a264-e07c1466b8b2">
+					<datasetRun subDataset="DS_Translation" uuid="cd8cb41c-fa01-46a7-ab04-6375dd895662">
 						<datasetParameter name="net.sf.jasperreports.json.source">
 							<datasetParameterExpression><![CDATA["http://35.204.113.104/translations/translation/"+$P{CountryCode}+"-"+$P{LanguageCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="JSON_INPUT_STREAM">
+							<datasetParameterExpression><![CDATA[$P{JSON_INPUT_STREAM}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="net.sf.jasperreports.json.sources">
+							<datasetParameterExpression><![CDATA[$P{net.sf.jasperreports.json.sources}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="net.sf.jasperreports.json.date.pattern">
+							<datasetParameterExpression><![CDATA[$P{net.sf.jasperreports.json.date.pattern}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="net.sf.jasperreports.json.number.pattern">
+							<datasetParameterExpression><![CDATA[$P{net.sf.jasperreports.json.number.pattern}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="JSON_LOCALE">
+							<datasetParameterExpression><![CDATA[$P{JSON_LOCALE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="net.sf.jasperreports.json.locale.code">
+							<datasetParameterExpression><![CDATA[$P{net.sf.jasperreports.json.locale.code}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="JSON_TIME_ZONE">
+							<datasetParameterExpression><![CDATA[$P{JSON_TIME_ZONE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="net.sf.jasperreports.json.timezone.id">
+							<datasetParameterExpression><![CDATA[$P{net.sf.jasperreports.json.timezone.id}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="CountryCode">
+							<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="LanguageCode">
+							<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
 						</datasetParameter>
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
 					<jr:listContents height="23" width="28">
 						<textField>
-							<reportElement x="0" y="0" width="20" height="20" uuid="0ba1d01e-2d8a-4b87-a2c9-97645c652e64"/>
+							<reportElement style="Style1" x="0" y="0" width="20" height="20" uuid="0ba1d01e-2d8a-4b87-a2c9-97645c652e64"/>
 							<textElement>
-								<font fontName="IKEA Sans" size="12"/>
+								<font size="12"/>
 							</textElement>
 							<textFieldExpression><![CDATA[$F{TitileName}]]></textFieldExpression>
 						</textField>
@@ -310,48 +428,60 @@
 				</jr:list>
 			</componentElement>
 			<staticText>
-				<reportElement x="172" y="403" width="8" height="150" uuid="81642bee-f477-47cf-a436-473bb910e68d"/>
+				<reportElement x="168" y="440" width="8" height="103" uuid="81642bee-f477-47cf-a436-473bb910e68d"/>
 				<textElement rotation="Left">
 					<font fontName="IKEA Sans" size="6"/>
 				</textElement>
 				<text><![CDATA[© Inter IKEA Systems B. V. 1994]]></text>
 			</staticText>
 			<componentElement>
-				<reportElement x="280" y="496" width="90" height="62" uuid="21dc19a5-86e5-4cf3-8482-b6951ec1b148"/>
+				<reportElement style="Style1" x="280" y="486" width="90" height="62" uuid="21dc19a5-86e5-4cf3-8482-b6951ec1b148"/>
 				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
-					<datasetRun subDataset="DS_Turnover" uuid="e89fff5b-4636-43ce-9b1f-ba0a696c5b03">
+					<datasetRun subDataset="DS_Turnover" uuid="28211090-20b9-4ea9-bdc3-cbdb38ad45fd">
 						<datasetParameter name="net.sf.jasperreports.json.source">
 							<datasetParameterExpression><![CDATA["http://35.204.113.104/translations/translation/"+$P{CountryCode}+"-"+$P{LanguageCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="CountryCode">
+							<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="LanguageCode">
+							<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
 						</datasetParameter>
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
 					<jr:listContents height="62" width="90">
 						<textField>
-							<reportElement x="0" y="0" width="80" height="62" uuid="0e7df91b-36d1-40ab-bb65-b45859ec99c4"/>
+							<reportElement style="Style1" isPrintRepeatedValues="false" x="0" y="0" width="80" height="62" uuid="0e7df91b-36d1-40ab-bb65-b45859ec99c4"/>
 							<textElement>
-								<font fontName="IKEA Sans" size="12"/>
+								<font size="12"/>
 							</textElement>
-							<textFieldExpression><![CDATA[$F{TitileName}]]></textFieldExpression>
+							<textFieldExpression><![CDATA[$F{Turn over }]]></textFieldExpression>
 						</textField>
 					</jr:listContents>
 				</jr:list>
 			</componentElement>
 			<componentElement>
-				<reportElement positionType="Float" x="207" y="125" width="182" height="45" uuid="ee2440c9-282e-4e98-912a-54042c14c296">
-					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+				<reportElement style="Style1" positionType="Float" x="207" y="111" width="182" height="26" uuid="ee2440c9-282e-4e98-912a-54042c14c296">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
 				</reportElement>
 				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical" ignoreWidth="false">
-					<datasetRun subDataset="DS_CustomerBenifits" uuid="12f48821-ed53-40b1-bfdf-a1d2d6d9b511">
+					<datasetRun subDataset="DS_CustomerBenifits" uuid="cc767c1b-af61-4e83-984d-7c6e6cf10175">
 						<datasetParameter name="net.sf.jasperreports.json.source">
 							<datasetParameterExpression><![CDATA["http://35.204.113.104/item-"+LOWER( $P{CountryCode})+"-"+$P{LanguageCode}+"/"+$P{CountryCode}+"_"+$P{LanguageCode}+"/"+$P{ItemType}+"-"+$P{ItemNumber}]]></datasetParameterExpression>
 						</datasetParameter>
+						<datasetParameter name="CountryCode">
+							<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="LanguageCode">
+							<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+						</datasetParameter>
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
-					<jr:listContents height="45" width="182">
+					<jr:listContents height="26" width="182">
 						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-							<reportElement positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="182" height="45" uuid="0eef7fe7-4277-4b9f-9088-e9c88e936c0a"/>
+							<reportElement style="Style1" positionType="Float" x="0" y="0" width="182" height="20" uuid="0eef7fe7-4277-4b9f-9088-e9c88e936c0a"/>
 							<textElement>
-								<font fontName="IKEA Sans" size="9"/>
+								<font size="9"/>
 							</textElement>
 							<textFieldExpression><![CDATA[$F{CustomerBenefitText}]]></textFieldExpression>
 						</textField>
@@ -359,55 +489,373 @@
 				</jr:list>
 			</componentElement>
 			<componentElement>
-				<reportElement x="187" y="125" width="28" height="23" uuid="1777fd1a-bd45-419a-9035-4510f1b3996f"/>
+				<reportElement style="Style1" x="190" y="0" width="199" height="90" uuid="e2039aa0-c736-4666-8303-91550c84943c"/>
 				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
-					<datasetRun subDataset="DS_Translation" uuid="11e4de77-2001-4e62-870f-065a3fd60e33">
+					<datasetRun subDataset="DS_Item" uuid="4668a843-3bac-447d-8d76-62a707727060">
 						<datasetParameter name="net.sf.jasperreports.json.source">
-							<datasetParameterExpression><![CDATA["http://35.204.113.104/translations/translation/"+$P{CountryCode}+"-"+$P{LanguageCode}]]></datasetParameterExpression>
+							<datasetParameterExpression><![CDATA["http://35.204.113.104/item-"+LOWER( $P{CountryCode})+"-"+$P{LanguageCode}+"/"+$P{CountryCode}+"_"+$P{LanguageCode}+"/"+$P{ItemType}+"-"+$P{ItemNumber}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="JSON_INPUT_STREAM">
+							<datasetParameterExpression><![CDATA[$P{JSON_INPUT_STREAM}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="net.sf.jasperreports.json.sources">
+							<datasetParameterExpression><![CDATA[$P{net.sf.jasperreports.json.sources}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="net.sf.jasperreports.json.date.pattern">
+							<datasetParameterExpression><![CDATA[$P{net.sf.jasperreports.json.date.pattern}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="net.sf.jasperreports.json.number.pattern">
+							<datasetParameterExpression><![CDATA[$P{net.sf.jasperreports.json.number.pattern}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="JSON_LOCALE">
+							<datasetParameterExpression><![CDATA[$P{JSON_LOCALE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="net.sf.jasperreports.json.locale.code">
+							<datasetParameterExpression><![CDATA[$P{net.sf.jasperreports.json.locale.code}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="JSON_TIME_ZONE">
+							<datasetParameterExpression><![CDATA[$P{JSON_TIME_ZONE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="net.sf.jasperreports.json.timezone.id">
+							<datasetParameterExpression><![CDATA[$P{net.sf.jasperreports.json.timezone.id}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="CountryCode">
+							<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="LanguageCode">
+							<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
 						</datasetParameter>
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
-					<jr:listContents height="23" width="28">
-						<textField>
-							<reportElement x="0" y="0" width="20" height="20" uuid="68651c00-5482-4e1c-8d22-ccf3f118ef80"/>
+					<jr:listContents height="90" width="199">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="Style1" x="0" y="0" width="199" height="30" uuid="b55f9fb1-27e5-4fd0-908c-ffc7cf4b9aa1"/>
 							<textElement>
-								<font fontName="IKEA Sans" size="12"/>
+								<font size="14"/>
 							</textElement>
-							<textFieldExpression><![CDATA[$F{TitileName}]]></textFieldExpression>
+							<textFieldExpression><![CDATA[$F{ProductTypeName}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="Style1" x="2" y="30" width="197" height="30" uuid="c76ceb92-c93a-473f-82fb-125947c4ebe5"/>
+							<textElement>
+								<font size="24" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{ProductNameEn}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="Style1" x="1" y="60" width="198" height="30" uuid="1e8cf65f-fa01-4e0d-a459-bda8c85c5156"/>
+							<textElement>
+								<font size="14"/>
+							</textElement>
+							<textFieldExpression><![CDATA[IF($F{ProductNameLocal} == null," ",$F{ProductNameLocal})]]></textFieldExpression>
 						</textField>
 					</jr:listContents>
 				</jr:list>
 			</componentElement>
 			<componentElement>
-				<reportElement x="190" y="10" width="199" height="110" uuid="e2039aa0-c736-4666-8303-91550c84943c"/>
+				<reportElement style="Style1" positionType="Float" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="2" y="100" width="166" height="20" uuid="12529308-da33-4967-b6db-db5678014a1c"/>
 				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
-					<datasetRun subDataset="DS_Item" uuid="da4b50c1-a1f1-4794-b8b3-034345b03441">
+					<datasetRun subDataset="DS_GoodToKnow" uuid="a00fcf61-7400-4e5e-b23a-14e29ba78ffc">
 						<datasetParameter name="net.sf.jasperreports.json.source">
 							<datasetParameterExpression><![CDATA["http://35.204.113.104/item-"+LOWER( $P{CountryCode})+"-"+$P{LanguageCode}+"/"+$P{CountryCode}+"_"+$P{LanguageCode}+"/"+$P{ItemType}+"-"+$P{ItemNumber}]]></datasetParameterExpression>
 						</datasetParameter>
+						<datasetParameter name="CountryCode">
+							<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="LanguageCode">
+							<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+						</datasetParameter>
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
-					<jr:listContents height="110" width="199">
-						<textField>
-							<reportElement x="0" y="0" width="199" height="30" uuid="b55f9fb1-27e5-4fd0-908c-ffc7cf4b9aa1"/>
+					<jr:listContents height="20" width="166">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="Style1" positionType="Float" stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="0" y="0" width="166" height="20" isRemoveLineWhenBlank="true" uuid="beebb320-2f0e-4fc4-a54e-7c65c9e8fad0"/>
 							<textElement>
-								<font fontName="IKEA Sans" size="14"/>
+								<font size="10"/>
 							</textElement>
-							<textFieldExpression><![CDATA[$F{ProductTypeName}]]></textFieldExpression>
+							<textFieldExpression><![CDATA[$F{GoodToKnowText}]]></textFieldExpression>
 						</textField>
-						<textField>
-							<reportElement x="2" y="33" width="197" height="30" uuid="c76ceb92-c93a-473f-82fb-125947c4ebe5"/>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement style="Style1" x="0" y="80" width="168" height="17" uuid="f47291aa-e5bb-4a48-9f8d-6a457fe7a050">
+					<printWhenExpression><![CDATA[IF( $V{Variable_GoodToKnow}.equals(""),Boolean.FALSE,Boolean.TRUE)]]></printWhenExpression>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="DS_Turnover" uuid="abf6d5f4-d976-4615-86f6-308f0256b84b">
+						<datasetParameter name="net.sf.jasperreports.json.source">
+							<datasetParameterExpression><![CDATA["http://35.204.113.104/translations/translation/"+$P{CountryCode}+"-"+$P{LanguageCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="CountryCode">
+							<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="LanguageCode">
+							<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="17" width="168">
+						<textField evaluationTime="Report">
+							<reportElement style="Style1" x="0" y="0" width="168" height="16" uuid="f8e3e060-b859-47ad-b36a-792c0d565b9e"/>
 							<textElement>
-								<font fontName="IKEA Sans" size="24" isBold="true"/>
+								<font isBold="true"/>
 							</textElement>
-							<textFieldExpression><![CDATA[$F{ProductNameEn}]]></textFieldExpression>
+							<textFieldExpression><![CDATA[$F{Good To Know}]]></textFieldExpression>
 						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement style="Style1" positionType="Float" x="1" y="120" width="167" height="17" isRemoveLineWhenBlank="true" uuid="5575286f-b869-4500-8fc4-3e508a4184a5">
+					<printWhenExpression><![CDATA[IF( $V{Variable_Planet} .equals(""),Boolean.FALSE,Boolean.TRUE)]]></printWhenExpression>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="DS_Turnover" uuid="865700d4-99ef-48a4-abd3-11c473cb351c">
+						<datasetParameter name="net.sf.jasperreports.json.source">
+							<datasetParameterExpression><![CDATA["http://35.204.113.104/translations/translation/"+$P{CountryCode}+"-"+$P{LanguageCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="CountryCode">
+							<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="LanguageCode">
+							<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="17" width="167">
 						<textField>
-							<reportElement x="1" y="67" width="198" height="30" uuid="1e8cf65f-fa01-4e0d-a459-bda8c85c5156"/>
+							<reportElement style="Style1" x="0" y="0" width="160" height="16" uuid="6b84b3e7-8765-4a03-bfaf-0e9465dc5665"/>
 							<textElement>
-								<font fontName="IKEA Sans" size="14"/>
+								<font isBold="true"/>
 							</textElement>
-							<textFieldExpression><![CDATA[IF($F{ProductNameLocal} == null," ",$F{ProductNameEn})]]></textFieldExpression>
+							<textFieldExpression><![CDATA[$F{People and Planet}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement style="Style1" positionType="Float" x="207" y="147" width="182" height="17" uuid="14b86e58-5969-4b74-ac6f-16581047564b">
+					<printWhenExpression><![CDATA[IF( $V{Variable_AlsoAvailable} .equals(""),Boolean.FALSE,Boolean.TRUE)]]></printWhenExpression>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="DS_Turnover" uuid="25dc3d4b-6bc0-43c7-ada3-52ba4ed22ab5">
+						<datasetParameter name="net.sf.jasperreports.json.source">
+							<datasetParameterExpression><![CDATA["http://35.204.113.104/translations/translation/"+$P{CountryCode}+"-"+$P{LanguageCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="CountryCode">
+							<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="LanguageCode">
+							<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="17" width="182">
+						<textField>
+							<reportElement style="Style1" x="0" y="0" width="170" height="17" uuid="b250b997-716e-44c7-af16-68a91c135370"/>
+							<textElement>
+								<font size="9" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{Also available in}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement style="Style1" positionType="Float" x="207" y="166" width="182" height="18" uuid="368e746f-5331-498d-8b77-f0095b952002"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="DS_AvailableColours" uuid="714c360d-1a81-4943-b758-5e6eaf1b3aa3">
+						<datasetParameter name="net.sf.jasperreports.json.source">
+							<datasetParameterExpression><![CDATA["http://35.204.113.104/item-"+LOWER( $P{CountryCode})+"-"+$P{LanguageCode}+"/"+$P{CountryCode}+"_"+$P{LanguageCode}+"/"+$P{ItemType}+"-"+$P{ItemNumber}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="CountryCode">
+							<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="LanguageCode">
+							<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="18" width="182">
+						<textField evaluationTime="Report">
+							<reportElement style="Style1" positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="182" height="15" uuid="df4c9794-b45f-434d-88f8-072dab12cfaf">
+								<printWhenExpression><![CDATA[$V{REPORT_COUNT}==1]]></printWhenExpression>
+							</reportElement>
+							<textFieldExpression><![CDATA[$V{Variable_1}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement style="Style1" positionType="Float" x="3" y="138" width="165" height="20" uuid="4e4411cd-623c-4c08-ac70-812a14a137d0"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="DS_Item" uuid="5618538c-cb38-4082-84c6-24d0c772c468">
+						<datasetParameter name="net.sf.jasperreports.json.source">
+							<datasetParameterExpression><![CDATA["http://35.204.113.104/item-"+LOWER( $P{CountryCode})+"-"+$P{LanguageCode}+"/"+$P{CountryCode}+"_"+$P{LanguageCode}+"/"+$P{ItemType}+"-"+$P{ItemNumber}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="JSON_INPUT_STREAM">
+							<datasetParameterExpression><![CDATA[$P{JSON_INPUT_STREAM}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="net.sf.jasperreports.json.sources">
+							<datasetParameterExpression><![CDATA[$P{net.sf.jasperreports.json.sources}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="net.sf.jasperreports.json.date.pattern">
+							<datasetParameterExpression><![CDATA[$P{net.sf.jasperreports.json.date.pattern}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="net.sf.jasperreports.json.number.pattern">
+							<datasetParameterExpression><![CDATA[$P{net.sf.jasperreports.json.number.pattern}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="JSON_LOCALE">
+							<datasetParameterExpression><![CDATA[$P{JSON_LOCALE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="net.sf.jasperreports.json.locale.code">
+							<datasetParameterExpression><![CDATA[$P{net.sf.jasperreports.json.locale.code}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="JSON_TIME_ZONE">
+							<datasetParameterExpression><![CDATA[$P{JSON_TIME_ZONE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="net.sf.jasperreports.json.timezone.id">
+							<datasetParameterExpression><![CDATA[$P{net.sf.jasperreports.json.timezone.id}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="CountryCode">
+							<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="LanguageCode">
+							<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="20" width="165">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="Style1" positionType="Float" x="0" y="0" width="165" height="15" uuid="933dcbf3-9b94-43bb-915d-450e9db6742e"/>
+							<textFieldExpression><![CDATA[$F{PeoplePlanetText}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement style="Style1" positionType="Float" x="194" y="285" width="195" height="33" uuid="7303ab12-4f98-4bfd-ba1a-53a445633bcc"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="DS_Item" uuid="bbd13acd-e5c6-4015-bc38-dd4c38d2a1cd">
+						<datasetParameter name="net.sf.jasperreports.json.source">
+							<datasetParameterExpression><![CDATA["http://35.204.113.104/item-"+LOWER( $P{CountryCode})+"-"+$P{LanguageCode}+"/"+$P{CountryCode}+"_"+$P{LanguageCode}+"/"+$P{ItemType}+"-"+$P{ItemNumber}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="JSON_INPUT_STREAM">
+							<datasetParameterExpression><![CDATA[$P{JSON_INPUT_STREAM}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="net.sf.jasperreports.json.sources">
+							<datasetParameterExpression><![CDATA[$P{net.sf.jasperreports.json.sources}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="net.sf.jasperreports.json.date.pattern">
+							<datasetParameterExpression><![CDATA[$P{net.sf.jasperreports.json.date.pattern}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="net.sf.jasperreports.json.number.pattern">
+							<datasetParameterExpression><![CDATA[$P{net.sf.jasperreports.json.number.pattern}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="JSON_LOCALE">
+							<datasetParameterExpression><![CDATA[$P{JSON_LOCALE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="net.sf.jasperreports.json.locale.code">
+							<datasetParameterExpression><![CDATA[$P{net.sf.jasperreports.json.locale.code}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="JSON_TIME_ZONE">
+							<datasetParameterExpression><![CDATA[$P{JSON_TIME_ZONE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="net.sf.jasperreports.json.timezone.id">
+							<datasetParameterExpression><![CDATA[$P{net.sf.jasperreports.json.timezone.id}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="CurrencySymbol">
+							<datasetParameterExpression><![CDATA[$F{CurrencySymbol}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="33" width="195">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="Style1" positionType="Float" isPrintRepeatedValues="false" x="2" y="0" width="184" height="33" uuid="7dcc993a-6be2-442e-9bd2-5b17b78b16c4"/>
+							<textElement>
+								<font size="26" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[IF( $F{Regular Price}.equals("")," ",$P{CurrencySymbol}+" "+$F{Regular Price})]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement style="Style1" positionType="Float" x="193" y="212" width="196" height="18" uuid="541b1b3f-5f3a-46b1-a5d4-870031397179">
+					<printWhenExpression><![CDATA[IF( $V{Variable_MemberPrice} .equals(""),Boolean.FALSE,Boolean.TRUE)]]></printWhenExpression>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="DS_Turnover" uuid="96b95831-6cff-4d57-b6f5-08d286921f65">
+						<datasetParameter name="net.sf.jasperreports.json.source">
+							<datasetParameterExpression><![CDATA["http://35.204.113.104/translations/translation/"+$P{CountryCode}+"-"+$P{LanguageCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="CountryCode">
+							<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="LanguageCode">
+							<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="18" width="196">
+						<textField>
+							<reportElement style="Style1" positionType="Float" x="0" y="0" width="188" height="18" uuid="2c588911-a733-477e-9e22-a06af1da6cb2"/>
+							<textElement>
+								<font size="14" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{MemberPrice}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement style="Style1" positionType="Float" isPrintRepeatedValues="false" x="194" y="266" width="195" height="18" uuid="4ad2436c-d7ce-4a5b-918f-5f131a14ddf5">
+					<printWhenExpression><![CDATA[IF( $V{Variable_RegularPrice} .equals(""),Boolean.FALSE,Boolean.TRUE)]]></printWhenExpression>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="DS_Turnover" uuid="8bd8a9fb-9e04-4802-93f7-86718e76519a">
+						<datasetParameter name="net.sf.jasperreports.json.source">
+							<datasetParameterExpression><![CDATA["http://35.204.113.104/translations/translation/"+$P{CountryCode}+"-"+$P{LanguageCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="CountryCode">
+							<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="LanguageCode">
+							<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="18" width="195">
+						<textField>
+							<reportElement style="Style1" positionType="Float" x="0" y="0" width="188" height="18" uuid="678f3e04-1782-44d7-a7df-672f9caab910"/>
+							<textElement>
+								<font size="14" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{RegularPrice}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement style="Style1" positionType="Float" isPrintRepeatedValues="false" x="3" y="484" width="157" height="26" uuid="f1161080-b396-4e2c-abfe-fd778255d8b6"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="DS_Turnover" uuid="5e57045b-671e-4696-af0c-335893ce76cf">
+						<datasetParameter name="net.sf.jasperreports.json.source">
+							<datasetParameterExpression><![CDATA["http://35.204.113.104/translations/translation/"+$P{CountryCode}+"-"+$P{LanguageCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="CountryCode">
+							<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="LanguageCode">
+							<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="26" width="157">
+						<textField>
+							<reportElement style="Style1" x="0" y="0" width="150" height="26" uuid="cf6f2614-d485-45bd-9fb3-482f6d13c212"/>
+							<textFieldExpression><![CDATA[IF($F{SelfAssembly}.equals("Y"), $F{SelfAssembly},"")]]></textFieldExpression>
 						</textField>
 					</jr:listContents>
 				</jr:list>
