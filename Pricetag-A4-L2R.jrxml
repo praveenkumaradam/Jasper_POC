@@ -11,7 +11,7 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="mm"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
-	<property name="ireport.jasperserver.url" value="http://localhost:8080/jasperserver/"/>
+	<property name="ireport.jasperserver.url" value="http://35.204.113.104:8080/jasperserver-pro/"/>
 	<property name="ireport.jasperserver.user" value="jasperadmin"/>
 	<property name="ireport.jasperserver.report.resource" value="/reports/Pricetag_A4_L2R_files/main_jrxml"/>
 	<property name="ireport.jasperserver.reportUnit" value="/reports/Pricetag_A4_L2R"/>
@@ -481,7 +481,7 @@
 						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 							<reportElement style="Style1" positionType="Float" x="0" y="0" width="182" height="20" uuid="0eef7fe7-4277-4b9f-9088-e9c88e936c0a"/>
 							<textElement>
-								<font size="9"/>
+								<font size="9" isBold="true"/>
 							</textElement>
 							<textFieldExpression><![CDATA[$F{CustomerBenefitText}]]></textFieldExpression>
 						</textField>
