@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CustomerBenefits" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2c241246-eb06-4462-a4a9-b132370226a1">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Json_Translation"/>
+	<style name="Style1" fontName="IKEA Sans">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP") && $P{LanguageCode}.equalsIgnoreCase( "ja" )]]></conditionExpression>
+			<style fontName="IKEA Sans JPN"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="DS_CustomerBenifits" uuid="96ee6986-142d-4a40-b100-6b4ff7033dfd">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_Item"/>
+		<parameter name="CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="LanguageCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="BulletSymbol1" class="java.lang.String"/>
+		<queryString language="JSON">
+			<![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.CustomerBenefitLocalList.CustomerBenefitLocal]]>
+		</queryString>
+		<field name="CustomerBenefitText" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="CustomerBenefitText"/>
+			<fieldDescription><![CDATA[CustomerBenefitText]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="CountryCode" class="java.lang.String">
+		<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LanguageCode" class="java.lang.String">
+		<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ItemNumber" class="java.lang.String">
+		<defaultValueExpression><![CDATA["10121544"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ItemType" class="java.lang.String">
+		<defaultValueExpression><![CDATA["ART"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="JSON">
+		<![CDATA[]]>
+	</queryString>
+	<field name="BulletSymbol1" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="_source.TranslationList.Translations.TitileName[24]"/>
+		<fieldDescription><![CDATA[_source.TranslationList.Translations.TitileName]]></fieldDescription>
+	</field>
+	<variable name="Variable_BulletSymbol1" class="java.lang.String">
+		<variableExpression><![CDATA[$F{BulletSymbol1}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="36" splitType="Stretch">
+			<componentElement>
+				<reportElement positionType="Float" x="1" y="3" width="179" height="29" uuid="d561d8f4-c319-4fb2-9572-a498d4cddba6"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="DS_CustomerBenifits" uuid="d3b94e7c-70ec-40ca-9e6f-e071795dcb7d">
+						<datasetParameter name="net.sf.jasperreports.json.source">
+							<datasetParameterExpression><![CDATA["http://35.204.113.104/item-"+LOWER( $P{CountryCode})+"-"+$P{LanguageCode}+"/"+$P{CountryCode}+"_"+$P{LanguageCode}+"/"+$P{ItemType}+"-"+$P{ItemNumber}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="BulletSymbol1">
+							<datasetParameterExpression><![CDATA[$F{BulletSymbol1}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="29" width="179">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="Style1" positionType="Float" x="26" y="0" width="153" height="26" uuid="a6d6b767-1b18-43da-8dcb-76848cb5b9f6"/>
+							<textElement textAlignment="Left">
+								<font size="9" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{CustomerBenefitText}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="7" y="2" width="18" height="20" uuid="28501a7b-22ea-4eff-89bb-87462fd3873d"/>
+							<textElement textAlignment="Right"/>
+							<textFieldExpression><![CDATA[$P{BulletSymbol1}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>
