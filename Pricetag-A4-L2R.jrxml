@@ -364,7 +364,9 @@
 					</datasetRun>
 					<jr:listContents height="33" width="196">
 						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-							<reportElement style="Style1" positionType="Float" x="2" y="0" width="187" height="33" uuid="22f13af7-9b2c-4867-a6e7-b0691709e5ff"/>
+							<reportElement style="Style1" positionType="Float" x="2" y="0" width="187" height="33" uuid="22f13af7-9b2c-4867-a6e7-b0691709e5ff">
+								<printWhenExpression><![CDATA[$F{Regular Price}!=null]]></printWhenExpression>
+							</reportElement>
 							<textElement>
 								<font size="26" isBold="true"/>
 							</textElement>
@@ -533,7 +535,7 @@
 							<textElement>
 								<font size="14"/>
 							</textElement>
-							<textFieldExpression><![CDATA[$F{ProductTypeName}]]></textFieldExpression>
+							<textFieldExpression><![CDATA[$F{ProductTypeName}.substring(0, 1).toUpperCase()+$F{ProductTypeName}.substring(1, $F{ProductTypeName}.length()).toLowerCase()]]></textFieldExpression>
 						</textField>
 						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 							<reportElement style="Style1" x="0" y="30" width="197" height="30" uuid="c76ceb92-c93a-473f-82fb-125947c4ebe5"/>
@@ -776,7 +778,7 @@
 							<textElement>
 								<font size="26" isBold="true"/>
 							</textElement>
-							<textFieldExpression><![CDATA[IF( $F{Regular Price}.equals("")," ",$P{CurrencySymbol}+" "+$F{Regular Price})]]></textFieldExpression>
+							<textFieldExpression><![CDATA[IF( $F{Regular Price}==null,$P{CurrencySymbol}+$F{Member Price} ,$P{CurrencySymbol}+" "+$F{Regular Price})]]></textFieldExpression>
 						</textField>
 					</jr:listContents>
 				</jr:list>
