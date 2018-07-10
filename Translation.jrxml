@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Translation" pageWidth="100" pageHeight="100" columnWidth="100" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="fb6789b0-8322-4d49-8956-75fa3d1bbb7c">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_Item"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="ireport.jasperserver.url" value="http://localhost:8080/jasperserver/"/>
+	<property name="ireport.jasperserver.user" value="jasperadmin"/>
+	<property name="ireport.jasperserver.reportUnit" value="/reports/Translation"/>
+	<queryString language="JSON">
+		<![CDATA[]]>
+	</queryString>
+	<field name="GoodToKnowText" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="_source.GetItemResponse.ItemListContainer.ItemList.Item.GoodToKnowLocalList.GoodToKnowLocal.GoodToKnowText"/>
+		<fieldDescription><![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.GoodToKnowLocalList.GoodToKnowLocal.GoodToKnowText]]></fieldDescription>
+	</field>
+	<field name="PeoplePlanetText" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="_source.GetItemResponse.ItemListContainer.ItemList.Item.PeoplePlanetLocalList.PeoplePlanetLocal.PeoplePlanetText"/>
+		<fieldDescription><![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.PeoplePlanetLocalList.PeoplePlanetLocal.PeoplePlanetText]]></fieldDescription>
+	</field>
+	<field name="VariantColour" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="_source.GetItemResponse.ItemListContainer.ItemList.Item.ItemVariantLocalList.ItemVariantLocal.VariantColour"/>
+		<fieldDescription><![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.ItemVariantLocalList.ItemVariantLocal.VariantColour]]></fieldDescription>
+	</field>
+	<field name="MemberPrice" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="_source.GetItemResponse.ItemListContainer.ItemList.Item.RetailItemPriceList.RetailItemPrice.RetailPriceIncludingTax[0]"/>
+		<fieldDescription><![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.RetailItemPriceList.RetailItemPrice.RetailPriceIncludingTax]]></fieldDescription>
+	</field>
+	<field name="RegularPrice" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="_source.GetItemResponse.ItemListContainer.ItemList.Item.RetailItemPriceList.RetailItemPrice.RetailPriceIncludingTax[1]"/>
+		<fieldDescription><![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.RetailItemPriceList.RetailItemPrice.RetailPriceIncludingTax]]></fieldDescription>
+	</field>
+	<field name="RequiresAssemblyYN" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="_source.GetItemResponse.ItemListContainer.ItemList.Item.Attribute.RequiresAssemblyYN[0]"/>
+		<fieldDescription><![CDATA[_source.GetItemResponse.ItemListContainer.ItemList.Item.Attribute.RequiresAssemblyYN]]></fieldDescription>
+	</field>
+	<variable name="Variable_SelfAssembly" class="java.lang.String">
+		<variableExpression><![CDATA[$F{RequiresAssemblyYN}]]></variableExpression>
+	</variable>
+	<variable name="Variable_GoodToKnow" class="java.lang.String">
+		<variableExpression><![CDATA[$F{RequiresAssemblyYN}]]></variableExpression>
+		<initialValueExpression><![CDATA[""]]></initialValueExpression>
+	</variable>
+	<variable name="Variable_Planet" class="java.lang.String">
+		<variableExpression><![CDATA[$V{Variable_Planet}+IF( $F{PeoplePlanetText}==null,"",$F{PeoplePlanetText})]]></variableExpression>
+		<initialValueExpression><![CDATA[""]]></initialValueExpression>
+	</variable>
+	<variable name="Variable_AlsoAvailable" class="java.lang.String">
+		<variableExpression><![CDATA[$V{Variable_AlsoAvailable} +IF($F{VariantColour}==null,"",$F{VariantColour})]]></variableExpression>
+		<initialValueExpression><![CDATA[""]]></initialValueExpression>
+	</variable>
+	<variable name="Variable_MemberPrice" class="java.lang.String">
+		<variableExpression><![CDATA[$V{Variable_MemberPrice} +IF($F{RegularPrice}==null,"",$F{MemberPrice})]]></variableExpression>
+		<initialValueExpression><![CDATA[""]]></initialValueExpression>
+	</variable>
+	<variable name="Variable_RegularPrice" class="java.lang.String">
+		<variableExpression><![CDATA[$F{RegularPrice} +IF($F{RegularPrice}==null,"",$F{RegularPrice})]]></variableExpression>
+		<initialValueExpression><![CDATA[""]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
