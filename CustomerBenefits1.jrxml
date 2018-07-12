@@ -31,9 +31,7 @@
 	<parameter name="LanguageCode" class="java.lang.String">
 		<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="ItemNumber" class="java.lang.String">
-		<defaultValueExpression><![CDATA["10121544"]]></defaultValueExpression>
-	</parameter>
+	<parameter name="ItemNumber" class="java.lang.String"/>
 	<parameter name="ItemType" class="java.lang.String">
 		<defaultValueExpression><![CDATA["ART"]]></defaultValueExpression>
 	</parameter>
@@ -55,7 +53,7 @@
 			<componentElement>
 				<reportElement style="Style1" positionType="Float" x="-24" y="0" width="191" height="13" isRemoveLineWhenBlank="true" uuid="d561d8f4-c319-4fb2-9572-a498d4cddba6"/>
 				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
-					<datasetRun subDataset="DS_CustomerBenifits" uuid="b943dc96-3856-4af6-8f61-86cd42bfbd28">
+					<datasetRun subDataset="DS_CustomerBenifits" uuid="60a77518-390e-41a2-a0ba-648a2d3814fa">
 						<datasetParameter name="net.sf.jasperreports.json.source">
 							<datasetParameterExpression><![CDATA["http://35.204.113.104/item-"+LOWER( $P{CountryCode})+"-"+$P{LanguageCode}+"/"+$P{CountryCode}+"_"+$P{LanguageCode}+"/"+$P{ItemType}+"-"+$P{ItemNumber}]]></datasetParameterExpression>
 						</datasetParameter>
