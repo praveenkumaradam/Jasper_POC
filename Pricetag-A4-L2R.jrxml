@@ -917,6 +917,12 @@
 				<subreportParameter name="ItemType">
 					<subreportParameterExpression><![CDATA[$P{ItemType}]]></subreportParameterExpression>
 				</subreportParameter>
+				<subreportParameter name="CountryCode">
+					<subreportParameterExpression><![CDATA[$P{CountryCode}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="LanguageCode">
+					<subreportParameterExpression><![CDATA[$P{LanguageCode}]]></subreportParameterExpression>
+				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<returnValue subreportVariable="Variable_BulletSymbol1" toVariable="Variable_BulletSymbol1"/>
 				<subreportExpression><![CDATA["CustomerBenefits1.jasper"]]></subreportExpression>
@@ -1255,7 +1261,7 @@
 				</jr:list>
 			</componentElement>
 			<componentElement>
-				<reportElement positionType="Float" x="193" y="93" width="198" height="18" isRemoveLineWhenBlank="true" uuid="1d71af8d-3092-47a6-afeb-4621aef7f2e8"/>
+				<reportElement style="Style1" positionType="Float" x="193" y="93" width="198" height="18" isRemoveLineWhenBlank="true" uuid="1d71af8d-3092-47a6-afeb-4621aef7f2e8"/>
 				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
 					<datasetRun subDataset="DS_Item" uuid="226e81d6-fc5b-4bd9-99f1-00f1b6109f9d">
 						<datasetParameter name="net.sf.jasperreports.json.source">
