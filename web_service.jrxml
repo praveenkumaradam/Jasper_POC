@@ -282,6 +282,293 @@
 		</queryString>
 		<field name="CareInstructionText" class="java.lang.String"/>
 	</subDataset>
+	<subDataset name="DS_Turnover" uuid="aec323ed-f533-40a0-bd64-7d4889ab2857">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="web_service_check"/>
+		<parameter name="ItemNumber" class="java.lang.String">
+			<defaultValueExpression><![CDATA["80279786"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="LanguageCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="Small_CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["gb"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="ItemType" class="java.lang.String">
+			<defaultValueExpression><![CDATA["ART"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="WebServiceQuery">
+			<![CDATA[{
+  "getparameters" : { },
+  "fields" : [ {
+    "name" : "TitleId",
+    "expression" : "TitleId"
+  }, {
+    "name" : "TitileName",
+    "expression" : "TitileName"
+  } ],
+  "options" : {
+    "contentType" : "application/json",
+    "rootPath" : "docs._source.TranslationList.Translations",
+    "baseUrl" : "_mget"
+  },
+  "headersMap" : { },
+  "queryData" : "{\r\n    \"docs\" : [\r\n        {\r\n            \"_index\" : \"item-$P{Small_CountryCode}-$P{LanguageCode}\",\r\n            \"_type\" : \"$P{CountryCode}_$P{LanguageCode}\",\r\n            \"_id\" : \"$P{ItemType}-$P{ItemNumber}\"\r\n        },\r\n        {\r\n            \"_index\" : \"configurations\",\r\n            \"_type\" : \"configuration\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        },\r\n        {\r\n            \"_index\" : \"translations\",\r\n            \"_type\" : \"translation\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        }\r\n         \r\n    ]\r\n} ",
+  "GETParameters" : { }
+}]]>
+		</queryString>
+		<field name="TitleId" class="java.lang.String"/>
+		<field name="TitileName" class="java.lang.String"/>
+		<filterExpression><![CDATA[$F{TitleId}.equals("BC1")]]></filterExpression>
+	</subDataset>
+	<subDataset name="DS_BulletSymbol" uuid="e80bba9a-be94-4380-babd-61f81e249ca5">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="web_service_check"/>
+		<parameter name="ItemNumber" class="java.lang.String">
+			<defaultValueExpression><![CDATA["80279786"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="LanguageCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="Small_CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["gb"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="ItemType" class="java.lang.String">
+			<defaultValueExpression><![CDATA["ART"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="WebServiceQuery">
+			<![CDATA[{
+  "getparameters" : { },
+  "fields" : [ {
+    "name" : "TitleId",
+    "expression" : "TitleId"
+  }, {
+    "name" : "TitileName",
+    "expression" : "TitileName"
+  } ],
+  "options" : {
+    "contentType" : "application/json",
+    "rootPath" : "docs._source.TranslationList.Translations",
+    "baseUrl" : "_mget"
+  },
+  "headersMap" : { },
+  "queryData" : "{\r\n    \"docs\" : [\r\n        {\r\n            \"_index\" : \"item-$P{Small_CountryCode}-$P{LanguageCode}\",\r\n            \"_type\" : \"$P{CountryCode}_$P{LanguageCode}\",\r\n            \"_id\" : \"$P{ItemType}-$P{ItemNumber}\"\r\n        },\r\n        {\r\n            \"_index\" : \"configurations\",\r\n            \"_type\" : \"configuration\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        },\r\n        {\r\n            \"_index\" : \"translations\",\r\n            \"_type\" : \"translation\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        }\r\n         \r\n    ]\r\n} ",
+  "GETParameters" : { }
+}]]>
+		</queryString>
+		<field name="TitleId" class="java.lang.String"/>
+		<field name="TitileName" class="java.lang.String"/>
+		<filterExpression><![CDATA[$F{TitleId}.equals("TUR")]]></filterExpression>
+	</subDataset>
+	<subDataset name="DS_ProductMeasurementNew" uuid="16576e38-c01b-4556-aa6d-c8e8f99f2c75">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="web_service_check"/>
+		<parameter name="ItemNumber" class="java.lang.String">
+			<defaultValueExpression><![CDATA["80279786"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="LanguageCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="Small_CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["gb"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="ItemType" class="java.lang.String">
+			<defaultValueExpression><![CDATA["ART"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="WebServiceQuery">
+			<![CDATA[{
+  "getparameters" : { },
+  "fields" : [ {
+    "name" : "TitleId",
+    "expression" : "TitleId"
+  }, {
+    "name" : "TitileName",
+    "expression" : "TitileName"
+  } ],
+  "options" : {
+    "contentType" : "application/json",
+    "rootPath" : "docs._source.TranslationList.Translations",
+    "baseUrl" : "_mget"
+  },
+  "headersMap" : { },
+  "queryData" : "{\r\n    \"docs\" : [\r\n        {\r\n            \"_index\" : \"item-$P{Small_CountryCode}-$P{LanguageCode}\",\r\n            \"_type\" : \"$P{CountryCode}_$P{LanguageCode}\",\r\n            \"_id\" : \"$P{ItemType}-$P{ItemNumber}\"\r\n        },\r\n        {\r\n            \"_index\" : \"configurations\",\r\n            \"_type\" : \"configuration\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        },\r\n        {\r\n            \"_index\" : \"translations\",\r\n            \"_type\" : \"translation\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        }\r\n         \r\n    ]\r\n} ",
+  "GETParameters" : { }
+}]]>
+		</queryString>
+		<field name="TitleId" class="java.lang.String"/>
+		<field name="TitileName" class="java.lang.String"/>
+		<filterExpression><![CDATA[$F{TitleId}.equals("HME")]]></filterExpression>
+	</subDataset>
+	<subDataset name="DS_ProductFactsNew" uuid="57abb47e-be3d-4736-833e-4153cb03f4b8">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="web_service_check"/>
+		<parameter name="ItemNumber" class="java.lang.String">
+			<defaultValueExpression><![CDATA["80279786"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="LanguageCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="Small_CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["gb"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="ItemType" class="java.lang.String">
+			<defaultValueExpression><![CDATA["ART"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="WebServiceQuery">
+			<![CDATA[{
+  "getparameters" : { },
+  "fields" : [ {
+    "name" : "TitleId",
+    "expression" : "TitleId"
+  }, {
+    "name" : "TitileName",
+    "expression" : "TitileName"
+  } ],
+  "options" : {
+    "contentType" : "application/json",
+    "rootPath" : "docs._source.TranslationList.Translations",
+    "baseUrl" : "_mget"
+  },
+  "headersMap" : { },
+  "queryData" : "{\r\n    \"docs\" : [\r\n        {\r\n            \"_index\" : \"item-$P{Small_CountryCode}-$P{LanguageCode}\",\r\n            \"_type\" : \"$P{CountryCode}_$P{LanguageCode}\",\r\n            \"_id\" : \"$P{ItemType}-$P{ItemNumber}\"\r\n        },\r\n        {\r\n            \"_index\" : \"configurations\",\r\n            \"_type\" : \"configuration\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        },\r\n        {\r\n            \"_index\" : \"translations\",\r\n            \"_type\" : \"translation\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        }\r\n         \r\n    ]\r\n} ",
+  "GETParameters" : { }
+}]]>
+		</queryString>
+		<field name="TitleId" class="java.lang.String"/>
+		<field name="TitileName" class="java.lang.String"/>
+		<filterExpression><![CDATA[$F{TitleId}.equals("HPF")]]></filterExpression>
+	</subDataset>
+	<subDataset name="DS_GoodToKnowNew" uuid="fd33de6d-20dc-4c64-a3db-b9cbaae84e69">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="web_service_check"/>
+		<parameter name="ItemNumber" class="java.lang.String">
+			<defaultValueExpression><![CDATA["80279786"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="LanguageCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="Small_CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["gb"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="ItemType" class="java.lang.String">
+			<defaultValueExpression><![CDATA["ART"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="WebServiceQuery">
+			<![CDATA[{
+  "getparameters" : { },
+  "fields" : [ {
+    "name" : "TitleId",
+    "expression" : "TitleId"
+  }, {
+    "name" : "TitileName",
+    "expression" : "TitileName"
+  } ],
+  "options" : {
+    "contentType" : "application/json",
+    "rootPath" : "docs._source.TranslationList.Translations",
+    "baseUrl" : "_mget"
+  },
+  "headersMap" : { },
+  "queryData" : "{\r\n    \"docs\" : [\r\n        {\r\n            \"_index\" : \"item-$P{Small_CountryCode}-$P{LanguageCode}\",\r\n            \"_type\" : \"$P{CountryCode}_$P{LanguageCode}\",\r\n            \"_id\" : \"$P{ItemType}-$P{ItemNumber}\"\r\n        },\r\n        {\r\n            \"_index\" : \"configurations\",\r\n            \"_type\" : \"configuration\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        },\r\n        {\r\n            \"_index\" : \"translations\",\r\n            \"_type\" : \"translation\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        }\r\n         \r\n    ]\r\n} ",
+  "GETParameters" : { }
+}]]>
+		</queryString>
+		<field name="TitleId" class="java.lang.String"/>
+		<field name="TitileName" class="java.lang.String"/>
+		<filterExpression><![CDATA[$F{TitleId}.equals("HGK")]]></filterExpression>
+	</subDataset>
+	<subDataset name="DS_PeoplePlanetNew" uuid="8fdb233e-2a39-43f2-9032-f8ad300e30f5">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="web_service_check"/>
+		<parameter name="ItemNumber" class="java.lang.String">
+			<defaultValueExpression><![CDATA["80279786"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="LanguageCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="Small_CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["gb"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="ItemType" class="java.lang.String">
+			<defaultValueExpression><![CDATA["ART"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="WebServiceQuery">
+			<![CDATA[{
+  "getparameters" : { },
+  "fields" : [ {
+    "name" : "TitleId",
+    "expression" : "TitleId"
+  }, {
+    "name" : "TitileName",
+    "expression" : "TitileName"
+  } ],
+  "options" : {
+    "contentType" : "application/json",
+    "rootPath" : "docs._source.TranslationList.Translations",
+    "baseUrl" : "_mget"
+  },
+  "headersMap" : { },
+  "queryData" : "{\r\n    \"docs\" : [\r\n        {\r\n            \"_index\" : \"item-$P{Small_CountryCode}-$P{LanguageCode}\",\r\n            \"_type\" : \"$P{CountryCode}_$P{LanguageCode}\",\r\n            \"_id\" : \"$P{ItemType}-$P{ItemNumber}\"\r\n        },\r\n        {\r\n            \"_index\" : \"configurations\",\r\n            \"_type\" : \"configuration\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        },\r\n        {\r\n            \"_index\" : \"translations\",\r\n            \"_type\" : \"translation\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        }\r\n         \r\n    ]\r\n} ",
+  "GETParameters" : { }
+}]]>
+		</queryString>
+		<field name="TitleId" class="java.lang.String"/>
+		<field name="TitileName" class="java.lang.String"/>
+		<filterExpression><![CDATA[$F{TitleId}.equals("HEN")]]></filterExpression>
+	</subDataset>
+	<subDataset name="DS_CareInstructionNew" uuid="bf460543-49f3-4fb5-a678-020cc49d65a1">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="web_service_check"/>
+		<parameter name="ItemNumber" class="java.lang.String">
+			<defaultValueExpression><![CDATA["80279786"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="LanguageCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="Small_CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["gb"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="ItemType" class="java.lang.String">
+			<defaultValueExpression><![CDATA["ART"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="WebServiceQuery">
+			<![CDATA[{
+  "getparameters" : { },
+  "fields" : [ {
+    "name" : "TitleId",
+    "expression" : "TitleId"
+  }, {
+    "name" : "TitileName",
+    "expression" : "TitileName"
+  } ],
+  "options" : {
+    "contentType" : "application/json",
+    "rootPath" : "docs._source.TranslationList.Translations",
+    "baseUrl" : "_mget"
+  },
+  "headersMap" : { },
+  "queryData" : "{\r\n    \"docs\" : [\r\n        {\r\n            \"_index\" : \"item-$P{Small_CountryCode}-$P{LanguageCode}\",\r\n            \"_type\" : \"$P{CountryCode}_$P{LanguageCode}\",\r\n            \"_id\" : \"$P{ItemType}-$P{ItemNumber}\"\r\n        },\r\n        {\r\n            \"_index\" : \"configurations\",\r\n            \"_type\" : \"configuration\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        },\r\n        {\r\n            \"_index\" : \"translations\",\r\n            \"_type\" : \"translation\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        }\r\n         \r\n    ]\r\n} ",
+  "GETParameters" : { }
+}]]>
+		</queryString>
+		<field name="TitleId" class="java.lang.String"/>
+		<field name="TitileName" class="java.lang.String"/>
+		<filterExpression><![CDATA[$F{TitleId}.equals("HCI")]]></filterExpression>
+	</subDataset>
 	<parameter name="ItemNumber" class="java.lang.String">
 		<defaultValueExpression><![CDATA["80279786"]]></defaultValueExpression>
 	</parameter>
@@ -402,6 +689,15 @@
   }, {
     "name" : "ProductMeasurementText",
     "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.MeasureLocalList.MeasureLocal.ItemMeasureTypeNameShort"
+  }, {
+    "name" : "CurrencyPosition",
+    "expression" : "docs._source.CurrencyformatList.CurrencyFormat.CurrencyPosition[0]"
+  }, {
+    "name" : "CurrencyText",
+    "expression" : "docs._source.CurrencyformatList.CurrencyFormat.CurrencyText[0]"
+  }, {
+    "name" : "CurrencyLayout",
+    "expression" : "docs._source.CurrencyformatList.CurrencyFormat.CurrencyLayout[0]"
   } ],
   "options" : {
     "contentType" : "application/json",
@@ -441,54 +737,54 @@
 	<field name="ProductAreaNo" class="java.lang.Integer"/>
 	<field name="ValidDesignText" class="java.lang.String"/>
 	<field name="ValidDesigner" class="java.lang.String"/>
-	<field name="RegularPriceText" class="java.lang.String"/>
+	<field name="RegularPriceText" class="java.lang.Integer"/>
 	<field name="ProductNameLocal" class="java.lang.String"/>
 	<field name="MaterialText" class="java.lang.String"/>
 	<field name="GoodToKnowText" class="java.lang.String"/>
 	<field name="PeoplePlanetText" class="java.lang.String"/>
 	<field name="ProductMeasurementText" class="java.lang.String"/>
+	<field name="CurrencyPosition" class="java.lang.String"/>
+	<field name="CurrencyText" class="java.lang.String"/>
+	<field name="CurrencyLayout" class="java.lang.String"/>
 	<variable name="Variable_1" class="java.lang.String">
 		<variableExpression><![CDATA[$F{BulletSymbol}]]></variableExpression>
+	</variable>
+	<variable name="currencyStartTag" class="java.lang.String">
+		<variableExpression><![CDATA[IF($F{CurrencyLayout}.equalsIgnoreCase("italic"),"<i>",
+	IF($F{CurrencyLayout}.equalsIgnoreCase("superscript"),"<sup>",
+		IF($F{CurrencyLayout}.equalsIgnoreCase("subscript"),"<sub>",
+			IF($F{CurrencyLayout}.equalsIgnoreCase("normal"),"","")
+		)
+	)
+)]]></variableExpression>
+	</variable>
+	<variable name="currencyEndTag" class="java.lang.String">
+		<variableExpression><![CDATA[IF($F{CurrencyLayout}.equalsIgnoreCase("italic"),"</i>",
+	IF($F{CurrencyLayout}.equalsIgnoreCase("superscript"),"</sup>",
+		IF($F{CurrencyLayout}.equalsIgnoreCase("subscript"),"</sub>",
+			IF($F{CurrencyLayout}.equalsIgnoreCase("normal"),"","")
+		)
+	)
+)]]></variableExpression>
 	</variable>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<summary>
-		<band height="533" splitType="Stretch">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="Style1" positionType="Float" x="242" y="172" width="100" height="15" uuid="bfac9c98-17da-43b5-86e9-6e84e87b437b"/>
-				<textElement>
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{ValidDesigner}]]></textFieldExpression>
-			</textField>
+		<band height="554" splitType="Stretch">
 			<image>
-				<reportElement x="190" y="465" width="80" height="62" uuid="a8cd973b-0b87-4a8d-a398-68536e581b1b"/>
+				<reportElement x="188" y="492" width="80" height="62" uuid="a8cd973b-0b87-4a8d-a398-68536e581b1b"/>
 				<imageExpression><![CDATA["C:/temp/logo.PNG"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement style="Style1" x="163" y="437" width="16" height="80" uuid="4b7730db-6fd4-4590-99b3-8084d17bab40"/>
+				<reportElement style="Style1" x="163" y="457" width="12" height="94" uuid="4b7730db-6fd4-4590-99b3-8084d17bab40"/>
 				<textElement rotation="Left">
 					<font fontName="IKEA Sans" size="6"/>
 				</textElement>
 				<text><![CDATA[© Inter IKEA Systems B. V. 1994]]></text>
 			</staticText>
-			<textField isStretchWithOverflow="true">
-				<reportElement style="Style1" positionType="Float" x="185" y="150" width="182" height="15" uuid="a6f7885e-23b3-4e36-ac98-61bcac8f9d7b"/>
-				<textElement>
-					<font size="9" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{VariantColour}.replace( "[","" ).replace("]","").replace("\"","")]]></textFieldExpression>
-			</textField>
 			<textField>
-				<reportElement style="Style1" x="279" y="476" width="71" height="51" uuid="a0e4dab7-6f94-419f-b36d-8e4fe311052f"/>
-				<textElement>
-					<font size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{TurnOver} +" "+$F{BulletSymbol}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement style="Style1" x="0" y="492" width="140" height="20" uuid="e72d4304-2eb8-48e1-a15d-c43deb60efe1">
+				<reportElement style="Style1" x="0" y="524" width="140" height="13" uuid="e72d4304-2eb8-48e1-a15d-c43deb60efe1">
 					<printWhenExpression><![CDATA[$F{RequiresAssemblyYN}.equals( "Y")]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -497,209 +793,248 @@
 				<textFieldExpression><![CDATA[$F{SelfAssembly}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="Style1" positionType="Float" x="180" y="172" width="70" height="15" uuid="459f88ae-ab7b-4e83-8575-5169bc1fab7c">
-					<printWhenExpression><![CDATA[IF($F{ValidDesigner}.equals("[null]"),Boolean.FALSE,Boolean.TRUE)]]></printWhenExpression>
-				</reportElement>
-				<textElement>
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{Design}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement style="Style1" x="5" y="512" width="45" height="17" uuid="792f52c1-9cd9-42be-bff9-498fa944f0f9"/>
+				<reportElement style="Style1" x="0" y="538" width="45" height="13" uuid="792f52c1-9cd9-42be-bff9-498fa944f0f9"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{ProductAreaNo}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="Style1" x="90" y="513" width="73" height="17" uuid="701f1e71-9454-4bda-80cb-d384395f28ee"/>
+				<reportElement style="Style1" x="90" y="537" width="73" height="17" uuid="701f1e71-9454-4bda-80cb-d384395f28ee"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{ItemNo}.substring(0,3)+"."+$F{ItemNo}.substring(3,6)+"."+$F{ItemNo}.substring(6,8)]]></textFieldExpression>
 			</textField>
 			<textField pattern="d/M/yyyy">
-				<reportElement style="Style1" x="48" y="513" width="49" height="12" uuid="0b058974-09d5-4bc3-a30a-295760db0c4b"/>
+				<reportElement style="Style1" x="30" y="537" width="49" height="12" uuid="0b058974-09d5-4bc3-a30a-295760db0c4b"/>
 				<box topPadding="0" bottomPadding="2"/>
 				<textElement verticalAlignment="Middle">
 					<font size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[NOW( )]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement style="Style1" positionType="Float" x="0" y="41" width="169" height="19" uuid="7a64fced-1440-41d5-b708-e3f3cb570dbb">
-					<printWhenExpression><![CDATA[!$F{GoodToKnowText}.equals("[]")]]></printWhenExpression>
-				</reportElement>
-				<textElement>
-					<font size="10" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{GoodToKnow}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement style="Style1" positionType="Float" x="0" y="159" width="169" height="19" uuid="b9920bcf-41fd-4e6d-8105-03660d4b0d2e">
-					<printWhenExpression><![CDATA[!$F{CareInstructionText}.equals("[]")]]></printWhenExpression>
-				</reportElement>
-				<textElement>
-					<font size="10" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{CareInstructionHeading}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement style="Style1" positionType="Float" x="0" y="80" width="169" height="19" uuid="876e1823-8f7f-4238-99ec-f03368ec3dba">
-					<printWhenExpression><![CDATA[!$F{PeoplePlanetText}.equals("[]")]]></printWhenExpression>
-				</reportElement>
-				<textElement>
-					<font size="10" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{PeopleAndPlanet}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement style="Style1" positionType="Float" x="1" y="119" width="168" height="19" uuid="c423a7bb-4801-4d69-b663-a25be1a510f8">
-					<printWhenExpression><![CDATA[!$F{ProductMeasurementText}.equals("[]")]]></printWhenExpression>
-				</reportElement>
-				<textElement>
-					<font size="10" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{ProductMeasurements}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement style="Style1" positionType="Float" x="0" y="2" width="169" height="19" uuid="d093c1e8-d426-468f-881f-ef8c558ed784">
-					<printWhenExpression><![CDATA[!$F{MaterialText}.equals("[]")]]></printWhenExpression>
-				</reportElement>
-				<textElement>
-					<font size="10" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{ProductFacts}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="Style1" positionType="Float" x="186" y="195" width="180" height="21" isRemoveLineWhenBlank="true" uuid="3fdfe370-3753-4b9e-aad3-12e36caff17d">
-					<printWhenExpression><![CDATA[$F{RegularPriceText}!=null]]></printWhenExpression>
-				</reportElement>
-				<textElement>
-					<font size="14" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{MemberPrice}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="Style1" positionType="Float" x="183" y="216" width="180" height="33" isRemoveLineWhenBlank="true" uuid="70e423a2-d884-409c-bf27-3d4bbefa7724">
-					<printWhenExpression><![CDATA[$F{RegularPriceText}!=null]]></printWhenExpression>
-				</reportElement>
-				<textElement>
-					<font size="25" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[IF( $F{MemberPriceText}.equals(" ")," ",$F{CurrencySymbol}+" "+$F{MemberPriceText})]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement style="Style1" positionType="Float" x="180" y="250" width="180" height="20" isRemoveLineWhenBlank="true" uuid="cb4f217d-cbd2-49cf-8dc0-8cbebdd96708"/>
-				<textElement>
-					<font size="14" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{RegularPrice}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="Style1" positionType="Float" x="180" y="271" width="180" height="33" isRemoveLineWhenBlank="true" uuid="4479559d-c530-48bb-b00d-5e8deae2711a"/>
-				<textElement>
-					<font size="25" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[IF( $F{RegularPriceText}==null,$F{CurrencySymbol}+$F{MemberPriceText} ,$F{CurrencySymbol}+" "+$F{RegularPriceText})]]></textFieldExpression>
-			</textField>
-			<componentElement>
-				<reportElement style="Style1" positionType="Float" x="1" y="182" width="168" height="17" uuid="89a82c71-a16f-4c44-8757-2abb6eaa20d9"/>
-				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
-					<datasetRun subDataset="DS_check" uuid="26fc663d-4380-4bb8-8ee8-a0d3c0c4b8c2">
-						<datasetParameter name="authTypeKey">
-							<datasetParameterExpression><![CDATA[$P{authTypeKey}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="authParametersKey">
-							<datasetParameterExpression><![CDATA[$P{authParametersKey}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="languageKey">
-							<datasetParameterExpression><![CDATA[$P{languageKey}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="uriKey">
-							<datasetParameterExpression><![CDATA[$P{uriKey}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="verbKey">
-							<datasetParameterExpression><![CDATA[$P{verbKey}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="ItemNumber">
-							<datasetParameterExpression><![CDATA[$P{ItemNumber}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="CountryCode">
-							<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="LanguageCode">
-							<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="ItemType">
-							<datasetParameterExpression><![CDATA[$P{ItemType}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="Small_CountryCode">
-							<datasetParameterExpression><![CDATA[$P{Small_CountryCode}]]></datasetParameterExpression>
-						</datasetParameter>
-					</datasetRun>
-					<jr:listContents height="17" width="168">
-						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-							<reportElement style="Style1" x="0" y="0" width="168" height="17" uuid="5afa14d8-2f56-4e3d-8219-36eabe383a76"/>
-							<textFieldExpression><![CDATA[$F{CareInstructionText}]]></textFieldExpression>
-						</textField>
-					</jr:listContents>
-				</jr:list>
-			</componentElement>
 			<frame>
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="183" y="0" width="197" height="111" uuid="987049f2-dbee-4579-ba41-bf0f593f6415"/>
-				<textField>
-					<reportElement style="Style1" x="2" y="0" width="183" height="20" isRemoveLineWhenBlank="true" uuid="623866d2-4654-49a7-ade6-b6488e533d47"/>
-					<textElement>
-						<font size="14"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{ProductTypeName}.substring(0, 1).toUpperCase()+$F{ProductTypeName}.substring(1, $F{ProductTypeName}.length()).toLowerCase()]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement style="Style1" x="4" y="20" width="181" height="30" isRemoveLineWhenBlank="true" uuid="12656ea6-d36a-4d3b-b2c7-bfdf08664459"/>
-					<textElement>
-						<font size="24" isBold="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{ProductNameEn}]]></textFieldExpression>
-				</textField>
+				<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Transparent" x="187" y="-17" width="188" height="180" backcolor="#FFFFFF" uuid="987049f2-dbee-4579-ba41-bf0f593f6415"/>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" x="3" y="78" width="186" height="15" isRemoveLineWhenBlank="true" uuid="74a3c94e-74b1-4d7a-89f6-d615166e8f41"/>
+					<reportElement style="Style1" x="0" y="98" width="186" height="15" isRemoveLineWhenBlank="true" uuid="74a3c94e-74b1-4d7a-89f6-d615166e8f41"/>
 					<textElement>
 						<font size="12"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{ItemMeasureReferenceMetric1}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" x="6" y="96" width="183" height="15" isRemoveLineWhenBlank="true" uuid="03b20981-8ae0-4567-98c5-853abf93cb1f"/>
+					<reportElement style="Style1" x="0" y="115" width="183" height="15" isRemoveLineWhenBlank="true" uuid="03b20981-8ae0-4567-98c5-853abf93cb1f"/>
 					<textElement>
 						<font size="12"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{ValidDesignPartText}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="4" y="52" width="185" height="26" isRemoveLineWhenBlank="true" uuid="d4bd2850-c6c0-4154-bcd5-4c425d5d9ef0"/>
+					<reportElement style="Style1" positionType="Float" x="-1" y="72" width="185" height="26" isRemoveLineWhenBlank="true" uuid="d4bd2850-c6c0-4154-bcd5-4c425d5d9ef0"/>
 					<textElement>
 						<font size="18"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{ProductNameLocal}]]></textFieldExpression>
 				</textField>
+				<componentElement>
+					<reportElement style="Style1" positionType="Float" x="-2" y="132" width="168" height="13" isRemoveLineWhenBlank="true" uuid="a0d27fbf-2aa5-4b8b-8fca-2a97be3889a2"/>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+						<datasetRun subDataset="DS_CustomerBenefits" uuid="2622ac5e-2ed9-4973-8554-e94f80be2bf1">
+							<datasetParameter name="ItemNumber">
+								<datasetParameterExpression><![CDATA[$P{ItemNumber}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="uriKey">
+								<datasetParameterExpression><![CDATA[$P{uriKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authTypeKey">
+								<datasetParameterExpression><![CDATA[$P{authTypeKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authParametersKey">
+								<datasetParameterExpression><![CDATA[$P{authParametersKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="languageKey">
+								<datasetParameterExpression><![CDATA[$P{languageKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="verbKey">
+								<datasetParameterExpression><![CDATA[$P{verbKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="BulletSymbol">
+								<datasetParameterExpression><![CDATA[$F{BulletSymbol}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="CountryCode">
+								<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="LanguageCode">
+								<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="ItemType">
+								<datasetParameterExpression><![CDATA[$P{ItemType}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="Small_CountryCode">
+								<datasetParameterExpression><![CDATA[$P{Small_CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+						</datasetRun>
+						<jr:listContents height="13" width="168">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement style="Style1" x="16" y="0" width="148" height="13" uuid="86a85227-263f-4186-8214-f23ca93e9313"/>
+								<textElement>
+									<font size="9" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{CustomerBenefitText}]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement x="4" y="0" width="16" height="13" uuid="e203839c-c7bd-4002-b94f-aa53cb0bb193"/>
+								<textElement>
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{BulletSymbol}]]></textFieldExpression>
+							</textField>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
+				<textField>
+					<reportElement style="Style1" positionType="Float" x="1" y="147" width="173" height="13" isRemoveLineWhenBlank="true" uuid="61f29e5a-983b-4016-9af3-b1fc5985be42">
+						<printWhenExpression><![CDATA[IF( $F{VariantColour}.equals("[]"),Boolean.FALSE,Boolean.TRUE)]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{BulletSymbol}+" "+$F{AlsoAvailable}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Style1" positionType="Float" x="6" y="162" width="182" height="15" isRemoveLineWhenBlank="true" uuid="a6f7885e-23b3-4e36-ac98-61bcac8f9d7b"/>
+					<textElement>
+						<font size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{VariantColour}.replace( "[","" ).replace("]","").replace("\"","")]]></textFieldExpression>
+				</textField>
+				<genericElement>
+					<reportElement style="Style1" positionType="Float" x="0" y="27" width="183" height="42" uuid="e16f01ee-23af-453a-b5b3-e64e99f443cf"/>
+					<genericElementType namespace="http://jasperreports.sourceforge.net/jasperreports/html" name="htmlelement"/>
+					<genericElementParameter name="scaleType">
+						<valueExpression><![CDATA["RealSize"]]></valueExpression>
+					</genericElementParameter>
+					<genericElementParameter name="htmlContent">
+						<valueExpression><![CDATA["<html><script src=\"jquery.fittext.js\"></script><div fittext></div><b>"+$F{ProductNameEn}+"</b></html> "]]></valueExpression>
+					</genericElementParameter>
+				</genericElement>
+				<genericElement>
+					<reportElement style="Style1" positionType="Float" x="0" y="2" width="184" height="42" uuid="8315e632-2045-4066-941a-e3c367735c7b"/>
+					<genericElementType namespace="http://jasperreports.sourceforge.net/jasperreports/html" name="htmlelement"/>
+					<genericElementParameter name="scaleType">
+						<valueExpression><![CDATA["RealSize"]]></valueExpression>
+					</genericElementParameter>
+					<genericElementParameter name="htmlContent">
+						<valueExpression><![CDATA["<html><script src=\"jquery.fittext.js\"></script><div fittext></div>"+$F{ProductTypeName}.substring(0, 1).toUpperCase()+$F{ProductTypeName}.substring(1, $F{ProductTypeName}.length()).toLowerCase()+"</html> "]]></valueExpression>
+					</genericElementParameter>
+				</genericElement>
 			</frame>
-			<textField>
-				<reportElement style="Style1" positionType="Float" x="183" y="132" width="173" height="15" uuid="61f29e5a-983b-4016-9af3-b1fc5985be42">
-					<printWhenExpression><![CDATA[IF( $F{VariantColour}.equals("[]"),Boolean.FALSE,Boolean.TRUE)]]></printWhenExpression>
-				</reportElement>
-				<textElement>
-					<font size="9" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{BulletSymbol}+" "+$F{AlsoAvailable}]]></textFieldExpression>
-			</textField>
+			<frame>
+				<reportElement mode="Transparent" x="187" y="320" width="186" height="143" backcolor="#FFFFFF" uuid="8bfb12f8-4a69-4d10-bacc-7375d32b8440"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Style1" x="0" y="107" width="180" height="33" uuid="4479559d-c530-48bb-b00d-5e8deae2711a"/>
+					<textElement markup="styled">
+						<font size="25" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[IF( $F{RegularPriceText}==null,IF( $F{CurrencyPosition}.equalsIgnoreCase("suffix"),$F{MemberPriceText}+" "+$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag},
+	IF( $F{CurrencyPosition}.equalsIgnoreCase("prefix"),$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$F{MemberPriceText},
+			$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$F{MemberPriceText}
+	)
+) ,IF( $F{CurrencyPosition}.equalsIgnoreCase("suffix"),$F{RegularPriceText}+" "+$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag},
+	IF( $F{CurrencyPosition}.equalsIgnoreCase("prefix"),$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$F{RegularPriceText},
+			$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$F{RegularPriceText}
+	)
+)
+
+)]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement style="Style1" x="0" y="87" width="180" height="20" isRemoveLineWhenBlank="true" uuid="cb4f217d-cbd2-49cf-8dc0-8cbebdd96708">
+						<printWhenExpression><![CDATA[$F{RegularPriceText}!=null]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{RegularPrice}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Style1" x="0" y="38" width="180" height="33" uuid="70e423a2-d884-409c-bf27-3d4bbefa7724">
+						<printWhenExpression><![CDATA[$F{RegularPriceText}!=null]]></printWhenExpression>
+					</reportElement>
+					<textElement markup="styled">
+						<font size="25" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[IF( $F{CurrencyPosition}.equalsIgnoreCase("suffix"),$F{MemberPriceText}+" "+$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag},
+	IF( $F{CurrencyPosition}.equalsIgnoreCase("prefix"),$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$F{MemberPriceText},
+			$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$F{MemberPriceText}
+	)
+)]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Style1" x="0" y="17" width="180" height="21" uuid="3fdfe370-3753-4b9e-aad3-12e36caff17d">
+						<printWhenExpression><![CDATA[$F{RegularPriceText}!=null]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{MemberPrice}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Style1" x="0" y="0" width="41" height="15" uuid="459f88ae-ab7b-4e83-8575-5169bc1fab7c">
+						<printWhenExpression><![CDATA[$F{RegularPriceText}!=null && $F{ValidDesigner}!=null]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Left">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Design}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Style1" x="31" y="0" width="144" height="15" uuid="bfac9c98-17da-43b5-86e9-6e84e87b437b">
+						<printWhenExpression><![CDATA[$F{RegularPriceText}!=null]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Left">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ValidDesigner}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Style1" x="0" y="70" width="41" height="15" uuid="1da518b9-084e-46a8-9bb5-8d61b7b011f1">
+						<printWhenExpression><![CDATA[$F{RegularPriceText}==null]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Left">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Design}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Style1" x="31" y="70" width="144" height="15" uuid="3be3736b-cb66-49d8-ae37-c6a5bcac2551">
+						<printWhenExpression><![CDATA[$F{RegularPriceText}==null]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Left">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ValidDesigner}]]></textFieldExpression>
+				</textField>
+			</frame>
 			<componentElement>
-				<reportElement style="Style1" positionType="Float" x="0" y="22" width="168" height="17" uuid="f585ed62-1ebd-4752-b4a7-11610c4c02b0"/>
+				<reportElement style="Style1" x="345" y="536" width="30" height="17" isRemoveLineWhenBlank="true" uuid="ef1bef4d-ca48-4681-8c6f-99c6614463d0"/>
 				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
-					<datasetRun subDataset="DS_Materials" uuid="8290fa1a-ebec-4074-bcca-2d766d89ec3f">
+					<datasetRun subDataset="DS_Turnover" uuid="d1364c50-1005-4627-9554-1f079d32d734">
 						<datasetParameter name="ItemNumber">
 							<datasetParameterExpression><![CDATA[$P{ItemNumber}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="CountryCode">
+							<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="LanguageCode">
+							<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="ItemType">
+							<datasetParameterExpression><![CDATA[$P{ItemType}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="Small_CountryCode">
+							<datasetParameterExpression><![CDATA[$P{Small_CountryCode}]]></datasetParameterExpression>
 						</datasetParameter>
 						<datasetParameter name="uriKey">
 							<datasetParameterExpression><![CDATA[$P{uriKey}]]></datasetParameterExpression>
@@ -716,33 +1051,33 @@
 						<datasetParameter name="verbKey">
 							<datasetParameterExpression><![CDATA[$P{verbKey}]]></datasetParameterExpression>
 						</datasetParameter>
-						<datasetParameter name="CountryCode">
-							<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="ItemType">
-							<datasetParameterExpression><![CDATA[$P{ItemType}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="LanguageCode">
-							<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="Small_CountryCode">
-							<datasetParameterExpression><![CDATA[$P{Small_CountryCode}]]></datasetParameterExpression>
-						</datasetParameter>
 					</datasetRun>
-					<jr:listContents height="17" width="168">
+					<jr:listContents height="17" width="30">
 						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-							<reportElement style="Style1" x="0" y="0" width="168" height="17" uuid="3f53b05c-03db-47d4-82e5-48783abd5976"/>
-							<textFieldExpression><![CDATA[IF($F{MaterialPartText}==null,$F{MaterialText},$F{MaterialPartText}+$F{MaterialText})]]></textFieldExpression>
+							<reportElement style="Style1" x="0" y="0" width="30" height="13" uuid="b7e37ba9-c59b-4899-81f0-9a598ce205f5"/>
+							<textFieldExpression><![CDATA[$F{TitileName}]]></textFieldExpression>
 						</textField>
 					</jr:listContents>
 				</jr:list>
 			</componentElement>
 			<componentElement>
-				<reportElement style="Style1" positionType="Float" x="0" y="62" width="168" height="17" uuid="d1549416-958b-4ee1-adf8-676327b1b69d"/>
+				<reportElement style="Style1" x="280" y="500" width="65" height="53" isRemoveLineWhenBlank="true" uuid="c6155355-9c8c-4060-bf1a-710e9449d693"/>
 				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
-					<datasetRun subDataset="DS_GoodToKnow" uuid="21aabbdc-ee43-4c54-9616-ec4ec9054684">
+					<datasetRun subDataset="DS_BulletSymbol" uuid="0474ceaf-b2dc-4628-898a-826f6b5ea51c">
 						<datasetParameter name="ItemNumber">
 							<datasetParameterExpression><![CDATA[$P{ItemNumber}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="CountryCode">
+							<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="LanguageCode">
+							<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="ItemType">
+							<datasetParameterExpression><![CDATA[$P{ItemType}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="Small_CountryCode">
+							<datasetParameterExpression><![CDATA[$P{Small_CountryCode}]]></datasetParameterExpression>
 						</datasetParameter>
 						<datasetParameter name="uriKey">
 							<datasetParameterExpression><![CDATA[$P{uriKey}]]></datasetParameterExpression>
@@ -759,162 +1094,476 @@
 						<datasetParameter name="verbKey">
 							<datasetParameterExpression><![CDATA[$P{verbKey}]]></datasetParameterExpression>
 						</datasetParameter>
-						<datasetParameter name="CountryCode">
-							<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="LanguageCode">
-							<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="ItemType">
-							<datasetParameterExpression><![CDATA[$P{ItemType}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="Small_CountryCode">
-							<datasetParameterExpression><![CDATA[$P{Small_CountryCode}]]></datasetParameterExpression>
-						</datasetParameter>
 					</datasetRun>
-					<jr:listContents height="17" width="168">
+					<jr:listContents height="53" width="65">
 						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-							<reportElement style="Style1" x="0" y="0" width="168" height="17" uuid="c4fd5d52-fe26-491e-85fe-ba4c38f5ca63"/>
-							<textFieldExpression><![CDATA[$F{GoodToKnowText}]]></textFieldExpression>
-						</textField>
-					</jr:listContents>
-				</jr:list>
-			</componentElement>
-			<componentElement>
-				<reportElement style="Style1" positionType="Float" x="0" y="100" width="168" height="17" uuid="e068cfba-d99f-4522-a33a-09c3732ad730"/>
-				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
-					<datasetRun subDataset="DS_PeoplePlanet" uuid="f709930c-ca32-4534-9b0b-1a95ef883e95">
-						<datasetParameter name="ItemNumber">
-							<datasetParameterExpression><![CDATA[$P{ItemNumber}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="uriKey">
-							<datasetParameterExpression><![CDATA[$P{uriKey}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="authTypeKey">
-							<datasetParameterExpression><![CDATA[$P{authTypeKey}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="authParametersKey">
-							<datasetParameterExpression><![CDATA[$P{authParametersKey}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="languageKey">
-							<datasetParameterExpression><![CDATA[$P{languageKey}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="verbKey">
-							<datasetParameterExpression><![CDATA[$P{verbKey}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="CountryCode">
-							<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="LanguageCode">
-							<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="ItemType">
-							<datasetParameterExpression><![CDATA[$P{ItemType}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="Small_CountryCode">
-							<datasetParameterExpression><![CDATA[$P{Small_CountryCode}]]></datasetParameterExpression>
-						</datasetParameter>
-					</datasetRun>
-					<jr:listContents height="17" width="168">
-						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-							<reportElement style="Style1" x="0" y="0" width="168" height="17" uuid="07c42a73-bf93-4ca8-8205-c1ad8f2440f3"/>
-							<textFieldExpression><![CDATA[$F{PeoplePlanetText}]]></textFieldExpression>
-						</textField>
-					</jr:listContents>
-				</jr:list>
-			</componentElement>
-			<componentElement>
-				<reportElement style="Style1" positionType="Float" x="1" y="140" width="168" height="17" uuid="027b4ee3-5e14-4be8-b7bc-de632e674782"/>
-				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
-					<datasetRun subDataset="DS_ProductMeasurement" uuid="34b6506d-0ae6-4027-9da6-6352489df40a">
-						<datasetParameter name="ItemNumber">
-							<datasetParameterExpression><![CDATA[$P{ItemNumber}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="uriKey">
-							<datasetParameterExpression><![CDATA[$P{uriKey}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="authTypeKey">
-							<datasetParameterExpression><![CDATA[$P{authTypeKey}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="authParametersKey">
-							<datasetParameterExpression><![CDATA[$P{authParametersKey}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="languageKey">
-							<datasetParameterExpression><![CDATA[$P{languageKey}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="verbKey">
-							<datasetParameterExpression><![CDATA[$P{verbKey}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="CountryCode">
-							<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="LanguageCode">
-							<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="ItemType">
-							<datasetParameterExpression><![CDATA[$P{ItemType}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="Small_CountryCode">
-							<datasetParameterExpression><![CDATA[$P{Small_CountryCode}]]></datasetParameterExpression>
-						</datasetParameter>
-					</datasetRun>
-					<jr:listContents height="17" width="168">
-						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-							<reportElement style="Style1" x="0" y="0" width="168" height="17" uuid="51a38a98-5ced-4e6d-a479-72a16192835a"/>
-							<textFieldExpression><![CDATA[$F{ItemMeasureTypeNameShort}+"   "+$F{ItemMeasureTextMetricShort}]]></textFieldExpression>
-						</textField>
-					</jr:listContents>
-				</jr:list>
-			</componentElement>
-			<componentElement>
-				<reportElement style="Style1" positionType="Float" x="183" y="113" width="168" height="17" uuid="a0d27fbf-2aa5-4b8b-8fca-2a97be3889a2"/>
-				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
-					<datasetRun subDataset="DS_CustomerBenefits" uuid="2622ac5e-2ed9-4973-8554-e94f80be2bf1">
-						<datasetParameter name="ItemNumber">
-							<datasetParameterExpression><![CDATA[$P{ItemNumber}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="uriKey">
-							<datasetParameterExpression><![CDATA[$P{uriKey}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="authTypeKey">
-							<datasetParameterExpression><![CDATA[$P{authTypeKey}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="authParametersKey">
-							<datasetParameterExpression><![CDATA[$P{authParametersKey}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="languageKey">
-							<datasetParameterExpression><![CDATA[$P{languageKey}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="verbKey">
-							<datasetParameterExpression><![CDATA[$P{verbKey}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="BulletSymbol">
-							<datasetParameterExpression><![CDATA[$F{BulletSymbol}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="CountryCode">
-							<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="LanguageCode">
-							<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="ItemType">
-							<datasetParameterExpression><![CDATA[$P{ItemType}]]></datasetParameterExpression>
-						</datasetParameter>
-						<datasetParameter name="Small_CountryCode">
-							<datasetParameterExpression><![CDATA[$P{Small_CountryCode}]]></datasetParameterExpression>
-						</datasetParameter>
-					</datasetRun>
-					<jr:listContents height="17" width="168">
-						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-							<reportElement style="Style1" x="0" y="0" width="168" height="17" uuid="86a85227-263f-4186-8214-f23ca93e9313"/>
+							<reportElement style="Style1" x="0" y="0" width="65" height="53" uuid="9114d10f-f00e-4ccc-9ba4-4a990c03873b"/>
 							<textElement>
-								<font isBold="true"/>
+								<font size="12"/>
 							</textElement>
-							<textFieldExpression><![CDATA[$P{BulletSymbol}+" "+$F{CustomerBenefitText}]]></textFieldExpression>
+							<textFieldExpression><![CDATA[$F{TitileName}]]></textFieldExpression>
 						</textField>
 					</jr:listContents>
 				</jr:list>
 			</componentElement>
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="171" height="146" uuid="c4b21515-efe7-4aa1-8c50-135918b1be50"/>
+				<componentElement>
+					<reportElement style="Style1" positionType="Float" x="3" y="3" width="164" height="13" isRemoveLineWhenBlank="true" uuid="0c74a4cc-81d9-4f0e-9dc8-990f541d4f03">
+						<printWhenExpression><![CDATA[!$F{MaterialText}.equals("[]")]]></printWhenExpression>
+					</reportElement>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+						<datasetRun subDataset="DS_ProductFactsNew" uuid="cf842065-5acb-48f8-9087-b1d4655a123b">
+							<datasetParameter name="ItemNumber">
+								<datasetParameterExpression><![CDATA[$P{ItemNumber}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="CountryCode">
+								<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="LanguageCode">
+								<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="ItemType">
+								<datasetParameterExpression><![CDATA[$P{ItemType}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="Small_CountryCode">
+								<datasetParameterExpression><![CDATA[$P{Small_CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="uriKey">
+								<datasetParameterExpression><![CDATA[$P{uriKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authTypeKey">
+								<datasetParameterExpression><![CDATA[$P{authTypeKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authParametersKey">
+								<datasetParameterExpression><![CDATA[$P{authParametersKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="languageKey">
+								<datasetParameterExpression><![CDATA[$P{languageKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="verbKey">
+								<datasetParameterExpression><![CDATA[$P{verbKey}]]></datasetParameterExpression>
+							</datasetParameter>
+						</datasetRun>
+						<jr:listContents height="13" width="164">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement style="Style1" x="0" y="0" width="164" height="13" uuid="4088e41a-4131-462b-9ad1-5c3b4acd6953"/>
+								<textElement>
+									<font size="10" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{TitileName}]]></textFieldExpression>
+							</textField>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
+				<componentElement>
+					<reportElement style="Style1" positionType="Float" x="4" y="16" width="163" height="13" isRemoveLineWhenBlank="true" uuid="a00a764a-f14c-4891-b659-4dc71ad04c50"/>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+						<datasetRun subDataset="DS_Materials" uuid="3470db0e-ae1d-4f03-af42-ee342310533d">
+							<datasetParameter name="ItemNumber">
+								<datasetParameterExpression><![CDATA[$P{ItemNumber}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="uriKey">
+								<datasetParameterExpression><![CDATA[$P{uriKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authTypeKey">
+								<datasetParameterExpression><![CDATA[$P{authTypeKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authParametersKey">
+								<datasetParameterExpression><![CDATA[$P{authParametersKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="languageKey">
+								<datasetParameterExpression><![CDATA[$P{languageKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="verbKey">
+								<datasetParameterExpression><![CDATA[$P{verbKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="CountryCode">
+								<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="ItemType">
+								<datasetParameterExpression><![CDATA[$P{ItemType}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="LanguageCode">
+								<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="Small_CountryCode">
+								<datasetParameterExpression><![CDATA[$P{Small_CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+						</datasetRun>
+						<jr:listContents height="13" width="163">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement style="Style1" x="0" y="0" width="163" height="13" uuid="e05edcd9-1cfc-4e4a-a869-9f3d6f343d59"/>
+								<textFieldExpression><![CDATA[IF($F{MaterialPartText}==null,$F{MaterialText},$F{MaterialPartText}+$F{MaterialText})]]></textFieldExpression>
+							</textField>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
+				<componentElement>
+					<reportElement style="Style1" positionType="Float" x="3" y="33" width="164" height="13" isRemoveLineWhenBlank="true" uuid="9aeaecc0-ca2e-48e0-b573-c7c330b05bcb">
+						<printWhenExpression><![CDATA[!$F{GoodToKnowText}.equals("[]")]]></printWhenExpression>
+					</reportElement>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+						<datasetRun subDataset="DS_GoodToKnowNew" uuid="109fd818-fdb1-4890-9779-b132cb1e12b8">
+							<datasetParameter name="ItemNumber">
+								<datasetParameterExpression><![CDATA[$P{ItemNumber}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="CountryCode">
+								<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="LanguageCode">
+								<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="ItemType">
+								<datasetParameterExpression><![CDATA[$P{ItemType}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="Small_CountryCode">
+								<datasetParameterExpression><![CDATA[$P{Small_CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="uriKey">
+								<datasetParameterExpression><![CDATA[$P{uriKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authTypeKey">
+								<datasetParameterExpression><![CDATA[$P{authTypeKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authParametersKey">
+								<datasetParameterExpression><![CDATA[$P{authParametersKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="languageKey">
+								<datasetParameterExpression><![CDATA[$P{languageKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="verbKey">
+								<datasetParameterExpression><![CDATA[$P{verbKey}]]></datasetParameterExpression>
+							</datasetParameter>
+						</datasetRun>
+						<jr:listContents height="13" width="164">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement style="Style1" x="0" y="0" width="164" height="13" uuid="54968adf-04af-4667-84b4-2b117e5ee68c"/>
+								<textElement>
+									<font size="10" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{TitileName}]]></textFieldExpression>
+							</textField>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
+				<componentElement>
+					<reportElement style="Style1" positionType="Float" x="4" y="46" width="163" height="13" isRemoveLineWhenBlank="true" uuid="f8681f6e-6187-4ba8-b252-951e6a6becd8"/>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+						<datasetRun subDataset="DS_GoodToKnow" uuid="193f3368-3694-4b18-8769-497089bb8414">
+							<datasetParameter name="ItemNumber">
+								<datasetParameterExpression><![CDATA[$P{ItemNumber}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="uriKey">
+								<datasetParameterExpression><![CDATA[$P{uriKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authTypeKey">
+								<datasetParameterExpression><![CDATA[$P{authTypeKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authParametersKey">
+								<datasetParameterExpression><![CDATA[$P{authParametersKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="languageKey">
+								<datasetParameterExpression><![CDATA[$P{languageKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="verbKey">
+								<datasetParameterExpression><![CDATA[$P{verbKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="CountryCode">
+								<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="LanguageCode">
+								<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="ItemType">
+								<datasetParameterExpression><![CDATA[$P{ItemType}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="Small_CountryCode">
+								<datasetParameterExpression><![CDATA[$P{Small_CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+						</datasetRun>
+						<jr:listContents height="13" width="163">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement style="Style1" x="0" y="0" width="163" height="13" uuid="b0672ffe-572b-4af1-a885-5bbc9fa8d384"/>
+								<textFieldExpression><![CDATA[$F{GoodToKnowText}]]></textFieldExpression>
+							</textField>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
+				<componentElement>
+					<reportElement style="Style1" positionType="Float" x="4" y="62" width="164" height="13" isRemoveLineWhenBlank="true" uuid="b2545d5d-a8b2-433b-aca2-c52861a94ab2">
+						<printWhenExpression><![CDATA[!$F{PeoplePlanetText}.equals("[]")]]></printWhenExpression>
+					</reportElement>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+						<datasetRun subDataset="DS_PeoplePlanetNew" uuid="a5c084ea-6662-45b3-ac91-a0ea41deef6a">
+							<datasetParameter name="ItemNumber">
+								<datasetParameterExpression><![CDATA[$P{ItemNumber}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="CountryCode">
+								<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="LanguageCode">
+								<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="ItemType">
+								<datasetParameterExpression><![CDATA[$P{ItemType}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="Small_CountryCode">
+								<datasetParameterExpression><![CDATA[$P{Small_CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="uriKey">
+								<datasetParameterExpression><![CDATA[$P{uriKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authTypeKey">
+								<datasetParameterExpression><![CDATA[$P{authTypeKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authParametersKey">
+								<datasetParameterExpression><![CDATA[$P{authParametersKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="languageKey">
+								<datasetParameterExpression><![CDATA[$P{languageKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="verbKey">
+								<datasetParameterExpression><![CDATA[$P{verbKey}]]></datasetParameterExpression>
+							</datasetParameter>
+						</datasetRun>
+						<jr:listContents height="13" width="164">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement style="Style1" x="0" y="0" width="164" height="13" uuid="61b59f42-ee03-4b28-93e4-d3e37a9c356a"/>
+								<textElement>
+									<font size="10" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{TitileName}]]></textFieldExpression>
+							</textField>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
+				<componentElement>
+					<reportElement style="Style1" positionType="Float" x="4" y="75" width="163" height="13" isRemoveLineWhenBlank="true" uuid="92e0611a-063b-4f45-867e-b9cc6d39197c"/>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+						<datasetRun subDataset="DS_PeoplePlanet" uuid="a09c0317-1f11-4300-8efc-898bdcfc9dbf">
+							<datasetParameter name="ItemNumber">
+								<datasetParameterExpression><![CDATA[$P{ItemNumber}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="uriKey">
+								<datasetParameterExpression><![CDATA[$P{uriKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authTypeKey">
+								<datasetParameterExpression><![CDATA[$P{authTypeKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authParametersKey">
+								<datasetParameterExpression><![CDATA[$P{authParametersKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="languageKey">
+								<datasetParameterExpression><![CDATA[$P{languageKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="verbKey">
+								<datasetParameterExpression><![CDATA[$P{verbKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="CountryCode">
+								<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="LanguageCode">
+								<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="ItemType">
+								<datasetParameterExpression><![CDATA[$P{ItemType}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="Small_CountryCode">
+								<datasetParameterExpression><![CDATA[$P{Small_CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+						</datasetRun>
+						<jr:listContents height="13" width="163">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement style="Style1" x="0" y="0" width="163" height="13" uuid="dad1d64b-ae5d-4c95-be41-43b1f5c87561"/>
+								<textFieldExpression><![CDATA[$F{PeoplePlanetText}]]></textFieldExpression>
+							</textField>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
+				<componentElement>
+					<reportElement style="Style1" positionType="Float" x="4" y="88" width="164" height="13" isRemoveLineWhenBlank="true" uuid="d2a140ca-7afb-4df1-b98b-54fcef8b90f6">
+						<printWhenExpression><![CDATA[!$F{ProductMeasurementText}.equals("[]")]]></printWhenExpression>
+					</reportElement>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+						<datasetRun subDataset="DS_ProductMeasurementNew" uuid="528a5c94-c3e3-4ffa-bfc1-042882ac5b2f">
+							<datasetParameter name="ItemNumber">
+								<datasetParameterExpression><![CDATA[$P{ItemNumber}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="CountryCode">
+								<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="LanguageCode">
+								<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="ItemType">
+								<datasetParameterExpression><![CDATA[$P{ItemType}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="Small_CountryCode">
+								<datasetParameterExpression><![CDATA[$P{Small_CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="uriKey">
+								<datasetParameterExpression><![CDATA[$P{uriKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authTypeKey">
+								<datasetParameterExpression><![CDATA[$P{authTypeKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authParametersKey">
+								<datasetParameterExpression><![CDATA[$P{authParametersKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="languageKey">
+								<datasetParameterExpression><![CDATA[$P{languageKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="verbKey">
+								<datasetParameterExpression><![CDATA[$P{verbKey}]]></datasetParameterExpression>
+							</datasetParameter>
+						</datasetRun>
+						<jr:listContents height="13" width="164">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement style="Style1" x="0" y="0" width="164" height="13" uuid="08322951-4ca2-4dfa-9234-ef8d64eabe8e"/>
+								<textElement>
+									<font size="10" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{TitileName}]]></textFieldExpression>
+							</textField>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
+				<componentElement>
+					<reportElement style="Style1" positionType="Float" x="5" y="104" width="162" height="13" isRemoveLineWhenBlank="true" uuid="b1b64e28-1525-4374-ad24-1e3ecf53a8a7"/>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+						<datasetRun subDataset="DS_ProductMeasurement" uuid="ab81e7ac-99e0-4909-bf40-80c95519b4d0">
+							<datasetParameter name="ItemNumber">
+								<datasetParameterExpression><![CDATA[$P{ItemNumber}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="uriKey">
+								<datasetParameterExpression><![CDATA[$P{uriKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authTypeKey">
+								<datasetParameterExpression><![CDATA[$P{authTypeKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authParametersKey">
+								<datasetParameterExpression><![CDATA[$P{authParametersKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="languageKey">
+								<datasetParameterExpression><![CDATA[$P{languageKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="verbKey">
+								<datasetParameterExpression><![CDATA[$P{verbKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="CountryCode">
+								<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="LanguageCode">
+								<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="ItemType">
+								<datasetParameterExpression><![CDATA[$P{ItemType}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="Small_CountryCode">
+								<datasetParameterExpression><![CDATA[$P{Small_CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+						</datasetRun>
+						<jr:listContents height="13" width="162">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement style="Style1" x="0" y="0" width="162" height="13" uuid="0726a5a8-298c-49e1-9d24-52a99a7abf70"/>
+								<textFieldExpression><![CDATA[$F{ItemMeasureTypeNameShort}+"   "+$F{ItemMeasureTextMetricShort}]]></textFieldExpression>
+							</textField>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
+				<componentElement>
+					<reportElement style="Style1" positionType="Float" x="3" y="120" width="164" height="13" isRemoveLineWhenBlank="true" uuid="a1e64096-9a66-41f9-bb9e-1ef224751ee1">
+						<printWhenExpression><![CDATA[!$F{CareInstructionText}.equals("[]")]]></printWhenExpression>
+					</reportElement>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+						<datasetRun subDataset="DS_CareInstructionNew" uuid="f77662f1-921d-45e1-ab2f-0e4453bf53da">
+							<datasetParameter name="ItemNumber">
+								<datasetParameterExpression><![CDATA[$P{ItemNumber}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="CountryCode">
+								<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="LanguageCode">
+								<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="ItemType">
+								<datasetParameterExpression><![CDATA[$P{ItemType}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="Small_CountryCode">
+								<datasetParameterExpression><![CDATA[$P{Small_CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="uriKey">
+								<datasetParameterExpression><![CDATA[$P{uriKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authTypeKey">
+								<datasetParameterExpression><![CDATA[$P{authTypeKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authParametersKey">
+								<datasetParameterExpression><![CDATA[$P{authParametersKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="languageKey">
+								<datasetParameterExpression><![CDATA[$P{languageKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="verbKey">
+								<datasetParameterExpression><![CDATA[$P{verbKey}]]></datasetParameterExpression>
+							</datasetParameter>
+						</datasetRun>
+						<jr:listContents height="13" width="164">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement style="Style1" x="0" y="0" width="164" height="13" uuid="6f410136-8c96-41ea-b3b6-050fae966686"/>
+								<textElement>
+									<font size="10" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{TitileName}]]></textFieldExpression>
+							</textField>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
+				<componentElement>
+					<reportElement style="Style1" positionType="Float" x="5" y="133" width="162" height="13" isRemoveLineWhenBlank="true" uuid="7c1722c6-986c-4efe-9c54-1fc4d4c8e964"/>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+						<datasetRun subDataset="DS_check" uuid="b43a8780-3182-40fa-8a41-48aa944e18ac">
+							<datasetParameter name="authTypeKey">
+								<datasetParameterExpression><![CDATA[$P{authTypeKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authParametersKey">
+								<datasetParameterExpression><![CDATA[$P{authParametersKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="languageKey">
+								<datasetParameterExpression><![CDATA[$P{languageKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="uriKey">
+								<datasetParameterExpression><![CDATA[$P{uriKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="verbKey">
+								<datasetParameterExpression><![CDATA[$P{verbKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="ItemNumber">
+								<datasetParameterExpression><![CDATA[$P{ItemNumber}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="CountryCode">
+								<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="LanguageCode">
+								<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="ItemType">
+								<datasetParameterExpression><![CDATA[$P{ItemType}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="Small_CountryCode">
+								<datasetParameterExpression><![CDATA[$P{Small_CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+						</datasetRun>
+						<jr:listContents height="13" width="162">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement style="Style1" x="0" y="0" width="162" height="13" uuid="34ed6b4e-ee31-4cc8-a5a9-5e4ea8e51291"/>
+								<textFieldExpression><![CDATA[$F{CareInstructionText}]]></textFieldExpression>
+							</textField>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
+			</frame>
 		</band>
 	</summary>
 </jasperReport>
