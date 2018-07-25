@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="web_service" pageWidth="420" pageHeight="595" whenNoDataType="AllSectionsNoDetail" columnWidth="380" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2d40bb8e-fa02-4d8e-ad33-6bad44db775b">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="web_service" pageWidth="420" pageHeight="595" whenNoDataType="AllSectionsNoDetail" columnWidth="380" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" scriptletClass="srTextWidth.TestTextWidth" uuid="2d40bb8e-fa02-4d8e-ad33-6bad44db775b">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="web_service_check"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
@@ -69,6 +69,9 @@
   }, {
     "name" : "SortNo",
     "expression" : "SortNo"
+  }, {
+    "name" : "BulletSymbol",
+    "expression" : "docs._source.TranslationList.Translations(TitleId == BC1).TitileName[0]"
   } ],
   "options" : {
     "contentType" : "application/json",
@@ -83,6 +86,7 @@
 		<field name="CustomerBenefitNo" class="java.lang.Integer"/>
 		<field name="CustomerBenefitText" class="java.lang.String"/>
 		<field name="SortNo" class="java.lang.Integer"/>
+		<field name="BulletSymbol" class="java.lang.String"/>
 		<variable name="Variabe_1" class="java.lang.String"/>
 	</subDataset>
 	<subDataset name="DS_Materials" uuid="3be3947a-f453-4fe9-b2e4-7e3d164e3336">
@@ -282,8 +286,51 @@
 		</queryString>
 		<field name="CareInstructionText" class="java.lang.String"/>
 	</subDataset>
+	<subDataset name="DS_Packaging" uuid="2f9fba88-e44f-4874-938b-29321731a3ea">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="web_service_check"/>
+		<parameter name="ItemNumber" class="java.lang.String"/>
+		<parameter name="LanguageCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="Small_CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["gb"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="ItemType" class="java.lang.String">
+			<defaultValueExpression><![CDATA["ART"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="WebServiceQuery">
+			<![CDATA[{
+  "getparameters" : { },
+  "fields" : [ {
+    "name" : "ConsumerPackLengthMetric",
+    "expression" : "ConsumerPackLengthMetric"
+  }, {
+    "name" : "ConsumerPackWidthMetric",
+    "expression" : "ConsumerPackWidthMetric"
+  }, {
+    "name" : "ConsumerPackHeightMetric",
+    "expression" : "ConsumerPackHeightMetric"
+  } ],
+  "options" : {
+    "contentType" : "application/json",
+    "rootPath" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.PackageMeasurementConsumerPackLocalList.PackageMeasurementConsumerPackLocal",
+    "baseUrl" : "_mget"
+  },
+  "headersMap" : { },
+  "queryData" : "{\r\n    \"docs\" : [\r\n        {\r\n            \"_index\" : \"item-$P{Small_CountryCode}-$P{LanguageCode}\",\r\n            \"_type\" : \"$P{CountryCode}_$P{LanguageCode}\",\r\n            \"_id\" : \"$P{ItemType}-$P{ItemNumber}\"\r\n        },\r\n        {\r\n            \"_index\" : \"configurations\",\r\n            \"_type\" : \"configuration\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        },\r\n        {\r\n            \"_index\" : \"translations\",\r\n            \"_type\" : \"translation\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        }\r\n         \r\n    ]\r\n} ",
+  "GETParameters" : { }
+}]]>
+		</queryString>
+		<field name="ConsumerPackLengthMetric" class="java.lang.String"/>
+		<field name="ConsumerPackWidthMetric" class="java.lang.String"/>
+		<field name="ConsumerPackHeightMetric" class="java.lang.String"/>
+		<variable name="Variable_NumberofPacks" class="java.lang.String"/>
+	</subDataset>
 	<parameter name="ItemNumber" class="java.lang.String">
-		<defaultValueExpression><![CDATA["80279786"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["00236263"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="LanguageCode" class="java.lang.String">
 		<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
@@ -411,6 +458,18 @@
   }, {
     "name" : "CurrencyLayout",
     "expression" : "docs._source.CurrencyformatList.CurrencyFormat.CurrencyLayout[0]"
+  }, {
+    "name" : "PackagingHeading",
+    "expression" : "docs._source.TranslationList.Translations(TitleId == HPA).TitileName[0]"
+  }, {
+    "name" : "PackagingText",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.PackageMeasurementConsumerPackLocalList.PackageMeasurementConsumerPackLocal.ConsumerPackLengthMetric"
+  }, {
+    "name" : "NumberOfPacks",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.PackageMeasurementLocalList.PackageMeasurementLocal.NumberOfConsumerPack[0]"
+  }, {
+    "name" : "PriceUnitTextEn",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.PriceUnitLocalList.PriceUnitLocal.PriceUnitTextEn[0]"
   } ],
   "options" : {
     "contentType" : "application/json",
@@ -430,7 +489,7 @@
 	<field name="VariantColour" class="java.lang.String"/>
 	<field name="ItemMeasureReferenceMetric" class="java.lang.String"/>
 	<field name="CustomerBenefitText" class="java.lang.String"/>
-	<field name="MemberPriceText" class="java.lang.Integer"/>
+	<field name="MemberPriceText" class="java.lang.Float"/>
 	<field name="CareInstructionHeading" class="java.lang.String"/>
 	<field name="ProductTypeName" class="java.lang.String"/>
 	<field name="ItemMeasureReferenceMetric1" class="java.lang.String"/>
@@ -459,6 +518,10 @@
 	<field name="CurrencyPosition" class="java.lang.String"/>
 	<field name="CurrencyText" class="java.lang.String"/>
 	<field name="CurrencyLayout" class="java.lang.String"/>
+	<field name="PackagingHeading" class="java.lang.String"/>
+	<field name="PackagingText" class="java.lang.String"/>
+	<field name="NumberOfPacks" class="java.lang.Integer"/>
+	<field name="PriceUnitTextEn" class="java.lang.String"/>
 	<variable name="Variable_1" class="java.lang.String">
 		<variableExpression><![CDATA[$F{BulletSymbol}]]></variableExpression>
 	</variable>
@@ -479,6 +542,16 @@
 		)
 	)
 )]]></variableExpression>
+	</variable>
+	<variable name="Variable_Memberprice_fittext" class="java.lang.String">
+		<variableExpression><![CDATA[IF( $F{CurrencyPosition}.equalsIgnoreCase("suffix"),$F{MemberPriceText}+" "+$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag},
+	IF( $F{CurrencyPosition}.equalsIgnoreCase("prefix"),$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$F{MemberPriceText},
+			$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$F{MemberPriceText}
+	)
+)]]></variableExpression>
+	</variable>
+	<variable name="Variable_NumberofPacks" class="java.lang.String">
+		<variableExpression><![CDATA[$F{NumberOfPacks}]]></variableExpression>
 	</variable>
 	<background>
 		<band splitType="Stretch"/>
@@ -535,30 +608,30 @@
 				<textFieldExpression><![CDATA[NOW( )]]></textFieldExpression>
 			</textField>
 			<frame>
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Transparent" x="187" y="-17" width="188" height="180" backcolor="#FFFFFF" uuid="987049f2-dbee-4579-ba41-bf0f593f6415"/>
+				<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Transparent" x="187" y="0" width="188" height="182" backcolor="#FFFFFF" uuid="987049f2-dbee-4579-ba41-bf0f593f6415"/>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" x="0" y="98" width="186" height="15" isRemoveLineWhenBlank="true" uuid="74a3c94e-74b1-4d7a-89f6-d615166e8f41"/>
+					<reportElement style="Style1" x="0" y="105" width="186" height="15" isRemoveLineWhenBlank="true" uuid="74a3c94e-74b1-4d7a-89f6-d615166e8f41"/>
 					<textElement>
 						<font size="12"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{ItemMeasureReferenceMetric1}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" x="0" y="115" width="183" height="15" isRemoveLineWhenBlank="true" uuid="03b20981-8ae0-4567-98c5-853abf93cb1f"/>
+					<reportElement style="Style1" x="0" y="122" width="183" height="15" isRemoveLineWhenBlank="true" uuid="03b20981-8ae0-4567-98c5-853abf93cb1f"/>
 					<textElement>
 						<font size="12"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{ValidDesignPartText}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="-1" y="72" width="185" height="26" isRemoveLineWhenBlank="true" uuid="d4bd2850-c6c0-4154-bcd5-4c425d5d9ef0"/>
+					<reportElement key="" style="Style1" positionType="Float" x="-1" y="79" width="185" height="26" isRemoveLineWhenBlank="true" uuid="d4bd2850-c6c0-4154-bcd5-4c425d5d9ef0"/>
 					<textElement>
 						<font size="18"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{ProductNameLocal}]]></textFieldExpression>
 				</textField>
 				<componentElement>
-					<reportElement style="Style1" positionType="Float" x="-2" y="132" width="168" height="13" isRemoveLineWhenBlank="true" uuid="a0d27fbf-2aa5-4b8b-8fca-2a97be3889a2"/>
+					<reportElement style="Style1" positionType="Float" x="-2" y="139" width="168" height="13" isRemoveLineWhenBlank="true" uuid="a0d27fbf-2aa5-4b8b-8fca-2a97be3889a2"/>
 					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
 						<datasetRun subDataset="DS_CustomerBenefits" uuid="2622ac5e-2ed9-4973-8554-e94f80be2bf1">
 							<datasetParameter name="ItemNumber">
@@ -604,7 +677,7 @@
 								<textFieldExpression><![CDATA[$F{CustomerBenefitText}]]></textFieldExpression>
 							</textField>
 							<textField>
-								<reportElement x="4" y="0" width="16" height="13" uuid="e203839c-c7bd-4002-b94f-aa53cb0bb193"/>
+								<reportElement style="Style1" x="4" y="0" width="16" height="13" uuid="e203839c-c7bd-4002-b94f-aa53cb0bb193"/>
 								<textElement>
 									<font size="9"/>
 								</textElement>
@@ -614,7 +687,7 @@
 					</jr:list>
 				</componentElement>
 				<textField>
-					<reportElement style="Style1" positionType="Float" x="1" y="147" width="173" height="13" isRemoveLineWhenBlank="true" uuid="61f29e5a-983b-4016-9af3-b1fc5985be42">
+					<reportElement style="Style1" positionType="Float" x="1" y="154" width="173" height="13" isRemoveLineWhenBlank="true" uuid="61f29e5a-983b-4016-9af3-b1fc5985be42">
 						<printWhenExpression><![CDATA[IF( $F{VariantColour}.equals("[]"),Boolean.FALSE,Boolean.TRUE)]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -623,35 +696,41 @@
 					<textFieldExpression><![CDATA[$F{BulletSymbol}+" "+$F{AlsoAvailable}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
-					<reportElement style="Style1" positionType="Float" x="6" y="162" width="182" height="15" isRemoveLineWhenBlank="true" uuid="a6f7885e-23b3-4e36-ac98-61bcac8f9d7b"/>
+					<reportElement style="Style1" positionType="Float" x="6" y="167" width="182" height="15" isRemoveLineWhenBlank="true" uuid="a6f7885e-23b3-4e36-ac98-61bcac8f9d7b"/>
 					<textElement>
 						<font size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{VariantColour}.replace( "[","" ).replace("]","").replace("\"","")]]></textFieldExpression>
 				</textField>
 				<genericElement>
-					<reportElement style="Style1" positionType="Float" x="0" y="27" width="183" height="42" uuid="e16f01ee-23af-453a-b5b3-e64e99f443cf"/>
+					<reportElement style="Style1" positionType="Float" x="2" y="37" width="183" height="42" uuid="e16f01ee-23af-453a-b5b3-e64e99f443cf"/>
 					<genericElementType namespace="http://jasperreports.sourceforge.net/jasperreports/html" name="htmlelement"/>
 					<genericElementParameter name="scaleType">
 						<valueExpression><![CDATA["RealSize"]]></valueExpression>
 					</genericElementParameter>
 					<genericElementParameter name="htmlContent">
-						<valueExpression><![CDATA["<html><script src=\"jquery.fittext.js\"></script><div fittext></div><b>"+$F{ProductNameEn}+"</b></html> "]]></valueExpression>
+						<valueExpression><![CDATA["<html><style>.fontstyle{font-family: IKEA Sans;font-weight: bold;}</style><script src=\"jquery.fittext.js\"></script><div class=\"fontstyle\" fittext>"+$F{ProductNameEn}+"</div></html> "]]></valueExpression>
+					</genericElementParameter>
+					<genericElementParameter name="verticalAlign ">
+						<valueExpression><![CDATA["Top"]]></valueExpression>
 					</genericElementParameter>
 				</genericElement>
 				<genericElement>
-					<reportElement style="Style1" positionType="Float" x="0" y="2" width="184" height="42" uuid="8315e632-2045-4066-941a-e3c367735c7b"/>
+					<reportElement style="Style1" positionType="Float" x="1" y="4" width="182" height="33" uuid="8315e632-2045-4066-941a-e3c367735c7b"/>
 					<genericElementType namespace="http://jasperreports.sourceforge.net/jasperreports/html" name="htmlelement"/>
 					<genericElementParameter name="scaleType">
 						<valueExpression><![CDATA["RealSize"]]></valueExpression>
 					</genericElementParameter>
 					<genericElementParameter name="htmlContent">
-						<valueExpression><![CDATA["<html><script src=\"jquery.fittext.js\"></script><div fittext></div>"+$F{ProductTypeName}.substring(0, 1).toUpperCase()+$F{ProductTypeName}.substring(1, $F{ProductTypeName}.length()).toLowerCase()+"</html> "]]></valueExpression>
+						<valueExpression><![CDATA["<html><style>.fontstyle{font-family: IKEA Sans;}</style><script src=\"jquery.fittext.js\"></script><div class=\"fontstyle\" fittext >"+$F{ProductTypeName}.substring(0, 1).toUpperCase()+$F{ProductTypeName}.substring(1, $F{ProductTypeName}.length()).toLowerCase()+"</div></html> "]]></valueExpression>
+					</genericElementParameter>
+					<genericElementParameter name="verticalAlign">
+						<valueExpression><![CDATA["Top"]]></valueExpression>
 					</genericElementParameter>
 				</genericElement>
 			</frame>
 			<frame>
-				<reportElement style="Style1" positionType="Float" mode="Transparent" x="0" y="7" width="170" height="153" isRemoveLineWhenBlank="true" backcolor="#FFFFFF" uuid="421e0d9d-5950-4f9e-a0e0-713011a62ef2"/>
+				<reportElement style="Style1" positionType="Float" mode="Transparent" x="0" y="7" width="170" height="173" isRemoveLineWhenBlank="true" backcolor="#FFFFFF" uuid="421e0d9d-5950-4f9e-a0e0-713011a62ef2"/>
 				<componentElement>
 					<reportElement style="Style1" positionType="Float" x="0" y="13" width="163" height="13" isRemoveLineWhenBlank="true" uuid="56b850a0-9035-4bc9-aa9e-c55451584fff"/>
 					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
@@ -852,7 +931,7 @@
 					</jr:list>
 				</componentElement>
 				<textField>
-					<reportElement style="Style1" positionType="Float" x="0" y="117" width="163" height="13" isRemoveLineWhenBlank="true" uuid="57ba584f-22e2-421a-a359-75b02b6b93ee">
+					<reportElement style="Style1" positionType="Float" x="0" y="147" width="163" height="13" isRemoveLineWhenBlank="true" uuid="57ba584f-22e2-421a-a359-75b02b6b93ee">
 						<printWhenExpression><![CDATA[!$F{CareInstructionText}.equals("[]")]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -861,7 +940,7 @@
 					<textFieldExpression><![CDATA[$F{CareInstructionHeading}]]></textFieldExpression>
 				</textField>
 				<componentElement>
-					<reportElement style="Style1" positionType="Float" x="1" y="130" width="162" height="13" isRemoveLineWhenBlank="true" uuid="8fd0cf0d-06db-4521-a5bd-ccc0bf3c6cdc"/>
+					<reportElement style="Style1" positionType="Float" x="1" y="160" width="162" height="13" isRemoveLineWhenBlank="true" uuid="8fd0cf0d-06db-4521-a5bd-ccc0bf3c6cdc"/>
 					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
 						<datasetRun subDataset="DS_check" uuid="8289256b-da10-43a6-85b4-6a809f88ce0e">
 							<datasetParameter name="authTypeKey">
@@ -912,13 +991,70 @@
 					</textElement>
 					<textFieldExpression><![CDATA[$F{ProductFacts}]]></textFieldExpression>
 				</textField>
+				<textField>
+					<reportElement style="Style1" positionType="Float" x="1" y="118" width="162" height="13" isRemoveLineWhenBlank="true" uuid="bd32d3c7-c97e-419c-bf93-a84f7157939e">
+						<printWhenExpression><![CDATA[!$F{PackagingText}.equals("[]")]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{PackagingHeading}]]></textFieldExpression>
+				</textField>
+				<componentElement>
+					<reportElement style="Style1" positionType="Float" x="0" y="131" width="162" height="13" isRemoveLineWhenBlank="true" uuid="cf7976f0-eeb7-437d-a366-4bf785eb9515"/>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+						<datasetRun subDataset="DS_Packaging" uuid="b69a1053-26a9-4534-933e-4093c2af6994">
+							<datasetParameter name="ItemNumber">
+								<datasetParameterExpression><![CDATA[$P{ItemNumber}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="CountryCode">
+								<datasetParameterExpression><![CDATA[$P{CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="LanguageCode">
+								<datasetParameterExpression><![CDATA[$P{LanguageCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="ItemType">
+								<datasetParameterExpression><![CDATA[$P{ItemType}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="Small_CountryCode">
+								<datasetParameterExpression><![CDATA[$P{Small_CountryCode}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="uriKey">
+								<datasetParameterExpression><![CDATA[$P{uriKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authTypeKey">
+								<datasetParameterExpression><![CDATA[$P{authTypeKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="authParametersKey">
+								<datasetParameterExpression><![CDATA[$P{authParametersKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="languageKey">
+								<datasetParameterExpression><![CDATA[$P{languageKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="verbKey">
+								<datasetParameterExpression><![CDATA[$P{verbKey}]]></datasetParameterExpression>
+							</datasetParameter>
+							<returnValue fromVariable="Variable_NumberofPacks" toVariable="Variable_NumberofPacks"/>
+						</datasetRun>
+						<jr:listContents height="13" width="162">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement style="Style1" x="69" y="0" width="93" height="13" uuid="47b4de3e-1460-450b-9acd-f46d0cad3684"/>
+								<textFieldExpression><![CDATA[$F{ConsumerPackLengthMetric}+"*"+$F{ConsumerPackWidthMetric}+"*"+$F{ConsumerPackHeightMetric}]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement style="Style1" x="0" y="0" width="80" height="13" uuid="8ddcb89f-2a10-47a9-851f-c46bba19b2c7"/>
+								<textFieldExpression><![CDATA["MEASUREMENT"]]></textFieldExpression>
+							</textField>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
 			</frame>
 			<frame>
-				<reportElement mode="Transparent" x="188" y="320" width="186" height="143" backcolor="#FFFFFF" uuid="8bfb12f8-4a69-4d10-bacc-7375d32b8440"/>
+				<reportElement mode="Transparent" x="188" y="320" width="186" height="141" backcolor="#FFFFFF" uuid="8bfb12f8-4a69-4d10-bacc-7375d32b8440"/>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" x="-1" y="107" width="180" height="33" uuid="4479559d-c530-48bb-b00d-5e8deae2711a"/>
+					<reportElement key="abc" style="Style1" x="-1" y="107" width="111" height="23" uuid="4479559d-c530-48bb-b00d-5e8deae2711a"/>
 					<textElement markup="styled">
-						<font size="25" isBold="true"/>
+						<font size="20" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[IF( $F{RegularPriceText}==null,IF( $F{CurrencyPosition}.equalsIgnoreCase("suffix"),$F{MemberPriceText}+" "+$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag},
 	IF( $F{CurrencyPosition}.equalsIgnoreCase("prefix"),$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$F{MemberPriceText},
@@ -998,6 +1134,15 @@
 						<font size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{ValidDesigner}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Style1" x="86" y="107" width="83" height="30" uuid="fa7896d3-f287-4ed8-a371-8b06aeca2fe8">
+						<printWhenExpression><![CDATA[$F{PriceUnitTextEn}!=null]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font size="20" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["/"+$F{PriceUnitTextEn}]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
