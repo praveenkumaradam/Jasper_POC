@@ -30,23 +30,7 @@
 			<style fontName="IKEA Sans" fontSize="16"/>
 		</conditionalStyle>
 	</style>
-	<style name="Style3">
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$F{ProductTypeName}.length()<6]]></conditionExpression>
-			<style fontName="IKEA Sans" fontSize="20"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$F{ProductTypeName}.length()>=6 && $F{ProductTypeName}.length()<12]]></conditionExpression>
-			<style fontName="IKEA Sans" fontSize="18"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$F{ProductTypeName}.length()>=12 && $F{ProductTypeName}.length()<18]]></conditionExpression>
-			<style fontName="IKEA Sans" fontSize="16"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$F{ProductTypeName}.length()>=18]]></conditionExpression>
-			<style fontName="IKEA Sans" fontSize="14"/>
-		</conditionalStyle>
+	<style name="Style3" fontName="IKEA Sans">
 		<conditionalStyle>
 			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP") && $P{LanguageCode}.equalsIgnoreCase( "ja" )&&$F{ProductTypeName}.length()<6]]></conditionExpression>
 			<style fontName="IKEA Sans JPN" fontSize="18"/>
@@ -78,6 +62,22 @@
 		<conditionalStyle>
 			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "AE") && $P{LanguageCode}.equalsIgnoreCase( "ar" )&&$F{ProductTypeName}.length()>25]]></conditionExpression>
 			<style fontName="IKEA Sans Arabic" fontSize="12"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "GB") && $P{LanguageCode}.equalsIgnoreCase( "en" )&&$F{ProductTypeName}.length()<6]]></conditionExpression>
+			<style fontName="IKEA Sans" fontSize="18"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "GB") && $P{LanguageCode}.equalsIgnoreCase( "en" )&&$F{ProductTypeName}.length()>=6 && $F{ProductTypeName}.length()<12]]></conditionExpression>
+			<style fontName="IKEA Sans" fontSize="16"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "GB") && $P{LanguageCode}.equalsIgnoreCase( "en" )&&$F{ProductTypeName}.length()>=12 && $F{ProductTypeName}.length()<25]]></conditionExpression>
+			<style fontName="IKEA Sans" fontSize="14"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "GB") && $P{LanguageCode}.equalsIgnoreCase( "en" )&&$F{ProductTypeName}.length()>25]]></conditionExpression>
+			<style fontName="IKEA Sans" fontSize="12"/>
 		</conditionalStyle>
 	</style>
 	<style name="Style4" fontName="IKEA Sans">
@@ -443,9 +443,8 @@
 	<scriptlet name="test" class="charPackage.charLength2">
 		<scriptletDescription><![CDATA[]]></scriptletDescription>
 	</scriptlet>
-	<scriptlet name="Scriptlet_1" class="charlength_front.charlength_front"/>
 	<parameter name="ItemNumber" class="java.lang.String">
-		<defaultValueExpression><![CDATA["00236263"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["80279786"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="LanguageCode" class="java.lang.String">
 		<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
@@ -726,28 +725,28 @@
 	<background>
 		<band splitType="Stretch"/>
 	</background>
-	<summary>
-		<band height="554" splitType="Stretch">
+	<pageFooter>
+		<band height="555">
 			<image>
-				<reportElement x="188" y="492" width="80" height="62" uuid="a8cd973b-0b87-4a8d-a398-68536e581b1b"/>
+				<reportElement x="193" y="493" width="80" height="62" uuid="4ccca478-c16d-4b86-a191-3fe4a0605900"/>
 				<imageExpression><![CDATA["C:/temp/logo.PNG"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement style="Style1" x="163" y="460" width="16" height="88" uuid="4b7730db-6fd4-4590-99b3-8084d17bab40"/>
+				<reportElement style="Style1" x="168" y="463" width="16" height="88" uuid="f233d5e6-1f1a-4faa-b772-9201eac2f5a2"/>
 				<textElement rotation="Left">
 					<font fontName="IKEA Sans" size="6"/>
 				</textElement>
 				<text><![CDATA[© Inter IKEA Systems B. V. 1994]]></text>
 			</staticText>
 			<textField>
-				<reportElement style="Style1" x="279" y="492" width="84" height="62" uuid="a0e4dab7-6f94-419f-b36d-8e4fe311052f"/>
+				<reportElement style="Style1" x="284" y="493" width="84" height="62" uuid="ce8ce757-a023-4bde-9e08-e0d72c59da75"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{TurnOver} +" "+$F{BulletSymbol}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="Style1" x="0" y="524" width="140" height="13" uuid="e72d4304-2eb8-48e1-a15d-c43deb60efe1">
+				<reportElement style="Style1" x="5" y="525" width="140" height="13" uuid="39d2b427-096b-4b82-b780-407ca62997ae">
 					<printWhenExpression><![CDATA[$F{RequiresAssemblyYN}.equals( "Y")]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -756,21 +755,21 @@
 				<textFieldExpression><![CDATA[$F{SelfAssembly}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="Style1" x="0" y="538" width="45" height="13" uuid="792f52c1-9cd9-42be-bff9-498fa944f0f9"/>
+				<reportElement style="Style1" x="5" y="539" width="45" height="13" uuid="82551d45-fe83-46ba-a486-d676e3d84b2e"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{ProductAreaNo}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="Style1" x="90" y="537" width="73" height="17" uuid="701f1e71-9454-4bda-80cb-d384395f28ee"/>
+				<reportElement style="Style1" x="95" y="538" width="73" height="17" uuid="562c92da-ec04-476d-9132-cea67937f16b"/>
 				<textElement>
 					<font size="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{ItemNo}.substring(0,3)+"."+$F{ItemNo}.substring(3,6)+"."+$F{ItemNo}.substring(6,8)]]></textFieldExpression>
 			</textField>
 			<textField pattern="d/M/yyyy">
-				<reportElement style="Style1" x="30" y="537" width="49" height="12" uuid="0b058974-09d5-4bc3-a30a-295760db0c4b"/>
+				<reportElement style="Style1" x="35" y="538" width="49" height="12" uuid="827fc895-d727-4188-8b4d-87583c8bd895"/>
 				<box topPadding="0" bottomPadding="2"/>
 				<textElement verticalAlignment="Middle">
 					<font size="6"/>
@@ -778,32 +777,32 @@
 				<textFieldExpression><![CDATA[NOW( )]]></textFieldExpression>
 			</textField>
 			<frame>
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Transparent" x="187" y="0" width="188" height="149" backcolor="#FFFFFF" uuid="987049f2-dbee-4579-ba41-bf0f593f6415"/>
+				<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Transparent" x="192" y="0" width="188" height="149" backcolor="#FFFFFF" uuid="c6c59c45-b921-408d-897b-a9299bd5384c"/>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="0" y="74" width="186" height="15" isRemoveLineWhenBlank="true" uuid="74a3c94e-74b1-4d7a-89f6-d615166e8f41"/>
+					<reportElement style="Style1" positionType="Float" x="0" y="74" width="186" height="15" isRemoveLineWhenBlank="true" uuid="cb1e93e3-d13d-40c5-a14d-eb902fe50963"/>
 					<textElement>
 						<font size="12"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{ItemMeasureReferenceMetric1}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="0" y="89" width="188" height="15" isRemoveLineWhenBlank="true" uuid="03b20981-8ae0-4567-98c5-853abf93cb1f"/>
+					<reportElement style="Style1" positionType="Float" x="0" y="89" width="188" height="15" isRemoveLineWhenBlank="true" uuid="6158a02a-1d17-4c54-86d3-0ddac6896d09"/>
 					<textElement>
 						<font size="12"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{ValidDesignPartText}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement key="" style="Style1" positionType="Float" x="0" y="48" width="185" height="26" isRemoveLineWhenBlank="true" uuid="d4bd2850-c6c0-4154-bcd5-4c425d5d9ef0"/>
+					<reportElement key="" style="Style1" positionType="Float" x="0" y="48" width="185" height="26" isRemoveLineWhenBlank="true" uuid="bd378aa7-3422-4c4f-8b74-8649a7814ac3"/>
 					<textElement>
 						<font size="18"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{ProductNameLocal}]]></textFieldExpression>
 				</textField>
 				<componentElement>
-					<reportElement style="Style1" positionType="Float" x="0" y="104" width="188" height="16" uuid="a0d27fbf-2aa5-4b8b-8fca-2a97be3889a2"/>
+					<reportElement style="Style1" positionType="Float" x="0" y="104" width="188" height="16" uuid="0dabe5fe-66fc-4345-869d-b07222c90104"/>
 					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
-						<datasetRun subDataset="DS_CustomerBenefits" uuid="2622ac5e-2ed9-4973-8554-e94f80be2bf1">
+						<datasetRun subDataset="DS_CustomerBenefits" uuid="3277abd9-77df-47bb-bc1e-bda0a9490366">
 							<datasetParameter name="ItemNumber">
 								<datasetParameterExpression><![CDATA[$P{ItemNumber}]]></datasetParameterExpression>
 							</datasetParameter>
@@ -841,7 +840,7 @@
 						</datasetRun>
 						<jr:listContents height="16" width="188">
 							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-								<reportElement style="Style1" x="16" y="0" width="172" height="13" uuid="86a85227-263f-4186-8214-f23ca93e9313">
+								<reportElement style="Style1" x="16" y="0" width="172" height="13" uuid="940d9e81-a49f-470d-b4a5-ce45b2501781">
 									<printWhenExpression><![CDATA[$V{Variable_forLength}<=300]]></printWhenExpression>
 								</reportElement>
 								<textElement>
@@ -850,7 +849,7 @@
 								<textFieldExpression><![CDATA[$F{CustomerBenefitText}]]></textFieldExpression>
 							</textField>
 							<textField>
-								<reportElement style="Style1" x="4" y="0" width="16" height="16" uuid="e203839c-c7bd-4002-b94f-aa53cb0bb193">
+								<reportElement style="Style1" x="4" y="0" width="16" height="16" uuid="1b6caddb-8637-4d04-be20-5c3906bd82a8">
 									<printWhenExpression><![CDATA[$V{Variable_forLength}<=300]]></printWhenExpression>
 								</reportElement>
 								<textElement>
@@ -862,7 +861,7 @@
 					</jr:list>
 				</componentElement>
 				<textField>
-					<reportElement style="Style1" positionType="Float" x="3" y="120" width="185" height="16" uuid="61f29e5a-983b-4016-9af3-b1fc5985be42">
+					<reportElement style="Style1" positionType="Float" x="3" y="120" width="185" height="16" uuid="edaf9ec4-a46f-4eb6-9e40-1b1bb518cc4f">
 						<printWhenExpression><![CDATA[IF( $F{VariantColour}.equals("[]"),Boolean.FALSE,Boolean.TRUE)]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -871,28 +870,28 @@
 					<textFieldExpression><![CDATA[$F{BulletSymbol}+" "+$F{AlsoAvailable}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
-					<reportElement style="Style1" positionType="Float" x="15" y="134" width="173" height="15" uuid="a6f7885e-23b3-4e36-ac98-61bcac8f9d7b"/>
+					<reportElement style="Style1" positionType="Float" x="15" y="134" width="173" height="15" uuid="6a3db452-89d6-4f8d-9125-3d2d2c16f2b8"/>
 					<textElement>
 						<font size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{VariantColour}.replace( "[","" ).replace("]","").replace("\"","")]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style2" positionType="Float" x="0" y="18" width="186" height="30" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="0cba6284-ec2f-4dd1-9dbf-62f753d124bc"/>
+					<reportElement style="Style2" positionType="Float" x="0" y="18" width="186" height="30" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="7d58cc47-1e2f-4561-be38-88dfc912d4a2"/>
 					<textElement>
 						<font isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{ProductNameEn}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style3" positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="186" height="18" isRemoveLineWhenBlank="true" uuid="91cfd491-d0ef-481d-882c-e790cd16acfb"/>
-					<textFieldExpression><![CDATA[$F{ProductTypeName}]]></textFieldExpression>
+					<reportElement style="Style3" positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="186" height="18" isRemoveLineWhenBlank="true" uuid="3a8509b3-efc4-4f44-a68d-4857823976fb"/>
+					<textFieldExpression><![CDATA[$F{ProductTypeName}.substring(0, 1).toUpperCase()+$F{ProductTypeName}.substring(1, $F{ProductTypeName}.length()).toLowerCase()]]></textFieldExpression>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement style="Style1" positionType="Float" mode="Transparent" x="0" y="0" width="170" height="168" isRemoveLineWhenBlank="true" backcolor="#FFFFFF" uuid="421e0d9d-5950-4f9e-a0e0-713011a62ef2"/>
+				<reportElement style="Style1" positionType="Float" mode="Transparent" x="5" y="0" width="170" height="168" isRemoveLineWhenBlank="true" backcolor="#FFFFFF" uuid="a2632711-7c46-46be-9656-acf410fbcbc7"/>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="1" y="28" width="169" height="15" isRemoveLineWhenBlank="true" uuid="8d52d236-a3f8-44ca-b8c8-20d9b56ff91b">
+					<reportElement style="Style1" positionType="Float" x="1" y="28" width="169" height="15" isRemoveLineWhenBlank="true" uuid="690bad0d-e038-4056-93c4-e46ea64c4e54">
 						<printWhenExpression><![CDATA[!$V{Variable_good_dummy}.equals("")]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -901,7 +900,7 @@
 					<textFieldExpression><![CDATA[$F{GoodToKnow}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="1" y="56" width="169" height="15" isRemoveLineWhenBlank="true" uuid="8a6c1cab-da05-44b6-894d-02bac901196b">
+					<reportElement style="Style1" positionType="Float" x="1" y="56" width="169" height="15" isRemoveLineWhenBlank="true" uuid="766b9eae-5241-47cc-b936-7f1330c74c73">
 						<printWhenExpression><![CDATA[!$V{Variable_people_dummy}.equals("")]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -910,7 +909,7 @@
 					<textFieldExpression><![CDATA[$F{PeopleAndPlanet}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="1" y="140" width="169" height="15" isRemoveLineWhenBlank="true" uuid="57ba584f-22e2-421a-a359-75b02b6b93ee">
+					<reportElement style="Style1" positionType="Float" x="1" y="140" width="169" height="15" isRemoveLineWhenBlank="true" uuid="682c8cd5-13af-4838-9e74-28210e1efde2">
 						<printWhenExpression><![CDATA[!$V{Variable_care_dummy}.equals("")]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -919,20 +918,20 @@
 					<textFieldExpression><![CDATA[$F{CareInstructionHeading}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="1" y="43" width="169" height="13" isRemoveLineWhenBlank="true" uuid="23c0d738-5504-4e46-8f4d-911a85e1cf35"/>
+					<reportElement style="Style1" positionType="Float" x="1" y="43" width="169" height="13" isRemoveLineWhenBlank="true" uuid="a16dc219-68cc-4775-b9b2-c0be9d601ff9"/>
 					<textElement markup="none"/>
 					<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.calculate( $F{MaterialPartText}, $F{ItemMeasureTypeNameShort}, $F{CareInstructionText}, $F{GoodToKnowText}, $F{PackagingText}==null?"":$F{PackagingText}, $F{PeoplePlanetText},$F{MaterialText}, $F{ItemMeasureTextMetricShort},"good")]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="0" y="71" width="170" height="13" isRemoveLineWhenBlank="true" uuid="508b11ac-2d65-476e-b4ed-783c09fe5cd3"/>
+					<reportElement style="Style1" positionType="Float" x="0" y="71" width="170" height="13" isRemoveLineWhenBlank="true" uuid="94dfb8d7-b7fa-49eb-b021-13423972da8e"/>
 					<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.calculate( $F{MaterialPartText}, $F{ItemMeasureTypeNameShort}, $F{CareInstructionText}, $F{GoodToKnowText}, $F{PackagingText}==null?"":$F{PackagingText}, $F{PeoplePlanetText},$F{MaterialText}, $F{ItemMeasureTextMetricShort},"people")]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="0" y="155" width="170" height="13" isRemoveLineWhenBlank="true" uuid="1b4d05c7-8e8d-47c7-b848-e076ad77d9f9"/>
+					<reportElement style="Style1" positionType="Float" x="0" y="155" width="170" height="13" isRemoveLineWhenBlank="true" uuid="8aeae000-07b1-43f6-b0fb-07439d636abb"/>
 					<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.calculate( $F{MaterialPartText}, $F{ItemMeasureTypeNameShort}, $F{CareInstructionText}, $F{GoodToKnowText}, $F{PackagingText}==null?"":$F{PackagingText}, $F{PeoplePlanetText},$F{MaterialText}, $F{ItemMeasureTextMetricShort},"care")]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="1" y="0" width="169" height="15" isRemoveLineWhenBlank="true" uuid="87062ab4-226d-47e8-b3e1-0036a9bc07aa">
+					<reportElement style="Style1" positionType="Float" x="1" y="0" width="169" height="15" isRemoveLineWhenBlank="true" uuid="9942dc32-d1bd-49cb-a32a-aa6baa89478d">
 						<printWhenExpression><![CDATA[!$V{Variable_productFacts_dummy}.equals("")]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -941,11 +940,12 @@
 					<textFieldExpression><![CDATA[$F{ProductFacts}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
-					<reportElement style="Style1" positionType="Float" x="0" y="15" width="170" height="13" uuid="1e01331a-2acf-4ce4-a605-df9800b6331b"/>
+					<reportElement style="Style1" positionType="Float" x="0" y="15" width="170" height="13" uuid="4b7be273-c8ba-41d5-84c6-fb99f6d9e64e"/>
+					<textElement textAlignment="Left"/>
 					<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.calculate( $F{MaterialPartText}.equals("[null]")?"":$F{MaterialPartText}, $F{ItemMeasureTypeNameShort}, $F{CareInstructionText}, $F{GoodToKnowText}, $F{PackagingText}==null?"":$F{PackagingText}, $F{PeoplePlanetText},$F{MaterialText}, $F{ItemMeasureTextMetricShort},"product")]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="0" y="84" width="170" height="15" isRemoveLineWhenBlank="true" uuid="c1d28d3a-15bb-46c3-8d30-207c8d122e0e">
+					<reportElement style="Style1" positionType="Float" x="0" y="84" width="170" height="15" isRemoveLineWhenBlank="true" uuid="bd82eb0b-4fdf-421e-b8c5-6847e796ff7a">
 						<printWhenExpression><![CDATA[!$V{Variable_productMeasurements_dummy}.equals(" ")]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -954,11 +954,11 @@
 					<textFieldExpression><![CDATA[$F{ProductMeasurements}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="0" y="99" width="170" height="13" uuid="07548ca6-147a-43e1-8918-95a12a5d0ad2"/>
+					<reportElement style="Style1" positionType="Float" x="0" y="99" width="170" height="13" uuid="86451954-ce1c-47d1-b001-e76299a7f62e"/>
 					<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.calculate( $F{MaterialPartText}, $F{ItemMeasureTypeNameShort}, $F{CareInstructionText}, $F{GoodToKnowText}, $F{PackagingText}==null?"":$F{PackagingText}, $F{PeoplePlanetText},$F{MaterialText}, $F{ItemMeasureTextMetricShort},"measure")]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="1" y="127" width="169" height="13" isRemoveLineWhenBlank="true" uuid="57c12874-dea9-429a-8c69-42eba3574e75">
+					<reportElement style="Style1" positionType="Float" x="1" y="127" width="169" height="13" isRemoveLineWhenBlank="true" uuid="1d7c2c6d-3c3c-41a6-91db-90b63c800b3a">
 						<printWhenExpression><![CDATA[!$F{PackagingText}.equals("")]]></printWhenExpression>
 					</reportElement>
 					<box>
@@ -967,7 +967,7 @@
 					<textFieldExpression><![CDATA["MEASUREMENT" +"  "+$F{PackagingText}+"*"+$F{packagingWidth}+"*"+$F{packagingHeight}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="0" y="112" width="170" height="15" isRemoveLineWhenBlank="true" uuid="ebeb9957-3dbc-43c0-9a7f-bd729f8b9d1c">
+					<reportElement style="Style1" positionType="Float" x="0" y="112" width="170" height="15" isRemoveLineWhenBlank="true" uuid="7188b2c4-02ed-4d13-8c29-65237ae92340">
 						<printWhenExpression><![CDATA[!$F{PackagingText}.equals("")]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -977,16 +977,16 @@
 				</textField>
 			</frame>
 			<frame>
-				<reportElement mode="Transparent" x="187" y="309" width="187" height="150" isRemoveLineWhenBlank="true" backcolor="#FFFFFF" uuid="8bfb12f8-4a69-4d10-bacc-7375d32b8440"/>
+				<reportElement mode="Transparent" x="192" y="309" width="187" height="150" isRemoveLineWhenBlank="true" backcolor="#FFFFFF" uuid="fa1243ef-8b40-4485-a179-e35e6aea1985"/>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement key="abc" style="Style4" x="1" y="105" width="182" height="45" isRemoveLineWhenBlank="true" uuid="4479559d-c530-48bb-b00d-5e8deae2711a"/>
+					<reportElement key="abc" style="Style4" x="1" y="105" width="182" height="45" isRemoveLineWhenBlank="true" uuid="66b91173-3cd8-461b-bee8-05c488ea7af1"/>
 					<textElement markup="styled">
 						<font isBold="true" isItalic="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{Variable_pricedivisor}+IF( $F{PriceUnitTextEn}==null,"","/"+$F{PriceUnitTextEn})]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="false">
-					<reportElement style="Style1" x="-1" y="85" width="180" height="20" isRemoveLineWhenBlank="true" uuid="cb4f217d-cbd2-49cf-8dc0-8cbebdd96708">
+					<reportElement style="Style1" x="-1" y="85" width="180" height="20" isRemoveLineWhenBlank="true" uuid="dc9e3294-328b-4a52-8452-8db77549c07c">
 						<printWhenExpression><![CDATA[$F{RegularPriceText}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -995,7 +995,7 @@
 					<textFieldExpression><![CDATA[$F{RegularPrice}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style5" x="2" y="36" width="180" height="33" isRemoveLineWhenBlank="true" uuid="70e423a2-d884-409c-bf27-3d4bbefa7724">
+					<reportElement style="Style5" x="2" y="36" width="180" height="33" isRemoveLineWhenBlank="true" uuid="b24f20cb-e5ad-42d5-a89c-456aa815b01a">
 						<printWhenExpression><![CDATA[$F{RegularPriceText}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement markup="styled">
@@ -1008,7 +1008,7 @@
 )]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" x="2" y="15" width="180" height="21" uuid="3fdfe370-3753-4b9e-aad3-12e36caff17d">
+					<reportElement style="Style1" x="2" y="15" width="180" height="21" uuid="819cd1c1-a988-4760-b43c-1e1fc851a25c">
 						<printWhenExpression><![CDATA[$F{RegularPriceText}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -1017,7 +1017,7 @@
 					<textFieldExpression><![CDATA[$F{MemberPrice}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Style1" x="-1" y="0" width="41" height="15" uuid="459f88ae-ab7b-4e83-8575-5169bc1fab7c">
+					<reportElement style="Style1" x="-1" y="0" width="41" height="15" uuid="a410c623-4512-4f06-8ea4-e22977b4d5d6">
 						<printWhenExpression><![CDATA[$F{RegularPriceText}!=null && $F{ValidDesigner}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left">
@@ -1026,7 +1026,7 @@
 					<textFieldExpression><![CDATA[$F{Design}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" x="31" y="0" width="144" height="15" uuid="bfac9c98-17da-43b5-86e9-6e84e87b437b">
+					<reportElement style="Style1" x="31" y="0" width="144" height="15" uuid="bbc3288f-b8db-4a66-9ce3-f93e4e7db8a6">
 						<printWhenExpression><![CDATA[$F{RegularPriceText}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left">
@@ -1035,7 +1035,7 @@
 					<textFieldExpression><![CDATA[$F{ValidDesigner}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Style1" x="2" y="70" width="41" height="15" isRemoveLineWhenBlank="true" uuid="1da518b9-084e-46a8-9bb5-8d61b7b011f1">
+					<reportElement style="Style1" x="2" y="70" width="41" height="15" isRemoveLineWhenBlank="true" uuid="bb6a1527-d9c7-4d24-8bf7-6e710d7ba478">
 						<printWhenExpression><![CDATA[$F{RegularPriceText}==null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left">
@@ -1044,7 +1044,7 @@
 					<textFieldExpression><![CDATA[$F{Design}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" x="34" y="70" width="144" height="15" isRemoveLineWhenBlank="true" uuid="3be3736b-cb66-49d8-ae37-c6a5bcac2551">
+					<reportElement style="Style1" x="34" y="70" width="144" height="15" isRemoveLineWhenBlank="true" uuid="fd127954-52d7-4c6b-bf00-32d1b7256846">
 						<printWhenExpression><![CDATA[$F{RegularPriceText}==null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left">
@@ -1054,11 +1054,11 @@
 				</textField>
 			</frame>
 			<componentElement>
-				<reportElement x="20" y="480" width="38" height="41" uuid="593d3fc0-992a-46b8-b029-efcbc53d9025"/>
+				<reportElement x="25" y="481" width="38" height="41" uuid="878a4018-8340-4fff-b3a3-94a30105a47e"/>
 				<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<jr:codeExpression><![CDATA["http://35.204.113.104/configurations/configuration/"+$P{CountryCode}+"-"+$P{LanguageCode}]]></jr:codeExpression>
 				</jr:QRCode>
 			</componentElement>
 		</band>
-	</summary>
+	</pageFooter>
 </jasperReport>
