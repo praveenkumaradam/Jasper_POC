@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="web_service" pageWidth="180" pageHeight="555" whenNoDataType="AllSectionsNoDetail" columnWidth="180" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" scriptletClass="charPackage.charLength2" uuid="2d40bb8e-fa02-4d8e-ad33-6bad44db775b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="web_service_check"/>
+	<property name="ireport.jasperserver.url" value="http://35.204.211.180:8080/jasperserver-pro/"/>
+	<property name="ireport.jasperserver.user" value="jasperadmin"/>
+	<property name="ireport.jasperserver.reportUnit" value="/reports/webservices_charlength"/>
+	<style name="Style1" fontName="IKEA Sans">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP") && $P{LanguageCode}.equalsIgnoreCase( "ja" )]]></conditionExpression>
+			<style fontName="IKEA Sans JPN"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "AE") && $P{LanguageCode}.equalsIgnoreCase( "ar" )]]></conditionExpression>
+			<style hTextAlign="Right" fontName="IKEA Sans Arabic"/>
+		</conditionalStyle>
+	</style>
+	<style name="Style2" hTextAlign="Left" fontName="IKEA Sans">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "GB")&&$F{ProductNameEn}.length()<=6]]></conditionExpression>
+			<style hTextAlign="Left" fontName="IKEA Sans" fontSize="30"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "GB")&&$F{ProductNameEn}.length() >6&&$F{ProductNameEn}.length() <=15]]></conditionExpression>
+			<style hTextAlign="Left" fontName="IKEA Sans" fontSize="24"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "GB")&&$F{ProductNameEn}.length() >15&&$F{ProductNameEn}.length() < 25]]></conditionExpression>
+			<style hTextAlign="Left" fontName="IKEA Sans" fontSize="16"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "GB")&&$F{ProductNameEn}.length() >=25]]></conditionExpression>
+			<style hTextAlign="Left" fontName="IKEA Sans" fontSize="16"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "AE")&&$F{ProductNameEn}.length()<=6]]></conditionExpression>
+			<style hTextAlign="Right" fontName="IKEA Sans" fontSize="30"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "AE")&&$F{ProductNameEn}.length() >6&&$F{ProductNameEn}.length() <=15]]></conditionExpression>
+			<style hTextAlign="Right" fontName="IKEA Sans" fontSize="24"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "AE")&&$F{ProductNameEn}.length() >15&&$F{ProductNameEn}.length() < 25]]></conditionExpression>
+			<style hTextAlign="Right" fontName="IKEA Sans" fontSize="16"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "GB")&&$F{ProductNameEn}.length() >=25]]></conditionExpression>
+			<style hTextAlign="Right" fontName="IKEA Sans" fontSize="16"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP")&&$F{ProductNameEn}.length()<=6]]></conditionExpression>
+			<style hTextAlign="Left" fontName="IKEA Sans" fontSize="30"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP")&&$F{ProductNameEn}.length() >6&&$F{ProductNameEn}.length() <=15]]></conditionExpression>
+			<style hTextAlign="Left" fontName="IKEA Sans" fontSize="24"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP")&&$F{ProductNameEn}.length() >15&&$F{ProductNameEn}.length() < 25]]></conditionExpression>
+			<style hTextAlign="Left" fontName="IKEA Sans" fontSize="16"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP")&&$F{ProductNameEn}.length() >=25]]></conditionExpression>
+			<style hTextAlign="Left" fontName="IKEA Sans" fontSize="16"/>
+		</conditionalStyle>
+	</style>
+	<style name="Style3" fontName="IKEA Sans">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP") && $P{LanguageCode}.equalsIgnoreCase( "ja" )&&$F{ProductTypeName}.length()<6]]></conditionExpression>
+			<style fontName="IKEA Sans JPN" fontSize="18"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP") && $P{LanguageCode}.equalsIgnoreCase( "ja" )&&$F{ProductTypeName}.length()>=6 && $F{ProductTypeName}.length()<12]]></conditionExpression>
+			<style fontName="IKEA Sans JPN" fontSize="16"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP") && $P{LanguageCode}.equalsIgnoreCase( "ja" )&&$F{ProductTypeName}.length()>=12 && $F{ProductTypeName}.length()<25]]></conditionExpression>
+			<style fontName="IKEA Sans JPN" fontSize="14"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP") && $P{LanguageCode}.equalsIgnoreCase( "ja" )&&$F{ProductTypeName}.length()>25]]></conditionExpression>
+			<style fontName="IKEA Sans JPN" fontSize="12"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "AE") && $P{LanguageCode}.equalsIgnoreCase( "ar" )&&$F{ProductTypeName}.length()<6]]></conditionExpression>
+			<style hTextAlign="Right" fontName="IKEA Sans Arabic" fontSize="18"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "AE") && $P{LanguageCode}.equalsIgnoreCase( "ar" )&&$F{ProductTypeName}.length()>=6 && $F{ProductTypeName}.length()<12]]></conditionExpression>
+			<style hTextAlign="Right" fontName="IKEA Sans Arabic" fontSize="16"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "AE") && $P{LanguageCode}.equalsIgnoreCase( "ar" )&&$F{ProductTypeName}.length()>=12 && $F{ProductTypeName}.length()<25]]></conditionExpression>
+			<style hTextAlign="Right" fontName="IKEA Sans Arabic" fontSize="14"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "AE") && $P{LanguageCode}.equalsIgnoreCase( "ar" )&&$F{ProductTypeName}.length()>25]]></conditionExpression>
+			<style hTextAlign="Right" fontName="IKEA Sans Arabic" fontSize="12"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "GB") && $P{LanguageCode}.equalsIgnoreCase( "en" )&&$F{ProductTypeName}.length()<6]]></conditionExpression>
+			<style fontName="IKEA Sans" fontSize="18"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "GB") && $P{LanguageCode}.equalsIgnoreCase( "en" )&&$F{ProductTypeName}.length()>=6 && $F{ProductTypeName}.length()<12]]></conditionExpression>
+			<style fontName="IKEA Sans" fontSize="16"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "GB") && $P{LanguageCode}.equalsIgnoreCase( "en" )&&$F{ProductTypeName}.length()>=12 && $F{ProductTypeName}.length()<25]]></conditionExpression>
+			<style fontName="IKEA Sans" fontSize="14"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "GB") && $P{LanguageCode}.equalsIgnoreCase( "en" )&&$F{ProductTypeName}.length()>25]]></conditionExpression>
+			<style fontName="IKEA Sans" fontSize="12"/>
+		</conditionalStyle>
+	</style>
+	<style name="Style4" fontName="IKEA Sans">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{regular}.length()<= 2]]></conditionExpression>
+			<style fontName="IKEA Sans" fontSize="35"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{regular}.length()==3]]></conditionExpression>
+			<style fontName="IKEA Sans" fontSize="22"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{regular}.length()>3]]></conditionExpression>
+			<style fontName="IKEA Sans" fontSize="16"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP") && $P{LanguageCode}.equalsIgnoreCase( "ja" )&&$V{regular}.length()<=3]]></conditionExpression>
+			<style fontName="IKEA Sans JPN" fontSize="40"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP") && $P{LanguageCode}.equalsIgnoreCase( "ja" )&&$V{regular}.length()>3]]></conditionExpression>
+			<style fontName="IKEA Sans JPN" fontSize="20"/>
+		</conditionalStyle>
+	</style>
+	<style name="Style5" hImageAlign="Left" fontName="IKEA Sans">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{member}.length()<=2]]></conditionExpression>
+			<style fontName="IKEA Sans" fontSize="35"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{member}.length()==3]]></conditionExpression>
+			<style fontName="IKEA Sans" fontSize="22"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{member}.length()>3]]></conditionExpression>
+			<style fontName="IKEA Sans" fontSize="16"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP") && $P{LanguageCode}.equalsIgnoreCase( "ja" ) && $V{member}.length()<=3]]></conditionExpression>
+			<style fontName="IKEA Sans JPN" fontSize="40"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP") && $P{LanguageCode}.equalsIgnoreCase( "ja" )&&$V{member}.length()>3]]></conditionExpression>
+			<style fontName="IKEA Sans JPN" fontSize="20"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="testQuery" uuid="7c3f986d-24a5-4097-82bf-12fb63cbd013">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="web_service_check"/>
+		<queryString language="WebServiceQuery">
+			<![CDATA[{
+  "getparameters" : { },
+  "fields" : [ {
+    "name" : "CustomerBenefitNo",
+    "expression" : "CustomerBenefitNo"
+  }, {
+    "name" : "CustomerBenefitText",
+    "expression" : "CustomerBenefitText"
+  } ],
+  "options" : {
+    "contentType" : "application/json",
+    "rootPath" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.CustomerBenefitLocalList.CustomerBenefitLocal",
+    "baseUrl" : "_mget"
+  },
+  "headersMap" : { },
+  "queryData" : "{\r\n    \"docs\" : [\r\n        {\r\n            \"_index\" : \"item-gb-en\",\r\n            \"_type\" : \"GB_en\",\r\n            \"_id\" : \"ART-80279786\"\r\n        },\r\n        {\r\n            \"_index\" : \"configurations\",\r\n            \"_type\" : \"configuration\",\r\n            \"_id\" : \"GB-en\"\r\n        },\r\n        {\r\n            \"_index\" : \"translations\",\r\n            \"_type\" : \"translation\",\r\n            \"_id\" : \"GB-en\"\r\n        }\r\n         \r\n    ]\r\n} ",
+   "GETParameters" : { }
+}]]>
+		</queryString>
+		<field name="CustomerBenefitText" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="DS_Materials" uuid="3be3947a-f453-4fe9-b2e4-7e3d164e3336">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="web_service_check"/>
+		<parameter name="ItemNumber" class="java.lang.String"/>
+		<parameter name="LanguageCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="Small_CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["gb"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="ItemType" class="java.lang.String">
+			<defaultValueExpression><![CDATA["ART"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="WebServiceQuery">
+			<![CDATA[{
+  "getparameters" : { },
+  "fields" : [ {
+    "name" : "MaterialPartText",
+    "expression" : "MaterialPartText"
+  }, {
+    "name" : "MaterialText",
+    "expression" : "MaterialText"
+  }, {
+    "name" : "SortNo",
+    "expression" : "SortNo"
+  } ],
+  "options" : {
+    "contentType" : "application/json",
+    "rootPath" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.CustomerMaterialLocalList.CustomerMaterialLocal",
+    "baseUrl" : "_mget"
+  },
+  "headersMap" : { },
+  "queryData" : "{\r\n    \"docs\" : [\r\n        {\r\n            \"_index\" : \"item-$P{Small_CountryCode}-$P{LanguageCode}\",\r\n            \"_type\" : \"$P{CountryCode}_$P{LanguageCode}\",\r\n            \"_id\" : \"$P{ItemType}-$P{ItemNumber}\"\r\n        },\r\n        {\r\n            \"_index\" : \"configurations\",\r\n            \"_type\" : \"configuration\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        },\r\n        {\r\n            \"_index\" : \"translations\",\r\n            \"_type\" : \"translation\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        }\r\n         \r\n    ]\r\n} ",
+  "GETParameters" : { }
+}]]>
+		</queryString>
+		<field name="MaterialPartText" class="java.lang.String"/>
+		<field name="MaterialText" class="java.lang.String"/>
+		<field name="SortNo" class="java.lang.Integer"/>
+		<sortField name="SortNo"/>
+	</subDataset>
+	<subDataset name="DS_GoodToKnow" uuid="7810bbb2-ffc7-4810-b7ff-040b2888640b">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="web_service_check"/>
+		<parameter name="ItemNumber" class="java.lang.String"/>
+		<parameter name="LanguageCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="Small_CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["gb"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="ItemType" class="java.lang.String">
+			<defaultValueExpression><![CDATA["ART"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="WebServiceQuery">
+			<![CDATA[{
+  "getparameters" : { },
+  "fields" : [ {
+    "name" : "GoodToKnowText",
+    "expression" : "GoodToKnowText"
+  }, {
+    "name" : "SortNo",
+    "expression" : "SortNo"
+  } ],
+  "options" : {
+    "contentType" : "application/json",
+    "rootPath" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.GoodToKnowLocalList.GoodToKnowLocal",
+    "baseUrl" : "_mget"
+  },
+  "headersMap" : { },
+  "queryData" : "{\r\n    \"docs\" : [\r\n        {\r\n            \"_index\" : \"item-$P{Small_CountryCode}-$P{LanguageCode}\",\r\n            \"_type\" : \"$P{CountryCode}_$P{LanguageCode}\",\r\n            \"_id\" : \"$P{ItemType}-$P{ItemNumber}\"\r\n        },\r\n        {\r\n            \"_index\" : \"configurations\",\r\n            \"_type\" : \"configuration\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        },\r\n        {\r\n            \"_index\" : \"translations\",\r\n            \"_type\" : \"translation\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        }\r\n         \r\n    ]\r\n} ",
+  "GETParameters" : { }
+}]]>
+		</queryString>
+		<field name="GoodToKnowText" class="java.lang.String"/>
+		<field name="SortNo" class="java.lang.Integer"/>
+	</subDataset>
+	<subDataset name="DS_PeoplePlanet" uuid="c5d938cd-4db6-4131-a6d6-a96c80aa2e1b">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="web_service_check"/>
+		<parameter name="ItemNumber" class="java.lang.String"/>
+		<parameter name="LanguageCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="Small_CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["gb"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="ItemType" class="java.lang.String">
+			<defaultValueExpression><![CDATA["ART"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="WebServiceQuery">
+			<![CDATA[{
+  "getparameters" : { },
+  "fields" : [ {
+    "name" : "PeoplePlanetText",
+    "expression" : "PeoplePlanetText"
+  }, {
+    "name" : "SortNo",
+    "expression" : "SortNo"
+  } ],
+  "options" : {
+    "contentType" : "application/json",
+    "rootPath" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.PeoplePlanetLocalList.PeoplePlanetLocal",
+    "baseUrl" : "_mget"
+  },
+  "headersMap" : { },
+  "queryData" : "{\r\n    \"docs\" : [\r\n        {\r\n            \"_index\" : \"item-$P{Small_CountryCode}-$P{LanguageCode}\",\r\n            \"_type\" : \"$P{CountryCode}_$P{LanguageCode}\",\r\n            \"_id\" : \"$P{ItemType}-$P{ItemNumber}\"\r\n        },\r\n        {\r\n            \"_index\" : \"configurations\",\r\n            \"_type\" : \"configuration\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        },\r\n        {\r\n            \"_index\" : \"translations\",\r\n            \"_type\" : \"translation\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        }\r\n         \r\n    ]\r\n} ",
+  "GETParameters" : { }
+}]]>
+		</queryString>
+		<field name="PeoplePlanetText" class="java.lang.String"/>
+		<field name="SortNo" class="java.lang.Integer"/>
+	</subDataset>
+	<subDataset name="DS_ProductMeasurement" uuid="2010c35c-faa7-44c9-995d-37670ad5f158">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="web_service_check"/>
+		<parameter name="ItemNumber" class="java.lang.String"/>
+		<parameter name="LanguageCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="Small_CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["gb"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="ItemType" class="java.lang.String">
+			<defaultValueExpression><![CDATA["ART"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="WebServiceQuery">
+			<![CDATA[{
+  "getparameters" : { },
+  "fields" : [ {
+    "name" : "ItemMeasureTypeNameShort",
+    "expression" : "ItemMeasureTypeNameShort"
+  }, {
+    "name" : "ItemMeasureTextMetricShort",
+    "expression" : "ItemMeasureTextMetricShort"
+  }, {
+    "name" : "SortNo",
+    "expression" : "SortNo"
+  } ],
+  "options" : {
+    "contentType" : "application/json",
+    "rootPath" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.MeasureLocalList.MeasureLocal",
+    "baseUrl" : "_mget"
+  },
+  "headersMap" : { },
+  "queryData" : "{\r\n    \"docs\" : [\r\n        {\r\n            \"_index\" : \"item-$P{Small_CountryCode}-$P{LanguageCode}\",\r\n            \"_type\" : \"$P{CountryCode}_$P{LanguageCode}\",\r\n            \"_id\" : \"$P{ItemType}-$P{ItemNumber}\"\r\n        },\r\n        {\r\n            \"_index\" : \"configurations\",\r\n            \"_type\" : \"configuration\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        },\r\n        {\r\n            \"_index\" : \"translations\",\r\n            \"_type\" : \"translation\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        }\r\n         \r\n    ]\r\n} ",
+  "GETParameters" : { }
+}]]>
+		</queryString>
+		<field name="ItemMeasureTypeNameShort" class="java.lang.String"/>
+		<field name="ItemMeasureTextMetricShort" class="java.lang.String"/>
+		<field name="SortNo" class="java.lang.Integer"/>
+	</subDataset>
+	<subDataset name="DS_check" uuid="9639a372-2263-4dcb-b933-a49babb97fe9">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="web_service_check"/>
+		<parameter name="ItemNumber" class="java.lang.String">
+			<defaultValueExpression><![CDATA["80279786"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="LanguageCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="Small_CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["gb"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="ItemType" class="java.lang.String">
+			<defaultValueExpression><![CDATA["ART"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="WebServiceQuery">
+			<![CDATA[{
+  "getparameters" : { },
+  "fields" : [ {
+    "name" : "CareInstructionText",
+    "expression" : "CareInstructionText"
+  } ],
+  "options" : {
+    "contentType" : "application/json",
+    "rootPath" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.CareInstructionLocalList.CareInstructionLocal",
+    "baseUrl" : "_mget"
+  },
+  "headersMap" : { },
+  "queryData" : "{\r\n    \"docs\" : [\r\n        {\r\n            \"_index\" : \"item-$P{Small_CountryCode}-$P{LanguageCode}\",\r\n            \"_type\" : \"$P{CountryCode}_$P{LanguageCode}\",\r\n            \"_id\" : \"$P{ItemType}-$P{ItemNumber}\"\r\n        },\r\n        {\r\n            \"_index\" : \"configurations\",\r\n            \"_type\" : \"configuration\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        },\r\n        {\r\n            \"_index\" : \"translations\",\r\n            \"_type\" : \"translation\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        }\r\n         \r\n    ]\r\n} ",
+  "GETParameters" : { }
+}]]>
+		</queryString>
+		<field name="CareInstructionText" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="DS_Packaging" uuid="2f9fba88-e44f-4874-938b-29321731a3ea">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="web_service_check"/>
+		<parameter name="ItemNumber" class="java.lang.String"/>
+		<parameter name="LanguageCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="Small_CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["gb"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="ItemType" class="java.lang.String">
+			<defaultValueExpression><![CDATA["ART"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="WebServiceQuery">
+			<![CDATA[{
+  "getparameters" : { },
+  "fields" : [ {
+    "name" : "ConsumerPackLengthMetric",
+    "expression" : "ConsumerPackLengthMetric"
+  }, {
+    "name" : "ConsumerPackWidthMetric",
+    "expression" : "ConsumerPackWidthMetric"
+  }, {
+    "name" : "ConsumerPackHeightMetric",
+    "expression" : "ConsumerPackHeightMetric"
+  } ],
+  "options" : {
+    "contentType" : "application/json",
+    "rootPath" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.PackageMeasurementConsumerPackLocalList.PackageMeasurementConsumerPackLocal",
+    "baseUrl" : "_mget"
+  },
+  "headersMap" : { },
+  "queryData" : "{\r\n    \"docs\" : [\r\n        {\r\n            \"_index\" : \"item-$P{Small_CountryCode}-$P{LanguageCode}\",\r\n            \"_type\" : \"$P{CountryCode}_$P{LanguageCode}\",\r\n            \"_id\" : \"$P{ItemType}-$P{ItemNumber}\"\r\n        },\r\n        {\r\n            \"_index\" : \"configurations\",\r\n            \"_type\" : \"configuration\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        },\r\n        {\r\n            \"_index\" : \"translations\",\r\n            \"_type\" : \"translation\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        }\r\n         \r\n    ]\r\n} ",
+  "GETParameters" : { }
+}]]>
+		</queryString>
+		<field name="ConsumerPackLengthMetric" class="java.lang.String"/>
+		<field name="ConsumerPackWidthMetric" class="java.lang.String"/>
+		<field name="ConsumerPackHeightMetric" class="java.lang.String"/>
+		<variable name="Variable_NumberofPacks" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="DS_CustomerBenefits" uuid="8523d3b1-0c7b-4a29-bb1e-c719e0045e79">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="web_service_check"/>
+		<parameter name="BulletSymbol" class="java.lang.String"/>
+		<parameter name="ItemNumber" class="java.lang.String"/>
+		<parameter name="LanguageCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="Small_CountryCode" class="java.lang.String">
+			<defaultValueExpression><![CDATA["gb"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="ItemType" class="java.lang.String">
+			<defaultValueExpression><![CDATA["ART"]]></defaultValueExpression>
+		</parameter>
+		<queryString language="WebServiceQuery">
+			<![CDATA[{
+  "getparameters" : { },
+  "fields" : [ {
+    "name" : "CustomerBenefitNo",
+    "expression" : "CustomerBenefitNo"
+  }, {
+    "name" : "CustomerBenefitText",
+    "expression" : "CustomerBenefitText"
+  }, {
+    "name" : "SortNo",
+    "expression" : "SortNo"
+  }, {
+    "name" : "BulletSymbol",
+    "expression" : "docs._source.TranslationList.Translations(TitleId == BC1).TitileName[0]"
+  } ],
+  "options" : {
+    "contentType" : "application/json",
+    "rootPath" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.CustomerBenefitLocalList.CustomerBenefitLocal",
+    "baseUrl" : "_mget"
+  },
+  "headersMap" : { },
+  "queryData" : "{\r\n    \"docs\" : [\r\n        {\r\n            \"_index\" : \"item-$P{Small_CountryCode}-$P{LanguageCode}\",\r\n            \"_type\" : \"$P{CountryCode}_$P{LanguageCode}\",\r\n            \"_id\" : \"$P{ItemType}-$P{ItemNumber}\"\r\n        },\r\n        {\r\n            \"_index\" : \"configurations\",\r\n            \"_type\" : \"configuration\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        },\r\n        {\r\n            \"_index\" : \"translations\",\r\n            \"_type\" : \"translation\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        }\r\n         \r\n    ]\r\n} ",
+  "GETParameters" : { }
+}]]>
+		</queryString>
+		<field name="CustomerBenefitNo" class="java.lang.Integer"/>
+		<field name="CustomerBenefitText" class="java.lang.String"/>
+		<field name="SortNo" class="java.lang.Integer"/>
+		<field name="BulletSymbol" class="java.lang.String"/>
+		<variable name="Variabe_1" class="java.lang.String"/>
+		<variable name="Variable_forLength" class="java.lang.Integer">
+			<variableExpression><![CDATA[$V{Variable_forLength}+$F{CustomerBenefitText}.length()]]></variableExpression>
+			<initialValueExpression><![CDATA[0]]></initialValueExpression>
+		</variable>
+	</subDataset>
+	<scriptlet name="test" class="charPackage.charLength2">
+		<scriptletDescription><![CDATA[]]></scriptletDescription>
+	</scriptlet>
+	<parameter name="ItemNumber" class="java.lang.String">
+		<defaultValueExpression><![CDATA["80279786"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LanguageCode" class="java.lang.String">
+		<defaultValueExpression><![CDATA["en"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CountryCode" class="java.lang.String">
+		<defaultValueExpression><![CDATA["GB"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Small_CountryCode" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[LOWER($P{CountryCode})]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ItemType" class="java.lang.String">
+		<defaultValueExpression><![CDATA["ART"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="WebServiceQuery">
+		<![CDATA[{
+  "getparameters" : { },
+  "fields" : [ {
+    "name" : "ItemNo",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.ItemNo[0]"
+  }, {
+    "name" : "ProductNameEn",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.ProductNameList.ProductName.ProductNameEn[0]"
+  }, {
+    "name" : "CurrencySymbol",
+    "expression" : "docs._source.CurrencyformatList.CurrencyFormat.CurrencySymbol[0]"
+  }, {
+    "name" : "BulletSymbol",
+    "expression" : "docs._source.TranslationList.Translations(TitleId == BC1).TitileName[0]"
+  }, {
+    "name" : "CareInstructionText",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.CareInstructionLocalList.CareInstructionLocal.CareInstructionText"
+  }, {
+    "name" : "VariantColour",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.ItemVariantLocalList.ItemVariantLocal.VariantColour"
+  }, {
+    "name" : "ItemMeasureReferenceMetric",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.MeasureReferenceLocalList.MeasureReferenceLocal.ItemMeasureReferenceMetric"
+  }, {
+    "name" : "CustomerBenefitText",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.CustomerBenefitLocalList.CustomerBenefitLocal.CustomerBenefitText"
+  }, {
+    "name" : "MemberPriceText",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.RetailItemPriceList.RetailItemPrice.RetailPriceIncludingTax[0]"
+  }, {
+    "name" : "CareInstructionHeading",
+    "expression" : "docs._source.TranslationList.Translations(TitleId == HCI).TitileName[0]"
+  }, {
+    "name" : "ProductTypeName",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.ProductTypeLocalList.ProductTypeLocal.ProductTypeName[0]"
+  }, {
+    "name" : "ItemMeasureReferenceMetric1",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.MeasureReferenceLocalList.MeasureReferenceLocal.ItemMeasureReferenceMetric[0]"
+  }, {
+    "name" : "ValidDesignPartText",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.ValidDesignPartsLocalList.ValidDesignPartsLocal.ValidDesignPartText[0]"
+  }, {
+    "name" : "AlsoAvailable",
+    "expression" : "docs._source.TranslationList.Translations(TitleId == OCS).TitileName[0]"
+  }, {
+    "name" : "MemberPrice",
+    "expression" : "docs._source.TranslationList.Translations(TitleId == FPR).TitileName[0]"
+  }, {
+    "name" : "RegularPrice",
+    "expression" : "docs._source.TranslationList.Translations(TitleId == PFN).TitileName[0]"
+  }, {
+    "name" : "TurnOver",
+    "expression" : "docs._source.TranslationList.Translations(TitleId == TUR).TitileName[0]"
+  }, {
+    "name" : "PeopleAndPlanet",
+    "expression" : "docs._source.TranslationList.Translations(TitleId == HEN).TitileName[0]"
+  }, {
+    "name" : "SelfAssembly",
+    "expression" : "docs._source.TranslationList.Translations(TitleId == ASC).TitileName[0]"
+  }, {
+    "name" : "ProductFacts",
+    "expression" : "docs._source.TranslationList.Translations(TitleId == HPF).TitileName[0]"
+  }, {
+    "name" : "Design",
+    "expression" : "docs._source.TranslationList.Translations(TitleId == DSR).TitileName[0]"
+  }, {
+    "name" : "ProductMeasurements",
+    "expression" : "docs._source.TranslationList.Translations(TitleId == HME).TitileName[0]"
+  }, {
+    "name" : "GoodToKnow",
+    "expression" : "docs._source.TranslationList.Translations(TitleId == HGK).TitileName[0]"
+  }, {
+    "name" : "Packaging",
+    "expression" : "docs._source.TranslationList.Translations(TitleId == HPA).TitileName[0]"
+  }, {
+    "name" : "RequiresAssemblyYN",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.Attribute.RequiresAssemblyYN[0]"
+  }, {
+    "name" : "ProductAreaNo",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.ProductAreaLocalList.ProductAreaLocal.ProductAreaNo[0]"
+  }, {
+    "name" : "ValidDesignText",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.ValidDesignLocalList.ValidDesignLocal.ValidDesignText[0]"
+  }, {
+    "name" : "ValidDesigner",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.Attribute.ValidDesigner[0]"
+  }, {
+    "name" : "RegularPriceText",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.RetailItemPriceList.RetailItemPrice.RetailPriceIncludingTax[1]"
+  }, {
+    "name" : "ProductNameLocal",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.ProductNameLocalList.ProductNameLocal.ProductName[0]"
+  }, {
+    "name" : "MaterialText",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.CustomerMaterialLocalList.CustomerMaterialLocal.MaterialText"
+  }, {
+    "name" : "GoodToKnowText",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.GoodToKnowLocalList.GoodToKnowLocal.GoodToKnowText"
+  }, {
+    "name" : "PeoplePlanetText",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.PeoplePlanetLocalList.PeoplePlanetLocal.PeoplePlanetText"
+  }, {
+    "name" : "ProductMeasurementText",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.MeasureLocalList.MeasureLocal.ItemMeasureTypeNameShort"
+  }, {
+    "name" : "CurrencyPosition",
+    "expression" : "docs._source.CurrencyformatList.CurrencyFormat.CurrencyPosition[0]"
+  }, {
+    "name" : "CurrencyText",
+    "expression" : "docs._source.CurrencyformatList.CurrencyFormat.CurrencyText[0]"
+  }, {
+    "name" : "CurrencyLayout",
+    "expression" : "docs._source.CurrencyformatList.CurrencyFormat.CurrencyLayout[0]"
+  }, {
+    "name" : "PackagingHeading",
+    "expression" : "docs._source.TranslationList.Translations(TitleId == HPA).TitileName[0]"
+  }, {
+    "name" : "PackagingText",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.PackageMeasurementConsumerPackLocalList.PackageMeasurementConsumerPackLocal.ConsumerPackLengthMetric[0]"
+  }, {
+    "name" : "NumberOfPacks",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.PackageMeasurementLocalList.PackageMeasurementLocal.NumberOfConsumerPack[0]"
+  }, {
+    "name" : "PriceUnitTextEn",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.PriceUnitLocalList.PriceUnitLocal.PriceUnitTextEn[0]"
+  }, {
+    "name" : "ItemMeasureTypeNameShort",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.MeasureLocalList.MeasureLocal.ItemMeasureTypeNameShort"
+  }, {
+    "name" : "ItemMeasureTextMetricShort",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.MeasureLocalList.MeasureLocal.ItemMeasureTextMetricShort"
+  }, {
+    "name" : "packagingWidth",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.PackageMeasurementConsumerPackLocalList.PackageMeasurementConsumerPackLocal.ConsumerPackWidthMetric[0]"
+  }, {
+    "name" : "packagingHeight",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.PackageMeasurementConsumerPackLocalList.PackageMeasurementConsumerPackLocal.ConsumerPackHeightMetric[0]"
+  }, {
+    "name" : "MaterialPartText",
+    "expression" : "docs._source.GetItemResponse.ItemListContainer.ItemList.Item.CustomerMaterialLocalList.CustomerMaterialLocal.MaterialPartText"
+  }, {
+    "name" : "QRCode",
+    "expression" : "docs._source.Referals.QRCodeBaseUrl[0]"
+  }, {
+    "name" : "QRCode_True_False",
+    "expression" : "docs._source.Referals.EnableQRCode"
+  }, {
+    "name" : "FontFamily",
+    "expression" : "docs._source.CarrierInfoList.CarrierInfo.FontFamily[0]"
+  } ],
+  "options" : {
+    "contentType" : "application/json",
+    "rootPath" : "",
+    "baseUrl" : "_mget"
+  },
+  "headersMap" : { },
+  "queryData" : "{\r\n    \"docs\" : [\r\n        {\r\n            \"_index\" : \"item-$P{Small_CountryCode}-$P{LanguageCode}\",\r\n            \"_type\" : \"$P{CountryCode}_$P{LanguageCode}\",\r\n            \"_id\" : \"$P{ItemType}-$P{ItemNumber}\"\r\n        },\r\n        {\r\n            \"_index\" : \"configurations\",\r\n            \"_type\" : \"configuration\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        },\r\n        {\r\n            \"_index\" : \"translations\",\r\n            \"_type\" : \"translation\",\r\n            \"_id\" : \"$P{CountryCode}-$P{LanguageCode}\"\r\n        }\r\n         \r\n    ]\r\n} ",
+  "GETParameters" : { }
+}]]>
+	</queryString>
+	<field name="ItemNo" class="java.lang.String"/>
+	<field name="ProductNameEn" class="java.lang.String"/>
+	<field name="CurrencySymbol" class="java.lang.String"/>
+	<field name="BulletSymbol" class="java.lang.String"/>
+	<field name="CareInstructionText" class="java.lang.String"/>
+	<field name="VariantColour" class="java.lang.String"/>
+	<field name="ItemMeasureReferenceMetric" class="java.lang.String"/>
+	<field name="CustomerBenefitText" class="java.lang.String"/>
+	<field name="MemberPriceText" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CareInstructionHeading" class="java.lang.String"/>
+	<field name="ProductTypeName" class="java.lang.String"/>
+	<field name="ItemMeasureReferenceMetric1" class="java.lang.String"/>
+	<field name="ValidDesignPartText" class="java.lang.String"/>
+	<field name="AlsoAvailable" class="java.lang.String"/>
+	<field name="MemberPrice" class="java.lang.String"/>
+	<field name="RegularPrice" class="java.lang.String"/>
+	<field name="TurnOver" class="java.lang.String"/>
+	<field name="PeopleAndPlanet" class="java.lang.String"/>
+	<field name="SelfAssembly" class="java.lang.String"/>
+	<field name="ProductFacts" class="java.lang.String"/>
+	<field name="Design" class="java.lang.String"/>
+	<field name="ProductMeasurements" class="java.lang.String"/>
+	<field name="GoodToKnow" class="java.lang.String"/>
+	<field name="Packaging" class="java.lang.String"/>
+	<field name="RequiresAssemblyYN" class="java.lang.String"/>
+	<field name="ProductAreaNo" class="java.lang.Integer"/>
+	<field name="ValidDesignText" class="java.lang.String"/>
+	<field name="ValidDesigner" class="java.lang.String"/>
+	<field name="RegularPriceText" class="java.lang.String"/>
+	<field name="ProductNameLocal" class="java.lang.String"/>
+	<field name="MaterialText" class="java.lang.String"/>
+	<field name="GoodToKnowText" class="java.lang.String"/>
+	<field name="PeoplePlanetText" class="java.lang.String"/>
+	<field name="ProductMeasurementText" class="java.lang.String"/>
+	<field name="CurrencyPosition" class="java.lang.String"/>
+	<field name="CurrencyText" class="java.lang.String"/>
+	<field name="CurrencyLayout" class="java.lang.String"/>
+	<field name="PackagingHeading" class="java.lang.String"/>
+	<field name="PackagingText" class="java.lang.String"/>
+	<field name="NumberOfPacks" class="java.lang.Integer"/>
+	<field name="PriceUnitTextEn" class="java.lang.String"/>
+	<field name="ItemMeasureTypeNameShort" class="java.lang.String"/>
+	<field name="ItemMeasureTextMetricShort" class="java.lang.String"/>
+	<field name="packagingWidth" class="java.lang.String"/>
+	<field name="packagingHeight" class="java.lang.String"/>
+	<field name="MaterialPartText" class="java.lang.String"/>
+	<field name="QRCode" class="java.lang.String"/>
+	<field name="QRCode_True_False" class="java.lang.String"/>
+	<field name="FontFamily" class="java.lang.String"/>
+	<variable name="Variable_1" class="java.lang.String">
+		<variableExpression><![CDATA[$F{BulletSymbol}]]></variableExpression>
+	</variable>
+	<variable name="currencyStartTag" class="java.lang.String">
+		<variableExpression><![CDATA[IF($F{CurrencyLayout}.equalsIgnoreCase("italic"),"<i>",
+	IF($F{CurrencyLayout}.equalsIgnoreCase("superscript"),"<sup>",
+		IF($F{CurrencyLayout}.equalsIgnoreCase("subscript"),"<sub>",
+			IF($F{CurrencyLayout}.equalsIgnoreCase("normal"),"","")
+		)
+	)
+)]]></variableExpression>
+	</variable>
+	<variable name="currencyEndTag" class="java.lang.String">
+		<variableExpression><![CDATA[IF($F{CurrencyLayout}.equalsIgnoreCase("italic"),"</i>",
+	IF($F{CurrencyLayout}.equalsIgnoreCase("superscript"),"</sup>",
+		IF($F{CurrencyLayout}.equalsIgnoreCase("subscript"),"</sub>",
+			IF($F{CurrencyLayout}.equalsIgnoreCase("normal"),"","")
+		)
+	)
+)]]></variableExpression>
+	</variable>
+	<variable name="Variable_Memberprice_fittext" class="java.lang.String">
+		<variableExpression><![CDATA[IF( $F{CurrencyPosition}.equalsIgnoreCase("suffix"),$F{MemberPriceText}+" "+$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag},
+	IF( $F{CurrencyPosition}.equalsIgnoreCase("prefix"),$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$F{MemberPriceText},
+			$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$F{MemberPriceText}
+	)
+)]]></variableExpression>
+	</variable>
+	<variable name="Variable_NumberofPacks" class="java.lang.String">
+		<variableExpression><![CDATA[$F{NumberOfPacks}]]></variableExpression>
+	</variable>
+	<variable name="Variable_people_dummy" class="java.lang.String">
+		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.calculate( $F{MaterialPartText}, $F{ItemMeasureTypeNameShort}, $F{CareInstructionText}, $F{GoodToKnowText}, $F{PackagingText}==null?"":$F{PackagingText}, $F{PeoplePlanetText},$F{MaterialText}, $F{ItemMeasureTextMetricShort},"people")]]></variableExpression>
+	</variable>
+	<variable name="Variable_care_dummy" class="java.lang.String">
+		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.calculate( $F{MaterialPartText}, $F{ItemMeasureTypeNameShort}, $F{CareInstructionText}, $F{GoodToKnowText}, $F{PackagingText}==null?"":$F{PackagingText}, $F{PeoplePlanetText},$F{MaterialText}, $F{ItemMeasureTextMetricShort},"care")]]></variableExpression>
+	</variable>
+	<variable name="Variable_good_dummy" class="java.lang.String">
+		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.calculate( $F{MaterialPartText}, $F{ItemMeasureTypeNameShort}, $F{CareInstructionText}, $F{GoodToKnowText}, $F{PackagingText}==null?"":$F{PackagingText}, $F{PeoplePlanetText},$F{MaterialText}, $F{ItemMeasureTextMetricShort},"good")]]></variableExpression>
+	</variable>
+	<variable name="Variable_forLenght" class="java.lang.Integer"/>
+	<variable name="Variable_pricedivisor" class="java.lang.String">
+		<variableExpression><![CDATA[IF( $F{RegularPriceText}==null,IF( $F{CurrencyPosition}.equalsIgnoreCase("suffix"),$F{MemberPriceText}+" "+$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag},
+	IF( $F{CurrencyPosition}.equalsIgnoreCase("prefix"),$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$F{MemberPriceText},
+			$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$F{MemberPriceText}
+	)
+) ,IF( $F{CurrencyPosition}.equalsIgnoreCase("suffix"),$F{RegularPriceText}+" "+$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag},
+	IF( $F{CurrencyPosition}.equalsIgnoreCase("prefix"),$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$F{RegularPriceText},
+			$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$F{RegularPriceText}
+	)
+)
+
+)]]></variableExpression>
+	</variable>
+	<variable name="Variable_productFacts_dummy" class="java.lang.String">
+		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.calculate( $F{MaterialPartText}, $F{ItemMeasureTypeNameShort}, $F{CareInstructionText}, $F{GoodToKnowText}, $F{PackagingText}==null?"":$F{PackagingText}, $F{PeoplePlanetText},$F{MaterialText}, $F{ItemMeasureTextMetricShort},"product")]]></variableExpression>
+	</variable>
+	<variable name="Variable_productMeasurements_dummy" class="java.lang.String">
+		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.calculate( $F{MaterialPartText}, $F{ItemMeasureTypeNameShort}, $F{CareInstructionText}, $F{GoodToKnowText}, $F{PackagingText}==null?"":$F{PackagingText}, $F{PeoplePlanetText},$F{MaterialText}, $F{ItemMeasureTextMetricShort},"measure")]]></variableExpression>
+	</variable>
+	<variable name="member" class="java.lang.String">
+		<variableExpression><![CDATA[$F{MemberPriceText}]]></variableExpression>
+	</variable>
+	<variable name="regular" class="java.lang.String">
+		<variableExpression><![CDATA[IF($F{RegularPriceText}==null,$F{MemberPriceText},$F{RegularPriceText})]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageFooter>
+		<band height="555">
+			<textField>
+				<reportElement style="Style1" x="1" y="525" width="161" height="13" uuid="39d2b427-096b-4b82-b780-407ca62997ae">
+					<printWhenExpression><![CDATA[$F{RequiresAssemblyYN}.equals( "Y")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SelfAssembly}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Style1" x="0" y="539" width="45" height="13" uuid="82551d45-fe83-46ba-a486-d676e3d84b2e"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ProductAreaNo}==null?"":$F{ProductAreaNo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Style1" x="100" y="539" width="65" height="7" uuid="562c92da-ec04-476d-9132-cea67937f16b"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ItemNo}.substring(0,3)+"."+$F{ItemNo}.substring(3,6)+"."+$F{ItemNo}.substring(6,8)]]></textFieldExpression>
+			</textField>
+			<textField pattern="d/M/yyyy">
+				<reportElement style="Style1" x="42" y="538" width="49" height="12" uuid="827fc895-d727-4188-8b4d-87583c8bd895"/>
+				<box topPadding="0" bottomPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[NOW( )]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement style="Style1" positionType="Float" mode="Transparent" x="0" y="0" width="180" height="125" isRemoveLineWhenBlank="true" backcolor="#FFFFFF" uuid="a2632711-7c46-46be-9656-acf410fbcbc7"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Style1" positionType="Float" x="0" y="21" width="180" height="10" isRemoveLineWhenBlank="true" uuid="690bad0d-e038-4056-93c4-e46ea64c4e54">
+						<printWhenExpression><![CDATA[!$V{Variable_good_dummy}.equals("")]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{GoodToKnow}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Style1" positionType="Float" x="0" y="42" width="180" height="10" isRemoveLineWhenBlank="true" uuid="766b9eae-5241-47cc-b936-7f1330c74c73">
+						<printWhenExpression><![CDATA[!$V{Variable_people_dummy}.equals("")]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{PeopleAndPlanet}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Style1" positionType="Float" x="0" y="105" width="180" height="10" isRemoveLineWhenBlank="true" uuid="682c8cd5-13af-4838-9e74-28210e1efde2">
+						<printWhenExpression><![CDATA[!$V{Variable_care_dummy}.equals("")]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{CareInstructionHeading}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Style1" positionType="Float" x="0" y="31" width="180" height="10" isRemoveLineWhenBlank="true" uuid="a16dc219-68cc-4775-b9b2-c0be9d601ff9"/>
+					<textElement markup="html"/>
+					<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.calculate( $F{MaterialPartText}, $F{ItemMeasureTypeNameShort}, $F{CareInstructionText}, $F{GoodToKnowText}, $F{PackagingText}==null?"":$F{PackagingText}, $F{PeoplePlanetText},$F{MaterialText}, $F{ItemMeasureTextMetricShort},"good")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Style1" positionType="Float" x="0" y="52" width="180" height="10" isRemoveLineWhenBlank="true" uuid="94dfb8d7-b7fa-49eb-b021-13423972da8e"/>
+					<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.calculate( $F{MaterialPartText}, $F{ItemMeasureTypeNameShort}, $F{CareInstructionText}, $F{GoodToKnowText}, $F{PackagingText}==null?"":$F{PackagingText}, $F{PeoplePlanetText},$F{MaterialText}, $F{ItemMeasureTextMetricShort},"people")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Style1" positionType="Float" x="0" y="115" width="180" height="10" isRemoveLineWhenBlank="true" uuid="8aeae000-07b1-43f6-b0fb-07439d636abb"/>
+					<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.calculate( $F{MaterialPartText}, $F{ItemMeasureTypeNameShort}, $F{CareInstructionText}, $F{GoodToKnowText}, $F{PackagingText}==null?"":$F{PackagingText}, $F{PeoplePlanetText},$F{MaterialText}, $F{ItemMeasureTextMetricShort},"care")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Style1" positionType="Float" x="0" y="0" width="180" height="10" isRemoveLineWhenBlank="true" uuid="9942dc32-d1bd-49cb-a32a-aa6baa89478d">
+						<printWhenExpression><![CDATA[!$V{Variable_productFacts_dummy}.equals("")]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ProductFacts}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement style="Style1" positionType="Float" x="0" y="10" width="180" height="10" uuid="4b7be273-c8ba-41d5-84c6-fb99f6d9e64e"/>
+					<textElement textAlignment="Left"/>
+					<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.calculate( $F{MaterialPartText}.equals("[null]")?"":$F{MaterialPartText}, $F{ItemMeasureTypeNameShort}, $F{CareInstructionText}, $F{GoodToKnowText}, $F{PackagingText}==null?"":$F{PackagingText}, $F{PeoplePlanetText},$F{MaterialText}, $F{ItemMeasureTextMetricShort},"product")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Style1" positionType="Float" x="0" y="63" width="180" height="10" isRemoveLineWhenBlank="true" uuid="bd82eb0b-4fdf-421e-b8c5-6847e796ff7a">
+						<printWhenExpression><![CDATA[!$V{Variable_productMeasurements_dummy}.equals(" ")]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ProductMeasurements}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Style1" positionType="Float" x="0" y="73" width="180" height="10" uuid="86451954-ce1c-47d1-b001-e76299a7f62e"/>
+					<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.calculate( $F{MaterialPartText}, $F{ItemMeasureTypeNameShort}, $F{CareInstructionText}, $F{GoodToKnowText}, $F{PackagingText}==null?"":$F{PackagingText}, $F{PeoplePlanetText},$F{MaterialText}, $F{ItemMeasureTextMetricShort},"measure")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Style1" positionType="Float" x="0" y="94" width="180" height="10" isRemoveLineWhenBlank="true" uuid="1d7c2c6d-3c3c-41a6-91db-90b63c800b3a">
+						<printWhenExpression><![CDATA[!$F{PackagingText}.equals("")]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.0"/>
+					</box>
+					<textFieldExpression><![CDATA[$F{PackagingText}+"*"+$F{packagingWidth}+"*"+$F{packagingHeight}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Style1" positionType="Float" x="0" y="84" width="180" height="10" isRemoveLineWhenBlank="true" uuid="7188b2c4-02ed-4d13-8c29-65237ae92340">
+						<printWhenExpression><![CDATA[!$F{PackagingText}.equals("")]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{PackagingHeading}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<componentElement>
+				<reportElement x="129" y="488" width="34" height="37" uuid="878a4018-8340-4fff-b3a3-94a30105a47e">
+					<printWhenExpression><![CDATA[$F{QRCode_True_False}.equals("[\"true\"]")]]></printWhenExpression>
+				</reportElement>
+				<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<jr:codeExpression><![CDATA[$F{QRCode}+$F{ItemNo}]]></jr:codeExpression>
+				</jr:QRCode>
+			</componentElement>
+			<staticText>
+				<reportElement style="Style1" x="169" y="458" width="8" height="88" uuid="302fd5fd-d0b2-466c-afa8-e74834292b72"/>
+				<textElement rotation="Left">
+					<font fontName="IKEA Sans" size="6"/>
+				</textElement>
+				<text><![CDATA[© Inter IKEA Systems B. V. 1994]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
