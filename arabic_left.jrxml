@@ -118,11 +118,11 @@
 	<style name="Style4" fontName="IKEA Sans">
 		<conditionalStyle>
 			<conditionExpression><![CDATA[$V{regular}.length()<= 2]]></conditionExpression>
-			<style fontName="IKEA Sans" fontSize="35"/>
+			<style fontName="IKEA Sans" fontSize="45"/>
 		</conditionalStyle>
 		<conditionalStyle>
 			<conditionExpression><![CDATA[$V{regular}.length()==3]]></conditionExpression>
-			<style fontName="IKEA Sans" fontSize="22"/>
+			<style fontName="IKEA Sans" fontSize="40"/>
 		</conditionalStyle>
 		<conditionalStyle>
 			<conditionExpression><![CDATA[$V{regular}.length()>3]]></conditionExpression>

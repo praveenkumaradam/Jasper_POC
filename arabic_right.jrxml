@@ -770,7 +770,7 @@
 	</background>
 	<pageFooter>
 		<band height="555">
-			<textField>
+			<textField isStretchWithOverflow="true">
 				<reportElement style="Style1" x="9" y="525" width="171" height="13" uuid="39d2b427-096b-4b82-b780-407ca62997ae">
 					<printWhenExpression><![CDATA[$F{RequiresAssemblyYN}.equals( "Y")]]></printWhenExpression>
 				</reportElement>
@@ -881,7 +881,7 @@
 						<pen lineWidth="0.0"/>
 					</box>
 					<textElement textAlignment="Right"/>
-					<textFieldExpression><![CDATA[$F{PackagingText}+"*"+$F{packagingWidth}+"*"+$F{packagingHeight}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{PackagingText}.replaceAll("سم","")+"*"+$F{packagingWidth}.replaceAll("سم","")+"*"+$F{packagingHeight}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement style="Style1" positionType="Float" x="0" y="45" width="180" height="5" isRemoveLineWhenBlank="true" uuid="7188b2c4-02ed-4d13-8c29-65237ae92340">
@@ -894,7 +894,7 @@
 				</textField>
 			</frame>
 			<componentElement>
-				<reportElement x="9" y="489" width="33" height="36" uuid="878a4018-8340-4fff-b3a3-94a30105a47e">
+				<reportElement x="9" y="470" width="70" height="54" uuid="878a4018-8340-4fff-b3a3-94a30105a47e">
 					<printWhenExpression><![CDATA[$F{QRCode_True_False}.equals("[\"true\"]")]]></printWhenExpression>
 				</reportElement>
 				<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">

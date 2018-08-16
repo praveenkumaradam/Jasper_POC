@@ -775,7 +775,7 @@
 		<band splitType="Stretch"/>
 	</background>
 	<pageFooter>
-		<band height="555">
+		<band height="552">
 			<textField>
 				<reportElement style="Style1" x="1" y="525" width="161" height="13" uuid="39d2b427-096b-4b82-b780-407ca62997ae">
 					<printWhenExpression><![CDATA[$F{RequiresAssemblyYN}.equals( "Y")]]></printWhenExpression>
@@ -883,7 +883,7 @@
 					<box>
 						<pen lineWidth="0.0"/>
 					</box>
-					<textFieldExpression><![CDATA[$F{PackagingText}+"*"+$F{packagingWidth}+"*"+$F{packagingHeight}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{PackagingText}.replaceAll("cm","")+"*"+$F{packagingWidth}.replaceAll("cm","")+"*"+$F{packagingHeight}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement style="Style1" positionType="Float" x="0" y="84" width="180" height="10" isRemoveLineWhenBlank="true" uuid="7188b2c4-02ed-4d13-8c29-65237ae92340">
@@ -896,7 +896,7 @@
 				</textField>
 			</frame>
 			<componentElement>
-				<reportElement x="129" y="488" width="34" height="37" uuid="878a4018-8340-4fff-b3a3-94a30105a47e">
+				<reportElement x="99" y="471" width="70" height="54" uuid="878a4018-8340-4fff-b3a3-94a30105a47e">
 					<printWhenExpression><![CDATA[$F{QRCode_True_False}.equals("[\"true\"]")]]></printWhenExpression>
 				</reportElement>
 				<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">

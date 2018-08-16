@@ -695,6 +695,7 @@
 	<field name="packagingHeight" class="java.lang.String"/>
 	<field name="MaterialPartText" class="java.lang.String"/>
 	<field name="QRCode" class="java.lang.String"/>
+	<field name="FontFamily" class="java.lang.String"/>
 	<variable name="Variable_1" class="java.lang.String">
 		<variableExpression><![CDATA[$F{BulletSymbol}]]></variableExpression>
 	</variable>
@@ -888,13 +889,14 @@
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement style="Style2" positionType="Float" x="0" y="18" width="180" height="30" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="7d58cc47-1e2f-4561-be38-88dfc912d4a2"/>
-					<textElement>
+					<textElement textAlignment="Left">
 						<font isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{ProductNameEn}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement style="Style3" positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="180" height="18" isRemoveLineWhenBlank="true" uuid="3a8509b3-efc4-4f44-a68d-4857823976fb"/>
+					<textElement textAlignment="Left"/>
 					<textFieldExpression><![CDATA[$F{ProductTypeName}.substring(0, 1).toUpperCase()+$F{ProductTypeName}.substring(1, $F{ProductTypeName}.length()).toLowerCase()]]></textFieldExpression>
 				</textField>
 			</frame>
