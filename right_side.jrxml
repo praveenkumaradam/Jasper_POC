@@ -779,7 +779,7 @@
 				<textFieldExpression><![CDATA[$F{TurnOver} +" "+$F{BulletSymbol}]]></textFieldExpression>
 			</textField>
 			<frame>
-				<reportElement style="Style1" positionType="Float" stretchType="ElementGroupHeight" mode="Transparent" x="0" y="0" width="180" height="170" backcolor="#FFFFFF" uuid="c6c59c45-b921-408d-897b-a9299bd5384c"/>
+				<reportElement style="Style1" positionType="Float" stretchType="ElementGroupHeight" mode="Transparent" x="0" y="0" width="180" height="190" backcolor="#FFFFFF" uuid="c6c59c45-b921-408d-897b-a9299bd5384c"/>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement style="Style1" positionType="Float" x="0" y="74" width="180" height="15" isRemoveLineWhenBlank="true" uuid="cb1e93e3-d13d-40c5-a14d-eb902fe50963"/>
 					<textElement>
@@ -802,7 +802,7 @@
 					<textFieldExpression><![CDATA[$F{ProductNameLocal}]]></textFieldExpression>
 				</textField>
 				<componentElement>
-					<reportElement style="Style1" positionType="Float" x="0" y="129" width="180" height="10" uuid="0dabe5fe-66fc-4345-869d-b07222c90104"/>
+					<reportElement style="Style1" positionType="Float" x="0" y="129" width="180" height="15" uuid="0dabe5fe-66fc-4345-869d-b07222c90104"/>
 					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
 						<datasetRun subDataset="DS_CustomerBenefits" uuid="3277abd9-77df-47bb-bc1e-bda0a9490366">
 							<datasetParameter name="ItemNumber">
@@ -840,7 +840,7 @@
 							</datasetParameter>
 							<returnValue fromVariable="Variable_forLength" toVariable="Variable_forLenght"/>
 						</datasetRun>
-						<jr:listContents height="10" width="180">
+						<jr:listContents height="15" width="180">
 							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 								<reportElement style="Style1" x="12" y="0" width="152" height="10" uuid="940d9e81-a49f-470d-b4a5-ce45b2501781">
 									<printWhenExpression><![CDATA[$V{Variable_forLength}<=300]]></printWhenExpression>

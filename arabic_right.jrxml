@@ -640,6 +640,9 @@
   }, {
     "name" : "QRCode_True_False",
     "expression" : "docs._source.Referals.EnableQRCode"
+  }, {
+    "name" : "FontFamily",
+    "expression" : "docs._source.CarrierInfoList.CarrierInfo.FontFamily[0]"
   } ],
   "options" : {
     "contentType" : "application/json",
@@ -699,6 +702,7 @@
 	<field name="MaterialPartText" class="java.lang.String"/>
 	<field name="QRCode" class="java.lang.String"/>
 	<field name="QRCode_True_False" class="java.lang.String"/>
+	<field name="FontFamily" class="java.lang.String"/>
 	<variable name="Variable_1" class="java.lang.String">
 		<variableExpression><![CDATA[$F{BulletSymbol}]]></variableExpression>
 	</variable>
@@ -894,7 +898,7 @@
 				</textField>
 			</frame>
 			<componentElement>
-				<reportElement x="9" y="470" width="70" height="54" uuid="878a4018-8340-4fff-b3a3-94a30105a47e">
+				<reportElement x="110" y="470" width="70" height="54" uuid="878a4018-8340-4fff-b3a3-94a30105a47e">
 					<printWhenExpression><![CDATA[$F{QRCode_True_False}.equals("[\"true\"]")]]></printWhenExpression>
 				</reportElement>
 				<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">

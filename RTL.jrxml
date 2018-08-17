@@ -15,6 +15,7 @@
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
 	<property name="ireport.jasperserver.report.resource" value="/reports/RTL_SubReport_files/main_jrxml"/>
+	<template><![CDATA["C:/Users/prada2/JaspersoftWorkspace/MyReports/fontTest_new.jrtx"]]></template>
 	<style name="Style1" fontName="IKEA Sans">
 		<conditionalStyle>
 			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP") && $P{LanguageCode}.equalsIgnoreCase( "ja" )]]></conditionExpression>

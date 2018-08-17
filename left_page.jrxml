@@ -808,9 +808,9 @@
 				<textFieldExpression><![CDATA[NOW( )]]></textFieldExpression>
 			</textField>
 			<frame>
-				<reportElement style="Style1" positionType="Float" mode="Transparent" x="0" y="0" width="180" height="125" isRemoveLineWhenBlank="true" backcolor="#FFFFFF" uuid="a2632711-7c46-46be-9656-acf410fbcbc7"/>
+				<reportElement style="Style1" positionType="Float" mode="Transparent" x="0" y="0" width="180" height="145" isRemoveLineWhenBlank="true" backcolor="#FFFFFF" uuid="a2632711-7c46-46be-9656-acf410fbcbc7"/>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="0" y="21" width="180" height="10" isRemoveLineWhenBlank="true" uuid="690bad0d-e038-4056-93c4-e46ea64c4e54">
+					<reportElement style="Style1" positionType="Float" x="0" y="25" width="180" height="10" isRemoveLineWhenBlank="true" uuid="690bad0d-e038-4056-93c4-e46ea64c4e54">
 						<printWhenExpression><![CDATA[!$V{Variable_good_dummy}.equals("")]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -819,7 +819,7 @@
 					<textFieldExpression><![CDATA[$F{GoodToKnow}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="0" y="42" width="180" height="10" isRemoveLineWhenBlank="true" uuid="766b9eae-5241-47cc-b936-7f1330c74c73">
+					<reportElement style="Style1" positionType="Float" x="0" y="50" width="180" height="10" isRemoveLineWhenBlank="true" uuid="766b9eae-5241-47cc-b936-7f1330c74c73">
 						<printWhenExpression><![CDATA[!$V{Variable_people_dummy}.equals("")]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -828,7 +828,7 @@
 					<textFieldExpression><![CDATA[$F{PeopleAndPlanet}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="0" y="105" width="180" height="10" isRemoveLineWhenBlank="true" uuid="682c8cd5-13af-4838-9e74-28210e1efde2">
+					<reportElement style="Style1" positionType="Float" x="0" y="125" width="180" height="10" isRemoveLineWhenBlank="true" uuid="682c8cd5-13af-4838-9e74-28210e1efde2">
 						<printWhenExpression><![CDATA[!$V{Variable_care_dummy}.equals("")]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -837,16 +837,16 @@
 					<textFieldExpression><![CDATA[$F{CareInstructionHeading}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="0" y="31" width="180" height="10" isRemoveLineWhenBlank="true" uuid="a16dc219-68cc-4775-b9b2-c0be9d601ff9"/>
+					<reportElement style="Style1" positionType="Float" x="0" y="35" width="180" height="10" isRemoveLineWhenBlank="true" uuid="a16dc219-68cc-4775-b9b2-c0be9d601ff9"/>
 					<textElement markup="html"/>
 					<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.calculate( $F{MaterialPartText}, $F{ItemMeasureTypeNameShort}, $F{CareInstructionText}, $F{GoodToKnowText}, $F{PackagingText}==null?"":$F{PackagingText}, $F{PeoplePlanetText},$F{MaterialText}, $F{ItemMeasureTextMetricShort},"good")]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="0" y="52" width="180" height="10" isRemoveLineWhenBlank="true" uuid="94dfb8d7-b7fa-49eb-b021-13423972da8e"/>
+					<reportElement style="Style1" positionType="Float" x="0" y="60" width="180" height="10" isRemoveLineWhenBlank="true" uuid="94dfb8d7-b7fa-49eb-b021-13423972da8e"/>
 					<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.calculate( $F{MaterialPartText}, $F{ItemMeasureTypeNameShort}, $F{CareInstructionText}, $F{GoodToKnowText}, $F{PackagingText}==null?"":$F{PackagingText}, $F{PeoplePlanetText},$F{MaterialText}, $F{ItemMeasureTextMetricShort},"people")]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="0" y="115" width="180" height="10" isRemoveLineWhenBlank="true" uuid="8aeae000-07b1-43f6-b0fb-07439d636abb"/>
+					<reportElement style="Style1" positionType="Float" x="0" y="135" width="180" height="10" isRemoveLineWhenBlank="true" uuid="8aeae000-07b1-43f6-b0fb-07439d636abb"/>
 					<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.calculate( $F{MaterialPartText}, $F{ItemMeasureTypeNameShort}, $F{CareInstructionText}, $F{GoodToKnowText}, $F{PackagingText}==null?"":$F{PackagingText}, $F{PeoplePlanetText},$F{MaterialText}, $F{ItemMeasureTextMetricShort},"care")]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
@@ -864,7 +864,7 @@
 					<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.calculate( $F{MaterialPartText}.equals("[null]")?"":$F{MaterialPartText}, $F{ItemMeasureTypeNameShort}, $F{CareInstructionText}, $F{GoodToKnowText}, $F{PackagingText}==null?"":$F{PackagingText}, $F{PeoplePlanetText},$F{MaterialText}, $F{ItemMeasureTextMetricShort},"product")]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="0" y="63" width="180" height="10" isRemoveLineWhenBlank="true" uuid="bd82eb0b-4fdf-421e-b8c5-6847e796ff7a">
+					<reportElement style="Style1" positionType="Float" x="0" y="75" width="180" height="10" isRemoveLineWhenBlank="true" uuid="bd82eb0b-4fdf-421e-b8c5-6847e796ff7a">
 						<printWhenExpression><![CDATA[!$V{Variable_productMeasurements_dummy}.equals(" ")]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -873,11 +873,11 @@
 					<textFieldExpression><![CDATA[$F{ProductMeasurements}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="0" y="73" width="180" height="10" uuid="86451954-ce1c-47d1-b001-e76299a7f62e"/>
+					<reportElement style="Style1" positionType="Float" x="0" y="85" width="180" height="10" uuid="86451954-ce1c-47d1-b001-e76299a7f62e"/>
 					<textFieldExpression><![CDATA[$P{REPORT_SCRIPTLET}.calculate( $F{MaterialPartText}, $F{ItemMeasureTypeNameShort}, $F{CareInstructionText}, $F{GoodToKnowText}, $F{PackagingText}==null?"":$F{PackagingText}, $F{PeoplePlanetText},$F{MaterialText}, $F{ItemMeasureTextMetricShort},"measure")]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="0" y="94" width="180" height="10" isRemoveLineWhenBlank="true" uuid="1d7c2c6d-3c3c-41a6-91db-90b63c800b3a">
+					<reportElement style="Style1" positionType="Float" x="0" y="110" width="180" height="10" isRemoveLineWhenBlank="true" uuid="1d7c2c6d-3c3c-41a6-91db-90b63c800b3a">
 						<printWhenExpression><![CDATA[!$F{PackagingText}.equals("")]]></printWhenExpression>
 					</reportElement>
 					<box>
@@ -886,7 +886,7 @@
 					<textFieldExpression><![CDATA[$F{PackagingText}.replaceAll("cm","")+"*"+$F{packagingWidth}.replaceAll("cm","")+"*"+$F{packagingHeight}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Style1" positionType="Float" x="0" y="84" width="180" height="10" isRemoveLineWhenBlank="true" uuid="7188b2c4-02ed-4d13-8c29-65237ae92340">
+					<reportElement style="Style1" positionType="Float" x="0" y="100" width="180" height="10" isRemoveLineWhenBlank="true" uuid="7188b2c4-02ed-4d13-8c29-65237ae92340">
 						<printWhenExpression><![CDATA[!$F{PackagingText}.equals("")]]></printWhenExpression>
 					</reportElement>
 					<textElement>
