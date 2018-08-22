@@ -657,6 +657,27 @@
   }, {
     "name" : "QRCode",
     "expression" : "docs._source.Referals.QRCodeBaseUrl[0]"
+  }, {
+    "name" : "ReadingDirection",
+    "expression" : "docs._source.CarrierInfoList.CarrierInfo.ReadingDirection[0]"
+  }, {
+    "name" : "DecimalPrecision",
+    "expression" : "docs._source.PriceformatList.PriceFormat.DecimalPrecision[0]"
+  }, {
+    "name" : "DecimalSeparator",
+    "expression" : "docs._source.PriceformatList.PriceFormat.DecimalSeparator[0]"
+  }, {
+    "name" : "ThousandsSeparator",
+    "expression" : "docs._source.PriceformatList.PriceFormat.ThousandsSeparator[0]"
+  }, {
+    "name" : "NumberOfDecimals",
+    "expression" : "docs._source.PriceformatList.PriceFormat.NumberOfDecimals[0]"
+  }, {
+    "name" : "PricePattern",
+    "expression" : "docs._source.PriceformatList.PriceFormat.PricePattern[0]"
+  }, {
+    "name" : "RoundPriceMethod",
+    "expression" : "docs._source.PriceformatList.PriceFormat.RoundPriceMethod[0]"
   } ],
   "options" : {
     "contentType" : "application/json",
@@ -707,7 +728,7 @@
 	<field name="CurrencyLayout" class="java.lang.String"/>
 	<field name="PackagingHeading" class="java.lang.String"/>
 	<field name="PackagingText" class="java.lang.String"/>
-	<field name="NumberOfPacks" class="java.lang.Integer"/>
+	<field name="NumberOfPacks" class="java.lang.String"/>
 	<field name="PriceUnitTextEn" class="java.lang.String"/>
 	<field name="ItemMeasureTypeNameShort" class="java.lang.String"/>
 	<field name="ItemMeasureTextMetricShort" class="java.lang.String"/>
@@ -715,6 +736,13 @@
 	<field name="packagingHeight" class="java.lang.String"/>
 	<field name="MaterialPartText" class="java.lang.String"/>
 	<field name="QRCode" class="java.lang.String"/>
+	<field name="ReadingDirection" class="java.lang.String"/>
+	<field name="DecimalPrecision" class="java.lang.Integer"/>
+	<field name="DecimalSeparator" class="java.lang.String"/>
+	<field name="ThousandsSeparator" class="java.lang.String"/>
+	<field name="NumberOfDecimals" class="java.lang.Integer"/>
+	<field name="PricePattern" class="java.lang.String"/>
+	<field name="RoundPriceMethod" class="java.lang.String"/>
 	<variable name="Variable_1" class="java.lang.String">
 		<variableExpression><![CDATA[$F{BulletSymbol}]]></variableExpression>
 	</variable>

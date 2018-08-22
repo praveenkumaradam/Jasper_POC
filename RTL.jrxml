@@ -1,175 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RTL_SubReport" pageWidth="420" pageHeight="595" whenNoDataType="AllSectionsNoDetail" columnWidth="380" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" scriptletClass="charPackage.charLength2" uuid="2d40bb8e-fa02-4d8e-ad33-6bad44db775b">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RTL_SubReport" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" scriptletClass="charPackage.charLength2" uuid="2d40bb8e-fa02-4d8e-ad33-6bad44db775b">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="web_service_check"/>
-	<property name="ireport.jasperserver.url" value="http://35.204.211.180:8080/jasperserver-pro/"/>
+	<property name="ireport.jasperserver.url" value="http://35.204.211.180:8080/jasperserver/"/>
 	<property name="ireport.jasperserver.user" value="jasperadmin"/>
-	<property name="ireport.jasperserver.reportUnit" value="/reports/RTL_SubReport"/>
-	<property name="com.jaspersoft.studio.unit." value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
-	<property name="ireport.jasperserver.report.resource" value="/reports/RTL_SubReport_files/main_jrxml"/>
-	<template><![CDATA["C:/Users/prada2/JaspersoftWorkspace/MyReports/fontTest_new.jrtx"]]></template>
-	<style name="Style1" fontName="IKEA Sans">
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP") && $P{LanguageCode}.equalsIgnoreCase( "ja" )]]></conditionExpression>
-			<style fontName="IKEA Sans JPN"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "AE") && $P{LanguageCode}.equalsIgnoreCase( "ar" )]]></conditionExpression>
-			<style hTextAlign="Right" fontName="IKEA Sans Arabic"/>
-		</conditionalStyle>
-	</style>
-	<style name="Style2" hTextAlign="Left" fontName="IKEA Sans">
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "GB")&&$F{ProductNameEn}.length()<=6]]></conditionExpression>
-			<style hTextAlign="Left" fontName="IKEA Sans" fontSize="30"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "GB")&&$F{ProductNameEn}.length() >6&&$F{ProductNameEn}.length() <=15]]></conditionExpression>
-			<style hTextAlign="Left" fontName="IKEA Sans" fontSize="24"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "GB")&&$F{ProductNameEn}.length() >15&&$F{ProductNameEn}.length() < 25]]></conditionExpression>
-			<style hTextAlign="Left" fontName="IKEA Sans" fontSize="16"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "GB")&&$F{ProductNameEn}.length() >=25]]></conditionExpression>
-			<style hTextAlign="Left" fontName="IKEA Sans" fontSize="16"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "AE")&&$F{ProductNameEn}.length()<=6]]></conditionExpression>
-			<style hTextAlign="Right" fontName="IKEA Sans" fontSize="30"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "AE")&&$F{ProductNameEn}.length() >6&&$F{ProductNameEn}.length() <=15]]></conditionExpression>
-			<style hTextAlign="Right" fontName="IKEA Sans" fontSize="24"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "AE")&&$F{ProductNameEn}.length() >15&&$F{ProductNameEn}.length() < 25]]></conditionExpression>
-			<style hTextAlign="Right" fontName="IKEA Sans" fontSize="16"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "GB")&&$F{ProductNameEn}.length() >=25]]></conditionExpression>
-			<style hTextAlign="Right" fontName="IKEA Sans" fontSize="16"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP")&&$F{ProductNameEn}.length()<=6]]></conditionExpression>
-			<style hTextAlign="Left" fontName="IKEA Sans" fontSize="30"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP")&&$F{ProductNameEn}.length() >6&&$F{ProductNameEn}.length() <=15]]></conditionExpression>
-			<style hTextAlign="Left" fontName="IKEA Sans" fontSize="24"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP")&&$F{ProductNameEn}.length() >15&&$F{ProductNameEn}.length() < 25]]></conditionExpression>
-			<style hTextAlign="Left" fontName="IKEA Sans" fontSize="16"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP")&&$F{ProductNameEn}.length() >=25]]></conditionExpression>
-			<style hTextAlign="Left" fontName="IKEA Sans" fontSize="16"/>
-		</conditionalStyle>
-	</style>
-	<style name="Style3" fontName="IKEA Sans">
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP") && $P{LanguageCode}.equalsIgnoreCase( "ja" )&&$F{ProductTypeName}.length()<6]]></conditionExpression>
-			<style fontName="IKEA Sans JPN" fontSize="18"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP") && $P{LanguageCode}.equalsIgnoreCase( "ja" )&&$F{ProductTypeName}.length()>=6 && $F{ProductTypeName}.length()<12]]></conditionExpression>
-			<style fontName="IKEA Sans JPN" fontSize="16"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP") && $P{LanguageCode}.equalsIgnoreCase( "ja" )&&$F{ProductTypeName}.length()>=12 && $F{ProductTypeName}.length()<25]]></conditionExpression>
-			<style fontName="IKEA Sans JPN" fontSize="14"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP") && $P{LanguageCode}.equalsIgnoreCase( "ja" )&&$F{ProductTypeName}.length()>25]]></conditionExpression>
-			<style fontName="IKEA Sans JPN" fontSize="12"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "AE") && $P{LanguageCode}.equalsIgnoreCase( "ar" )&&$F{ProductTypeName}.length()<6]]></conditionExpression>
-			<style hTextAlign="Right" fontName="IKEA Sans Arabic" fontSize="18"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "AE") && $P{LanguageCode}.equalsIgnoreCase( "ar" )&&$F{ProductTypeName}.length()>=6 && $F{ProductTypeName}.length()<12]]></conditionExpression>
-			<style hTextAlign="Right" fontName="IKEA Sans Arabic" fontSize="16"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "AE") && $P{LanguageCode}.equalsIgnoreCase( "ar" )&&$F{ProductTypeName}.length()>=12 && $F{ProductTypeName}.length()<25]]></conditionExpression>
-			<style hTextAlign="Right" fontName="IKEA Sans Arabic" fontSize="14"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "AE") && $P{LanguageCode}.equalsIgnoreCase( "ar" )&&$F{ProductTypeName}.length()>25]]></conditionExpression>
-			<style hTextAlign="Right" fontName="IKEA Sans Arabic" fontSize="12"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "GB") && $P{LanguageCode}.equalsIgnoreCase( "en" )&&$F{ProductTypeName}.length()<6]]></conditionExpression>
-			<style fontName="IKEA Sans" fontSize="18"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "GB") && $P{LanguageCode}.equalsIgnoreCase( "en" )&&$F{ProductTypeName}.length()>=6 && $F{ProductTypeName}.length()<12]]></conditionExpression>
-			<style fontName="IKEA Sans" fontSize="16"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "GB") && $P{LanguageCode}.equalsIgnoreCase( "en" )&&$F{ProductTypeName}.length()>=12 && $F{ProductTypeName}.length()<25]]></conditionExpression>
-			<style fontName="IKEA Sans" fontSize="14"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "GB") && $P{LanguageCode}.equalsIgnoreCase( "en" )&&$F{ProductTypeName}.length()>25]]></conditionExpression>
-			<style fontName="IKEA Sans" fontSize="12"/>
-		</conditionalStyle>
-	</style>
-	<style name="Style4" fontName="IKEA Sans">
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$V{regular}.length()<= 2]]></conditionExpression>
-			<style fontName="IKEA Sans" fontSize="35"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$V{regular}.length()==3]]></conditionExpression>
-			<style fontName="IKEA Sans" fontSize="22"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$V{regular}.length()>3]]></conditionExpression>
-			<style fontName="IKEA Sans" fontSize="16"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP") && $P{LanguageCode}.equalsIgnoreCase( "ja" )&&$V{regular}.length()<=3]]></conditionExpression>
-			<style fontName="IKEA Sans JPN" fontSize="40"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP") && $P{LanguageCode}.equalsIgnoreCase( "ja" )&&$V{regular}.length()>3]]></conditionExpression>
-			<style fontName="IKEA Sans JPN" fontSize="20"/>
-		</conditionalStyle>
-	</style>
-	<style name="Style5" hImageAlign="Left" fontName="IKEA Sans">
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$V{member}.length()<=2]]></conditionExpression>
-			<style fontName="IKEA Sans" fontSize="35"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$V{member}.length()==3]]></conditionExpression>
-			<style fontName="IKEA Sans" fontSize="22"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$V{member}.length()>3]]></conditionExpression>
-			<style fontName="IKEA Sans" fontSize="16"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP") && $P{LanguageCode}.equalsIgnoreCase( "ja" ) && $V{member}.length()<=3]]></conditionExpression>
-			<style fontName="IKEA Sans JPN" fontSize="40"/>
-		</conditionalStyle>
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$P{CountryCode}.equalsIgnoreCase( "JP") && $P{LanguageCode}.equalsIgnoreCase( "ja" )&&$V{member}.length()>3]]></conditionExpression>
-			<style fontName="IKEA Sans JPN" fontSize="20"/>
-		</conditionalStyle>
-	</style>
+	<property name="ireport.jasperserver.reportUnit" value="/reports/RTL"/>
 	<subDataset name="testQuery" uuid="7c3f986d-24a5-4097-82bf-12fb63cbd013">
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="web_service_check"/>
 		<queryString language="WebServiceQuery">
@@ -651,6 +486,30 @@
   }, {
     "name" : "QRCode_True_False",
     "expression" : "docs._source.Referals.EnableQRCode"
+  }, {
+    "name" : "FontFamily",
+    "expression" : "docs._source.CarrierInfoList.CarrierInfo.FontFamily[0]"
+  }, {
+    "name" : "ReadingDirection",
+    "expression" : "docs._source.CarrierInfoList.CarrierInfo.ReadingDirection[0]"
+  }, {
+    "name" : "DecimalPrecision",
+    "expression" : "docs._source.PriceformatList.PriceFormat.DecimalPrecision[0]"
+  }, {
+    "name" : "DecimalSeparator",
+    "expression" : "docs._source.PriceformatList.PriceFormat.DecimalSeparator[0]"
+  }, {
+    "name" : "ThousandsSeparator",
+    "expression" : "docs._source.PriceformatList.PriceFormat.ThousandsSeparator[0]"
+  }, {
+    "name" : "NumberOfDecimals",
+    "expression" : "docs._source.PriceformatList.PriceFormat.NumberOfDecimals[0]"
+  }, {
+    "name" : "PricePattern",
+    "expression" : "docs._source.PriceformatList.PriceFormat.PricePattern[0]"
+  }, {
+    "name" : "RoundPriceMethod",
+    "expression" : "docs._source.PriceformatList.PriceFormat.RoundPriceMethod[0]"
   } ],
   "options" : {
     "contentType" : "application/json",
@@ -701,7 +560,7 @@
 	<field name="CurrencyLayout" class="java.lang.String"/>
 	<field name="PackagingHeading" class="java.lang.String"/>
 	<field name="PackagingText" class="java.lang.String"/>
-	<field name="NumberOfPacks" class="java.lang.Integer"/>
+	<field name="NumberOfPacks" class="java.lang.String"/>
 	<field name="PriceUnitTextEn" class="java.lang.String"/>
 	<field name="ItemMeasureTypeNameShort" class="java.lang.String"/>
 	<field name="ItemMeasureTextMetricShort" class="java.lang.String"/>
@@ -710,6 +569,14 @@
 	<field name="MaterialPartText" class="java.lang.String"/>
 	<field name="QRCode" class="java.lang.String"/>
 	<field name="QRCode_True_False" class="java.lang.String"/>
+	<field name="FontFamily" class="java.lang.String"/>
+	<field name="ReadingDirection" class="java.lang.String"/>
+	<field name="DecimalPrecision" class="java.lang.Integer"/>
+	<field name="DecimalSeparator" class="java.lang.String"/>
+	<field name="ThousandsSeparator" class="java.lang.String"/>
+	<field name="NumberOfDecimals" class="java.lang.Integer"/>
+	<field name="PricePattern" class="java.lang.String"/>
+	<field name="RoundPriceMethod" class="java.lang.String"/>
 	<variable name="Variable_1" class="java.lang.String">
 		<variableExpression><![CDATA[$F{BulletSymbol}]]></variableExpression>
 	</variable>
@@ -780,7 +647,7 @@
 		<band height="555">
 			<subreport>
 				<reportElement x="200" y="0" width="180" height="555" uuid="b6a70897-775b-45a7-bb21-cd486c7a20cc">
-					<printWhenExpression><![CDATA[!$P{CountryCode}.equals("AE")]]></printWhenExpression>
+					<printWhenExpression><![CDATA[$F{ReadingDirection}.equalsIgnoreCase( "L2R")]]></printWhenExpression>
 				</reportElement>
 				<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
 				<subreportParameter name="ItemNumber">
@@ -803,7 +670,7 @@
 			</subreport>
 			<subreport>
 				<reportElement x="0" y="0" width="180" height="555" uuid="33d26082-8be0-4c84-a5fc-88619ce8fa83">
-					<printWhenExpression><![CDATA[!$P{CountryCode}.equals("AE")]]></printWhenExpression>
+					<printWhenExpression><![CDATA[$F{ReadingDirection}.equalsIgnoreCase( "L2R")]]></printWhenExpression>
 				</reportElement>
 				<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
 				<subreportParameter name="ItemNumber">
@@ -826,7 +693,7 @@
 			</subreport>
 			<subreport>
 				<reportElement x="0" y="0" width="180" height="555" uuid="1e58c586-b0fb-424c-acba-dfeffee50504">
-					<printWhenExpression><![CDATA[$P{CountryCode}.equals("AE")]]></printWhenExpression>
+					<printWhenExpression><![CDATA[$F{ReadingDirection}.equalsIgnoreCase( "R2L")]]></printWhenExpression>
 				</reportElement>
 				<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
 				<subreportParameter name="ItemNumber">
@@ -849,7 +716,7 @@
 			</subreport>
 			<subreport>
 				<reportElement x="200" y="0" width="180" height="555" uuid="2fd07bc3-829b-492c-9afa-1af79fb57d8d">
-					<printWhenExpression><![CDATA[$P{CountryCode}.equals("AE")]]></printWhenExpression>
+					<printWhenExpression><![CDATA[$F{ReadingDirection}.equalsIgnoreCase( "R2L")]]></printWhenExpression>
 				</reportElement>
 				<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
 				<subreportParameter name="ItemNumber">
