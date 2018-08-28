@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RTL_SubReport" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" scriptletClass="charPackage.charLength2" uuid="2d40bb8e-fa02-4d8e-ad33-6bad44db775b">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RTL_SubReport" pageWidth="420" pageHeight="595" whenNoDataType="AllSectionsNoDetail" columnWidth="380" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" scriptletClass="charPackage.charLength2" uuid="2d40bb8e-fa02-4d8e-ad33-6bad44db775b">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="web_service_check"/>
 	<property name="ireport.jasperserver.url" value="http://35.204.211.180:8080/jasperserver/"/>
 	<property name="ireport.jasperserver.user" value="jasperadmin"/>
 	<property name="ireport.jasperserver.reportUnit" value="/reports/RTL"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
 	<subDataset name="testQuery" uuid="7c3f986d-24a5-4097-82bf-12fb63cbd013">
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="web_service_check"/>
 		<queryString language="WebServiceQuery">

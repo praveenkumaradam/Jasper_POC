@@ -891,7 +891,7 @@
 		<variableExpression><![CDATA[IF($F{CurrencyLayout}.equalsIgnoreCase("italic"),"<i>",
 	IF($F{CurrencyLayout}.equalsIgnoreCase("superscript"),"<sup>",
 		IF($F{CurrencyLayout}.equalsIgnoreCase("subscript"),"<sub>",
-			IF($F{CurrencyLayout}.equalsIgnoreCase("normal"),"<sup>","<sup>")
+			IF($F{CurrencyLayout}.equalsIgnoreCase("normal"),"","")
 		)
 	)
 )]]></variableExpression>
@@ -900,7 +900,7 @@
 		<variableExpression><![CDATA[IF($F{CurrencyLayout}.equalsIgnoreCase("italic"),"</i>",
 	IF($F{CurrencyLayout}.equalsIgnoreCase("superscript"),"</sup>",
 		IF($F{CurrencyLayout}.equalsIgnoreCase("subscript"),"</sub>",
-			IF($F{CurrencyLayout}.equalsIgnoreCase("normal"),"</sup>","</sup>")
+			IF($F{CurrencyLayout}.equalsIgnoreCase("normal"),"","")
 		)
 	)
 )]]></variableExpression>
@@ -926,17 +926,7 @@
 	</variable>
 	<variable name="Variable_forLenght" class="java.lang.Integer"/>
 	<variable name="Variable_pricedivisor" class="java.lang.String">
-		<variableExpression><![CDATA[IF( $F{RegularPriceText}==null,IF( $F{CurrencyPosition}.equalsIgnoreCase("suffix"),$F{MemberPriceText}+" "+$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag},
-	IF( $F{CurrencyPosition}.equalsIgnoreCase("prefix"),$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$F{MemberPriceText},
-			$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$F{MemberPriceText}
-	)
-) ,IF( $F{CurrencyPosition}.equalsIgnoreCase("suffix"),$F{RegularPriceText}+" "+$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag},
-	IF( $F{CurrencyPosition}.equalsIgnoreCase("prefix"),$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$F{RegularPriceText},
-			$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$F{RegularPriceText}
-	)
-)
-
-)]]></variableExpression>
+		<variableExpression><![CDATA[$V{Regular_price_numeric}]]></variableExpression>
 	</variable>
 	<variable name="Variable_productFacts_dummy" class="java.lang.String">
 		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.calculate( $F{MaterialPartText}, $F{ItemMeasureTypeNameShort}, $F{CareInstructionText}, $F{GoodToKnowText}, $F{PackagingText}==null?"":$F{PackagingText}, $F{PeoplePlanetText},$F{MaterialText}, $F{ItemMeasureTextMetricShort},"product")]]></variableExpression>
@@ -951,7 +941,23 @@
 		<variableExpression><![CDATA[IF($F{RegularPriceText}==null,$F{MemberPriceText},$F{RegularPriceText})]]></variableExpression>
 	</variable>
 	<variable name="Member_price_numeric" class="java.lang.String">
-		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.decimalFormat( $F{MemberPriceText},$F{NumberOfDecimals} , $F{DecimalPrecision},',' )]]></variableExpression>
+		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.decimalFormat( $F{MemberPriceText},$F{NumberOfDecimals} , $F{DecimalPrecision},$F{DecimalSeparator})]]></variableExpression>
+	</variable>
+	<variable name="Regular_price_numeric" class="java.lang.String">
+		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.decimalFormat( $F{RegularPriceText},$F{NumberOfDecimals} , $F{DecimalPrecision},$F{DecimalSeparator})]]></variableExpression>
+	</variable>
+	<variable name="Variable_RegularPrice_for_pricedivisor" class="java.lang.String">
+		<variableExpression><![CDATA[IF($V{Regular_price_numeric}==null,IF( $F{CurrencyPosition}.equalsIgnoreCase("suffix"), $V{Member_price_numeric}+" "+$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag},
+	IF( $F{CurrencyPosition}.equalsIgnoreCase("prefix"),$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+ $V{Member_price_numeric},
+			$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+ $V{Member_price_numeric}
+	)
+) ,IF( $F{CurrencyPosition}.equalsIgnoreCase("suffix"), $V{Regular_price_numeric}+" "+$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag},
+	IF( $F{CurrencyPosition}.equalsIgnoreCase("prefix"),$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+ $V{Regular_price_numeric},
+			$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+ $V{Regular_price_numeric}
+	)
+)
+
+)]]></variableExpression>
 	</variable>
 	<background>
 		<band splitType="Stretch"/>
@@ -1101,7 +1107,7 @@
 					<textElement markup="styled">
 						<font isBold="true" isItalic="false"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$V{Variable_pricedivisor}+IF( $F{PriceUnitTextEn}==null,"","/"+$F{PriceUnitTextEn})]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$V{Variable_RegularPrice_for_pricedivisor}+IF( $F{PriceUnitTextEn}==null,"","/"+$F{PriceUnitTextEn})]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
 					<reportElement style="Style1" x="0" y="85" width="180" height="20" uuid="dc9e3294-328b-4a52-8452-8db77549c07c">
@@ -1119,9 +1125,9 @@
 					<textElement markup="styled">
 						<font isBold="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA[IF( $F{CurrencyPosition}.equalsIgnoreCase("suffix"),$F{MemberPriceText}+" "+$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag},
-	IF( $F{CurrencyPosition}.equalsIgnoreCase("prefix"),$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$F{MemberPriceText},
-			$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$F{MemberPriceText}
+					<textFieldExpression><![CDATA[IF( $F{CurrencyPosition}.equalsIgnoreCase("suffix"),$V{Member_price_numeric}+" "+$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag},
+	IF( $F{CurrencyPosition}.equalsIgnoreCase("prefix"),$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$V{Member_price_numeric},
+			$V{currencyStartTag}+IF($F{CurrencySymbol}==null,$F{CurrencyText},$F{CurrencySymbol})+$V{currencyEndTag}+" "+$V{Member_price_numeric}
 	)
 )]]></textFieldExpression>
 				</textField>

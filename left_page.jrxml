@@ -940,10 +940,10 @@
 		<variableExpression><![CDATA[IF($F{RegularPriceText}==null,$F{MemberPriceText},$F{RegularPriceText})]]></variableExpression>
 	</variable>
 	<variable name="Member_price_numeric" class="java.lang.String">
-		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.decimalFormat( $F{MemberPriceText},$F{NumberOfDecimals} , $F{DecimalPrecision},',')]]></variableExpression>
+		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.decimalFormat( $F{MemberPriceText},$F{NumberOfDecimals} , $F{DecimalPrecision},$F{DecimalSeparator})]]></variableExpression>
 	</variable>
 	<variable name="Regular_price_numeric" class="java.lang.String">
-		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.decimalFormat( $F{RegularPriceText},$F{NumberOfDecimals} , $F{DecimalPrecision},',')]]></variableExpression>
+		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.decimalFormat( $F{RegularPriceText},$F{NumberOfDecimals} , $F{DecimalPrecision},$F{DecimalSeparator})]]></variableExpression>
 	</variable>
 	<background>
 		<band splitType="Stretch"/>
